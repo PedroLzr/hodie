@@ -8,7 +8,8 @@ WORKDIR /app
 COPY . .
 
 # Instalamos las dependencias
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
 # Definimos la variable de entorno para indicar que Flask debe correr en modo producción
 ENV FLASK_APP=src/index.py
