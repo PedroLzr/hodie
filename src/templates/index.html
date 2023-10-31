@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hodiernus</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <header>
+        {% include 'header.html' %}
+    </header>
+
+    <div class="container-fluid bg-dark text-light">
+        <section class="section">
+            <h3 class="h3 text-info">Palabra del día:</h3>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div>
+                        <h4 style="display: inline-block;">{{ today.word.name }}</h4>
+                        {% if today.word.link %}
+                        <a href="{{ today.word.link }}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        {% endif %}
+                    </div>
+                    {% for def_word in today.word.defs_word %}
+                    <ul>{{ def_word }}</ul>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="h3 text-info">Palabra en inglés del día:</h3>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div>
+                        <h4 style="display: inline-block;">{{ today.english_word.name }}</h4>
+                        {% if today.english_word.link %}
+                        <a href="{{ today.english_word.link }}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        {% endif %}
+                    </div>
+                    <ul>{{ today.english_word.def_word }}</ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="h3 text-info">Frase del día:</h3>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div>
+                        <h4 style="display: inline-block;">{{ today.saying.phrase }}</h4>
+                        {% if today.saying.link %}
+                        <a href="{{ today.saying.link }}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        {% endif %}
+                    </div>
+                    <span>{{ today.saying.author }} - {{ today.saying.desc_author }}</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="h3 text-info">Curiosidad del día:</h3>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h4 style="display: inline-block;">{{ today.curiosity.curiosity }}</h4>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="h3 text-info">Algo para saber:</h3>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h4 style="display: inline-block;">{{ today.something_to_know.something_to_know }}</h4>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="h3 text-info">Artículo del día:</h3>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div>
+                        <h4 style="display: inline-block;">{{ today.article.title }}</h4>
+                        {% if today.article.link %}
+                        <a href="{{ today.article.link }}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-6 offset-md-3">
+                    <p>{{ today.article.body }}</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div>
+                <h3 class="h3 text-info" style="display: inline-block;">Santos del día:</h3>
+                {% if today.saints.link %}
+                <a href="{{ today.saints.link }}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                {% endif %}
+            </div>
+            <div id="carouselSaintsControls" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner" role="listbox">
+                    <ol class="carousel-indicators">
+                        {% for saint in today.saints.list %}
+                        {% if loop.index0 == 0 %}
+                        <li data-target="#carouselSaintsIndicators" data-slide-to="{{ loop.index0 }}" class="active">
+                        </li>
+                        {% else %}
+                        <li data-target="#carouselSaintsIndicators" data-slide-to="{{ loop.index0 }}"></li>
+                        {% endif %} 
+                        {% endfor %}
+                    </ol>
+                    {% for saint in today.saints.list %}
+                    {% if loop.index0 == 0 %}
+                    <div class="carousel-item active text-center p-4">
+                        <div class="col-md-6 offset-md-3">
+                            <ul>{{ saint.name }}</ul>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="carousel-item text-center p-4">
+                        <div class="col-md-6 offset-md-3">
+                            <ul>{{ saint.name }}</ul>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselSaintsControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselSaintsControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="section">
+            <div>
+                <h3 class="h3 text-info" style="display: inline-block;">Efemérides del día:</h3>
+                {% if today.anniversaries.link %}
+                <a href="{{ today.anniversaries.link }}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                {% endif %}
+            </div>
+            <div id="carouselAnniversariesControls" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner" role="listbox">
+                    <ol class="carousel-indicators">
+                        {% for anniversarie in today.anniversaries.list %}
+                        {% if loop.index0 == 0 %}
+                        <li data-target="#carouselAnniversariesIndicators" data-slide-to="{{ loop.index0 }}"
+                            class="active">
+                        </li>
+                        {% else %}
+                        <li data-target="#carouselAnniversariesIndicators" data-slide-to="{{ loop.index0 }}"></li>
+                        {% endif %}
+                        {% endfor %}
+                    </ol>
+                    {% for anniversarie in today.anniversaries.list %}
+                    {% if loop.index0 == 0 %}
+                    <div class="carousel-item active text-center p-4">
+                        <div class="col-md-6 offset-md-3">
+                            <p><b>{{ anniversarie.year }}</b> - {{ anniversarie.fact }}</p>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="carousel-item text-center p-4">
+                        <div class="col-md-6 offset-md-3">
+                            <p><b>{{ anniversarie.year }}</b> - {{ anniversarie.fact }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselAnniversariesControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselAnniversariesControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
