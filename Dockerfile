@@ -13,6 +13,7 @@ COPY . .
 RUN pip install Flask
 RUN pip install requests
 RUN pip install bs4
+RUN pip install lxml
 
 # Definimos la variable de entorno para indicar que Flask debe correr en modo producción
 ENV FLASK_APP=src/index.py
