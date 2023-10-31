@@ -1,5 +1,5 @@
 # Usamos una imagen oficial de Python como base
-FROM python:3.9-slim
+FROM python:3.9
 
 # Definimos la carpeta de trabajo en el contenedor
 WORKDIR /app
