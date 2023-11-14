@@ -1,11 +1,15 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #168de2;">
-    <span class="navbar-brand mb-0 h1">¿Hoy Que Hay?</span>
+    <span class="navbar-brand mb-0 h1">¿Y Hoy Que Hay? &#129300;</span>
     <span class="navbar-text ml-auto" id="dateNow"></span>
 </nav>
 
 <script>
     var dateNow = new Date();
-    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    var options = { year: 'numeric', month: 'long', weekday: 'long', day: 'numeric' };
     var formattedDate = dateNow.toLocaleDateString('es-ES', options);
+
+    var initialOfDay = formattedDate[0].toUpperCase();
+    formattedDate = initialOfDay + formattedDate.slice(1);
+
     document.getElementById('dateNow').textContent = formattedDate;
 </script>
