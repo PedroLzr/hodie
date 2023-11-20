@@ -1,0 +1,38 @@
+nav {
+    background-color: #168de2;
+}
+
+.header-title {
+    color: rgb(56, 55, 55);
+    text-decoration: none;
+    font-size: 1.5em;
+    margin-left: 1rem;
+}
+
+.header-title:hover {
+    color: rgb(56, 55, 55);
+}
+
+.btn-menu {
+    flex-grow: 1;
+    text-align: center;
+
+    display: inline-block;
+    padding: 5px 25px 5px 25px;
+    margin: 3px;
+    text-decoration: none;
+    color: rgb(56, 55, 55);
+    background-color: #4e86ee;
+    border: 1px solid #0056b3;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-menu:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+}
+
+li {
+    display: flex;
+}

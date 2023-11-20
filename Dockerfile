@@ -8,7 +8,6 @@ WORKDIR /app
 COPY . .
 
 # Instalamos las dependencias
-# RUN pip install --upgrade pip && \
 #     pip install --no-cache-dir -r requirements.txt
 RUN pip install Flask
 RUN pip install requests

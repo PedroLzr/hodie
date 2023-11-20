@@ -11,7 +11,7 @@ from controllers.english_word import *
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
 
     today = Day()
@@ -25,3 +25,7 @@ def index():
     today.anniversaries = get_anniversaries_from_hechoshistoricos()
 
     return render_template('index.html', today=today)
+
+@app.route('/credits', methods=['GET'])
+def credits():
+    return render_template('credits.html')
