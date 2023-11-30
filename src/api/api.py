@@ -48,7 +48,7 @@ def api_internal_phrase_today():
     return jsonify({'curiosity': month[str(current_day)]})
 
 @api_bp.route('/v1/internal/phrase/random', methods=['GET'])
-def api_internal_phrase_today():
+def api_internal_phrase_random():
 
     current_date = datetime.now()
     current_month = current_date.strftime("%B").lower()
