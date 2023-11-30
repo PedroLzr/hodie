@@ -1,0 +1,58 @@
+{% extends 'general/base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<section>
+    <div class="row">
+        <div class="col">
+            <h3>Curiosidad del día:</h3>
+
+            <pre><code>
+                curl hodi.dev.syndeno.cloud/api/v1/internal/curiosity/today
+            </code></pre>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="row">
+        <div class="col">
+            <h3>Curiosidad aleatoria:</h3>
+
+            <pre><code>
+                curl hodi.dev.syndeno.cloud/api/v1/internal/curiosity/random
+            </code></pre>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="row">
+        <div class="col">
+            <h3>Frase del día:</h3>
+
+            <pre><code>
+                curl hodi.dev.syndeno.cloud/api/v1/internal/phrase/today
+            </code></pre>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="row">
+        <div class="col">
+            <h3>Frase aleatoria:</h3>
+
+            <pre><code>
+                curl hodi.dev.syndeno.cloud/api/v1/internal/phrase/random
+            </code></pre>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
