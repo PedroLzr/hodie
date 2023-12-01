@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from models.anniversaries import *
 
 HEADERS = ({'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0'})
-HECHOSHISTORICOS_URL = 'https://www.hechoshistoricos.es/'
+HECHOSHISTORICOS_URL = 'https://www.hechoshistoricos.es'
 
 def get_anniversaries_from_hechoshistoricos():
     url = HECHOSHISTORICOS_URL
