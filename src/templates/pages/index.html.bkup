@@ -3,14 +3,16 @@
 {% block title %}Inicio{% endblock %}
 
 {% block content %}
-
 <section>
     <div class="row">
         <div class="col">
-            <h3>Palabra del día</h3>
+            <h3>Palabra del día:</h3>
             <h4>{{ today.word.name }}</h4>
+            {% if today.word.link %}
+            <a href="{{ today.word.link }}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+            {% endif %}
             {% for def_word in today.word.defs_word %}
-            <p>{{ def_word }}</p>
+            <ul>{{ def_word }}</ul>
             {% endfor %}
         </div>
     </div>
@@ -19,9 +21,12 @@
 <section>
     <div class="row">
         <div class="col">
-            <h3>Palabra en inglés del día</h3>
+            <h3>Palabra en inglés del día:</h3>
             <h4>{{ today.english_word.name }}</h4>
-            <p>{{ today.english_word.def_word }}</p>
+            {% if today.english_word.link %}
+            <a href="{{ today.english_word.link }}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+            {% endif %}
+            <ul>{{ today.english_word.def_word }}</ul>
         </div>
     </div>
 </section>
@@ -29,9 +34,12 @@
 <section>
     <div class="row">
         <div class="col">
-            <h3>Frase del día</h3>
+            <h3>Frase del día:</h3>
             <h4>{{ today.saying.phrase }}</h4>
-            <p>{{ today.saying.author }} - {{ today.saying.desc_author }}</p>
+            {% if today.saying.link %}
+            <a href="{{ today.saying.link }}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+            {% endif %}
+            <ul>{{ today.saying.author }} - {{ today.saying.desc_author }}</ul>
         </div>
     </div>
 </section>
@@ -39,7 +47,7 @@
 <section>
     <div class="row">
         <div class="col">
-            <h3>Curiosidad del día</h3>
+            <h3>Curiosidad del día:</h3>
             <h4>{{ today.curiosity.curiosity }}</h4>
         </div>
     </div>
@@ -48,8 +56,11 @@
 <section>
     <div class="row">
         <div class="col">
-            <h3>Artículo del día</h3>
+            <h3>Artículo del día:</h3>
             <h4>{{ today.article.title }}</h4>
+            {% if today.article.link %}
+            <a href="{{ today.article.link }}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+            {% endif %}
             <p>{{ today.article.body }}</p>
         </div>
     </div>
@@ -58,7 +69,10 @@
 <section>
     <div class="row">
         <div class="col">
-            <h3>Santos del día</h3>
+            <h3 style="display: inline-block;">Santos del día:</h3>
+            {% if today.saints.link %}
+            <a href="{{ today.saints.link }}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+            {% endif %}
 
             <div id="carouselSaintsControls" class="carousel slide" data-bs-interval="false">
                 <div class="carousel-indicators">
@@ -77,13 +91,13 @@
                     {% if loop.index0 == 0 %}
                     <div class="carousel-item active text-center p-4">
                         <div class="col-md-6 offset-md-3">
-                            <p>{{ saint.name }}</p>
+                            <ul>{{ saint.name }}</ul>
                         </div>
                     </div>
                     {% else %}
                     <div class="carousel-item text-center p-4">
                         <div class="col-md-6 offset-md-3">
-                            <p>{{ saint.name }}</p>
+                            <ul>{{ saint.name }}</ul>
                         </div>
                     </div>
                     {% endif %}
@@ -108,7 +122,10 @@
 <section>
     <div class="row">
         <div class="col">
-            <h3>Efemérides del día</h3>
+            <h3 style="display: inline-block;">Efemérides del día:</h3>
+            {% if today.anniversaries.link %}
+            <a href="{{ today.anniversaries.link }}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+            {% endif %}
 
             <div id="carouselAnniversariesControls" class="carousel slide" data-bs-interval="false">
                 <div class="carousel-indicators">
@@ -150,9 +167,8 @@
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
-
+            
         </div>
     </div>
 </section>
-
 {% endblock %}
