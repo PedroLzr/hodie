@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // Lista de palabras para el juego
-    const words = ["javascript", "html", "css", "nodejs", "react", "angular", "python", "java", "typescript", "php"];
+    const words = ["serendipia", "continuado", "nascisista", "colombia", "libreta", "pajarita", "serpiente", "cosmos", "diurno", "arriba"];
 
     // Escoge una palabra al azar de la lista
     let selectedWord = words[Math.floor(Math.random() * words.length)];
