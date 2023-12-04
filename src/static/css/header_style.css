@@ -36,3 +36,8 @@ nav {
 li {
     display: flex;
 }
+
+body{
+    background-color: rgb(39, 38, 38);
+    color: aliceblue;
+}
