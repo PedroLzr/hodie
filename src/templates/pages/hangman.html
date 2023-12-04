@@ -1,6 +1,6 @@
 {% extends 'general/base.html' %}
 
-{% block title %}Ahorcado{% endblock %}
+{% block title %}Adivina la palabra{% endblock %}
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='scripts/hangman.js') }}"></script>
@@ -13,7 +13,7 @@
 {% block content %}
 
 <div id="hangman-container">
-    <h1 class="h1">El Ahorcado</h1>
+    <h2>¡Adivina la palabra!</h2>
     <div id="word-display"></div>
     <div id="letters-container"></div>
     <img id="hangman-image" src="{{ url_for('static', filename='/images/hangman/0.png') }}" alt="Ahorcado">

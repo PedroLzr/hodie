@@ -36,26 +36,25 @@ document.addEventListener("DOMContentLoaded", function () {
     // Función para verificar si el jugador ha ganado
     function checkWin() {
         if (!wordDisplay.textContent.includes("_")) {
-            alert("¡Has ganado!");
-            resetGame();
+            lettersContainer.innerHTML = "Definición de la palabra";
         }
     }
 
     // Función para verificar si el jugador ha perdido
     function checkLose() {
         if (hangmanImage === 6) {
-            alert("¡Has perdido! La palabra era: " + selectedWord);
-            resetGame();
+            lettersContainer.innerHTML = "Definición de la palabra";
+            wordDisplay.textContent = selectedWord;
         }
     }
 
-    // Función para reiniciar el juego
-    function resetGame() {
-        guessedLetters = [];
-        hangmanImage = 0;
-        selectedWord = words[Math.floor(Math.random() * words.length)];
-        displayWord();
-        updateHangmanImage();
+    // Creación de botones de letras
+    for (let i = 65; i <= 90; i++) {
+        const letter = String.fromCharCode(i);
+        const button = document.createElement("button");
+        button.textContent = letter;
+        button.classList.add("letter-button");
+        lettersContainer.appendChild(button);
     }
 
     // Event listener para manejar los clics en las letras
@@ -69,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 letter = letter.toUpperCase();
                 selectedWord = selectedWord.toUpperCase();
-                
+
                 if (!selectedWord.includes(letter)) {
                     hangmanImage++;
                     updateHangmanImage();
@@ -83,14 +82,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Inicialización del juego
     displayWord();
-
-    // Creación de botones de letras
-    for (let i = 65; i <= 90; i++) {
-        const letter = String.fromCharCode(i);
-        const button = document.createElement("button");
-        button.textContent = letter;
-        button.classList.add("letter-button");
-        lettersContainer.appendChild(button);
-    }
-
 });
