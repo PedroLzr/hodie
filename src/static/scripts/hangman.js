@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", async function () {
 
+    // Inicializar variables
+    let guessedLetters = [];
+    let hangmanImage = 0;
+    const wordDisplay = document.getElementById("word-display");
+    const lettersContainer = document.getElementById("letters-container");
+    const hangmanImageElement = document.getElementById("hangman-image");
+    const dynamicTitle = document.getElementById("dynamic-title");
+
+    // Traer la palabra del día
     async function getHangmanWord() {
         try {
             const response = await fetch('static/jsons/words_hangman.json');
@@ -18,18 +27,34 @@ document.addEventListener("DOMContentLoaded", async function () {
             console.error(error);
         }
     }
-
     let wordObj = await getHangmanWord();
     let selectedWord = wordObj.word;
     let selectedWordDefinition = wordObj.definition;
 
-    let guessedLetters = [];
-    let hangmanImage = 0;
-    const wordDisplay = document.getElementById("word-display");
-    const lettersContainer = document.getElementById("letters-container");
-    const hangmanImageElement = document.getElementById("hangman-image");
-    const dynamicTitle = document.getElementById("dynamic-title");
 
+    // LocalStorage: comprobo si el usuario ya jugó hoy
+    var lsHangman = JSON.parse(localStorage.getItem("hangman"));
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+    var dateForSave = `${d}/${m}/${y}`
+
+    if(lsHangman && lsHangman.date === dateForSave){
+        if(lsHangman.succeeded === true){
+            dynamicTitle.innerHTML = "¡Correcto! &#127894;"
+            lettersContainer.innerHTML = selectedWordDefinition;
+            wordDisplay.textContent = selectedWord;
+            return;
+        }else{
+            dynamicTitle.innerHTML = "Fallaste &#128128;"
+            lettersContainer.innerHTML = selectedWordDefinition;
+            wordDisplay.textContent = selectedWord;
+            return;
+        }
+    }
+
+    // Funciones del juego
     function displayWord() {
         let displayText = "";
         for (let letter of selectedWord) {
@@ -52,6 +77,17 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (!wordDisplay.textContent.includes("_")) {
             dynamicTitle.innerHTML = "¡Correcto! &#127894;"
             lettersContainer.innerHTML = selectedWordDefinition;
+
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+            var dateForSave = `${d}/${m}/${y}`
+            let lsHangman = {
+                "date": dateForSave,
+                "succeeded": true
+            };
+            localStorage.setItem("hangman", JSON.stringify(lsHangman));
         }
     }
 
@@ -60,6 +96,17 @@ document.addEventListener("DOMContentLoaded", async function () {
             dynamicTitle.innerHTML = "Fallaste &#128128;"
             lettersContainer.innerHTML = selectedWordDefinition;
             wordDisplay.textContent = selectedWord;
+
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+            var dateForSave = `${d}/${m}/${y}`
+            let lsHangman = {
+                "date": dateForSave,
+                "succeeded": false
+            };
+            localStorage.setItem("hangman", JSON.stringify(lsHangman));
         }
     }
 
