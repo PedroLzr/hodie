@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const wordDisplay = document.getElementById("word-display");
     const lettersContainer = document.getElementById("letters-container");
     const hangmanImageElement = document.getElementById("hangman-image");
+    const dynamicTitle = document.getElementById("dynamic-title");
 
     // Función para mostrar la palabra oculta con guiones bajos y letras adivinadas
     function displayWord() {
@@ -36,14 +37,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // Función para verificar si el jugador ha ganado
     function checkWin() {
         if (!wordDisplay.textContent.includes("_")) {
-            lettersContainer.innerHTML = "Definición de la palabra";
+            dynamicTitle.innerHTML = "¡Correcto! &#127894;"
+            lettersContainer.innerHTML = "Definición de la palabra (Próximamente)";
         }
     }
 
     // Función para verificar si el jugador ha perdido
     function checkLose() {
         if (hangmanImage === 6) {
-            lettersContainer.innerHTML = "Definición de la palabra";
+            dynamicTitle.innerHTML = "Oh, no. Fallaste &#128128;"
+            lettersContainer.innerHTML = "Definición de la palabra (Próximamente)";
             wordDisplay.textContent = selectedWord;
         }
     }
