@@ -1,12 +1,28 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
 
-    // Lista de palabras para el juego
-    const words = ["serendipia", "continuado", "nascisista", "colombia", "libreta", "pajarita", "serpiente", "cosmos", "diurno", "arriba"];
+    async function getHangmanWord() {
+        try {
+            const response = await fetch('static/jsons/words_hangman.json');
+            if (!response.ok) {
+                throw new Error('Error al cargar el archivo JSON');
+            }
+    
+            const data = await response.json();
+            var date = new Date();
+            var month = date.toLocaleString('default', { month: 'long' });
+            var day = date.getDate().toString();
+    
+            return data[month.toLowerCase()][day];
 
-    // Escoge una palabra al azar de la lista
-    let selectedWord = words[Math.floor(Math.random() * words.length)];
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
-    // Inicialización de variables
+    let wordObj = await getHangmanWord();
+    let selectedWord = wordObj.word;
+    let selectedWordDefinition = wordObj.definition;
+
     let guessedLetters = [];
     let hangmanImage = 0;
     const wordDisplay = document.getElementById("word-display");
@@ -14,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const hangmanImageElement = document.getElementById("hangman-image");
     const dynamicTitle = document.getElementById("dynamic-title");
 
-    // Función para mostrar la palabra oculta con guiones bajos y letras adivinadas
     function displayWord() {
         let displayText = "";
         for (let letter of selectedWord) {
@@ -28,30 +43,26 @@ document.addEventListener("DOMContentLoaded", function () {
         wordDisplay.textContent = displayText;
     }
 
-    // Función para actualizar la imagen del ahorcado
     function updateHangmanImage() {
         let imageUrl = "/static/images/hangman/" + hangmanImage + ".png";
         hangmanImageElement.src = imageUrl;
     }
 
-    // Función para verificar si el jugador ha ganado
     function checkWin() {
         if (!wordDisplay.textContent.includes("_")) {
             dynamicTitle.innerHTML = "¡Correcto! &#127894;"
-            lettersContainer.innerHTML = "Definición de la palabra (Próximamente)";
+            lettersContainer.innerHTML = selectedWordDefinition;
         }
     }
 
-    // Función para verificar si el jugador ha perdido
     function checkLose() {
         if (hangmanImage === 6) {
-            dynamicTitle.innerHTML = "Oh, no. Fallaste &#128128;"
-            lettersContainer.innerHTML = "Definición de la palabra (Próximamente)";
+            dynamicTitle.innerHTML = "Fallaste &#128128;"
+            lettersContainer.innerHTML = selectedWordDefinition;
             wordDisplay.textContent = selectedWord;
         }
     }
 
-    // Creación de botones de letras
     for (let i = 65; i <= 90; i++) {
         const letter = String.fromCharCode(i);
         const button = document.createElement("button");
@@ -60,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
         lettersContainer.appendChild(button);
     }
 
-    // Event listener para manejar los clics en las letras
     lettersContainer.addEventListener("click", function (event) {
         if (event.target.classList.contains("letter-button")) {
             let letter = event.target.textContent;
@@ -83,6 +93,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Inicialización del juego
     displayWord();
 });
