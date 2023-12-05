@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", async function () {
             if (!response.ok) {
                 throw new Error('Error al cargar el archivo JSON');
             }
-    
+
             const data = await response.json();
             var date = new Date();
             var month = date.toLocaleString('default', { month: 'long' });
             var day = date.getDate().toString();
-    
+
             return data[month.toLowerCase()][day];
 
         } catch (error) {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
     let wordObj = await getHangmanWord();
-    let selectedWord = wordObj.word;
+    let selectedWord = wordObj.word.toUpperCase();
     let selectedWordDefinition = wordObj.definition;
 
 
@@ -40,16 +40,20 @@ document.addEventListener("DOMContentLoaded", async function () {
     var y = date.getFullYear();
     var dateForSave = `${d}/${m}/${y}`
 
-    if(lsHangman && lsHangman.date === dateForSave){
-        if(lsHangman.succeeded === true){
-            dynamicTitle.innerHTML = "¡Correcto! &#127894;"
+    if (lsHangman && lsHangman.date === dateForSave) {
+        if (lsHangman.succeeded === true) {
+            dynamicTitle.innerHTML = "¡Muy bien! &#127894;"
             lettersContainer.innerHTML = selectedWordDefinition;
             wordDisplay.textContent = selectedWord;
+            hangmanImage = 7;
+            updateHangmanImage();
             return;
-        }else{
-            dynamicTitle.innerHTML = "Fallaste &#128128;"
+        } else {
+            dynamicTitle.innerHTML = "Fallaste &#128128; ¡Prueba mañana!"
             lettersContainer.innerHTML = selectedWordDefinition;
             wordDisplay.textContent = selectedWord;
+            hangmanImage = 6;
+            updateHangmanImage();
             return;
         }
     }
@@ -58,7 +62,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     function displayWord() {
         let displayText = "";
         for (let letter of selectedWord) {
-            letter = letter.toUpperCase();
             if (guessedLetters.includes(letter)) {
                 displayText += letter + " ";
             } else {
@@ -75,8 +78,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     function checkWin() {
         if (!wordDisplay.textContent.includes("_")) {
-            dynamicTitle.innerHTML = "¡Correcto! &#127894;"
+            dynamicTitle.innerHTML = "¡Muy bien! &#127894;"
             lettersContainer.innerHTML = selectedWordDefinition;
+            hangmanImage = 7;
+            updateHangmanImage();
 
             var date = new Date();
             var d = date.getDate();
@@ -93,7 +98,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     function checkLose() {
         if (hangmanImage === 6) {
-            dynamicTitle.innerHTML = "Fallaste &#128128;"
+            dynamicTitle.innerHTML = "Fallaste &#128128; ¡Prueba mañana!"
             lettersContainer.innerHTML = selectedWordDefinition;
             wordDisplay.textContent = selectedWord;
 
@@ -120,14 +125,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     lettersContainer.addEventListener("click", function (event) {
         if (event.target.classList.contains("letter-button")) {
-            let letter = event.target.textContent;
+            let letter = event.target.textContent.toUpperCase();
+
             if (!guessedLetters.includes(letter)) {
                 guessedLetters.push(letter);
                 event.target.disabled = true;
                 displayWord();
-
-                letter = letter.toUpperCase();
-                selectedWord = selectedWord.toUpperCase();
 
                 if (!selectedWord.includes(letter)) {
                     hangmanImage++;
