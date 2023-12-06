@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             alert("Despues de await response.json()");
             alert(data);
             let date = new Date();
-            let month = date.toLocaleString('default', { month: 'long', locale: 'en-US' });
+            let month = date.toString({ month: 'long' });
             let day = date.getDate().toString();
 
             alert(date);
