@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
 
+    console.log("Entra a js)");
+
     // Inicializar variables
     let guessedLetters = [];
     let hangmanImage = 0;
@@ -8,18 +10,26 @@ document.addEventListener("DOMContentLoaded", async function () {
     const hangmanImageElement = document.getElementById("hangman-image");
     const dynamicTitle = document.getElementById("dynamic-title");
 
+    console.log("despues de inicializar variables");
+
     // Traer la palabra del día
     async function getHangmanWord() {
         try {
+            alert("Entra al try de getHangmanWord()");
             const response = await fetch('static/jsons/words_hangman.json');
             if (!response.ok) {
+                console.log("Error response.ok");
                 throw new Error('Error al cargar el archivo JSON');
             }
 
+            console.log("Antes de await response.json()");
             const data = await response.json();
+            console.log("Despues de await response.json()");
             let date = new Date();
             let month = date.toLocaleString('default', { month: 'long' });
             let day = date.getDate().toString();
+
+            console.log("antes del return");
 
             return data[month.toLowerCase()][day];
 
@@ -31,8 +41,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     let selectedWord = wordObj.word.toUpperCase();
     let selectedWordDefinition = wordObj.definition;
 
-    alert(selectedWord);
-    alert(selectedWordDefinition);
+    console.log("antes de localstorage");
 
     // LocalStorage: compruebo si el usuario ya jugó hoy
     try {
@@ -67,6 +76,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.log("Error con localstorage");
         console.log(error);
     }
+
+    console.log("antes de funciones del juego");
 
     // Funciones del juego
     function displayWord() {
