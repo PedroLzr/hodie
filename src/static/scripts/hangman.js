@@ -31,40 +31,39 @@ document.addEventListener("DOMContentLoaded", async function () {
     let selectedWord = wordObj.word.toUpperCase();
     let selectedWordDefinition = wordObj.definition;
 
-
     // LocalStorage: compruebo si el usuario ya jugó hoy
-    // try {
-    //     let lsHangman = localStorage.getItem("hangman");
-    //     if (lsHangman) {
-    //         let lsHangmanObj = JSON.parse(lsHangman);
-    //         const date = new Date();
-    //         let d = date.getDate();
-    //         let m = date.getMonth();
-    //         let y = date.getFullYear();
-    //         let dateForSave = `${d}/${m}/${y}`
+    try {
+        let lsHangman = localStorage.getItem("hangman");
+        if (lsHangman) {
+            let lsHangmanObj = JSON.parse(lsHangman);
+            const date = new Date();
+            let d = date.getDate();
+            let m = date.getMonth();
+            let y = date.getFullYear();
+            let dateForSave = `${d}/${m}/${y}`
 
-    //         if (lsHangmanObj && lsHangmanObj.date === dateForSave) {
-    //             if (lsHangmanObj.succeeded === true) {
-    //                 dynamicTitle.innerHTML = "¡Muy bien! &#127894;";
-    //                 lettersContainer.innerHTML = selectedWordDefinition;
-    //                 wordDisplay.textContent = selectedWord;
-    //                 hangmanImage = 7;
-    //                 updateHangmanImage();
-    //                 return;
-    //             } else {
-    //                 dynamicTitle.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
-    //                 lettersContainer.innerHTML = selectedWordDefinition;
-    //                 wordDisplay.textContent = selectedWord;
-    //                 hangmanImage = 6;
-    //                 updateHangmanImage();
-    //                 return;
-    //             }
-    //         }
-    //     }
-    // } catch (error) {
-    //     console.log("Error con localstorage");
-    //     console.log(error);
-    // }
+            if (lsHangmanObj && lsHangmanObj.date === dateForSave) {
+                if (lsHangmanObj.succeeded === true) {
+                    dynamicTitle.innerHTML = "¡Muy bien! &#127894;";
+                    lettersContainer.innerHTML = selectedWordDefinition;
+                    wordDisplay.textContent = selectedWord;
+                    hangmanImage = 7;
+                    updateHangmanImage();
+                    return;
+                } else {
+                    dynamicTitle.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
+                    lettersContainer.innerHTML = selectedWordDefinition;
+                    wordDisplay.textContent = selectedWord;
+                    hangmanImage = 6;
+                    updateHangmanImage();
+                    return;
+                }
+            }
+        }
+    } catch (error) {
+        console.log("Error con localstorage");
+        console.log(error);
+    }
 
     // Funciones del juego
     function displayWord() {
@@ -80,7 +79,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     function updateHangmanImage() {
-        let imageUrl = "/static/images/hangman/" + hangmanImage + ".png";
+        const currentScheme = window.location.protocol;
+        const imagePath = "static/images/hangman/" + hangmanImage + ".png";
+        const imageUrl = currentScheme + "//" + window.location.host + "/" + imagePath;
         hangmanImageElement.src = imageUrl;
     }
 
