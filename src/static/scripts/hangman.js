@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
 
             const data = await response.json();
-            var date = new Date();
-            var month = date.toLocaleString('default', { month: 'long' });
-            var day = date.getDate().toString();
+            let date = new Date();
+            let month = date.toLocaleString('default', { month: 'long' });
+            let day = date.getDate().toString();
 
             return data[month.toLowerCase()][day];
 
@@ -33,30 +33,40 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 
     // LocalStorage: comprobo si el usuario ya jugó hoy
-    var lsHangman = JSON.parse(localStorage.getItem("hangman"));
-    var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
-    var dateForSave = `${d}/${m}/${y}`
+    try {
+        let lsHangman = localStorage.getItem("hangman");
+        if (lsHangman) {
+            let lsHangmanObj = JSON.parse(lsHangman);
+            const date = new Date();
+            let d = date.getDate();
+            let m = date.getMonth();
+            let y = date.getFullYear();
+            let dateForSave = `${d}/${m}/${y}`
 
-    if (lsHangman && lsHangman.date === dateForSave) {
-        if (lsHangman.succeeded === true) {
-            dynamicTitle.innerHTML = "¡Muy bien! &#127894;"
-            lettersContainer.innerHTML = selectedWordDefinition;
-            wordDisplay.textContent = selectedWord;
-            hangmanImage = 7;
-            updateHangmanImage();
-            return;
-        } else {
-            dynamicTitle.innerHTML = "Fallaste &#128128; ¡Prueba mañana!"
-            lettersContainer.innerHTML = selectedWordDefinition;
-            wordDisplay.textContent = selectedWord;
-            hangmanImage = 6;
-            updateHangmanImage();
-            return;
+            if (lsHangmanObj && lsHangmanObj.date === dateForSave) {
+                if (lsHangmanObj.succeeded === true) {
+                    dynamicTitle.innerHTML = "¡Muy bien! &#127894;";
+                    lettersContainer.innerHTML = selectedWordDefinition;
+                    wordDisplay.textContent = selectedWord;
+                    hangmanImage = 7;
+                    updateHangmanImage();
+                    return;
+                } else {
+                    dynamicTitle.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
+                    lettersContainer.innerHTML = selectedWordDefinition;
+                    wordDisplay.textContent = selectedWord;
+                    hangmanImage = 6;
+                    updateHangmanImage();
+                    return;
+                }
+            }
         }
+    } catch (error) {
+        console.log("Error con localstorage");
+        console.log(error);
     }
+
+
 
     // Funciones del juego
     function displayWord() {
@@ -78,16 +88,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     function checkWin() {
         if (!wordDisplay.textContent.includes("_")) {
-            dynamicTitle.innerHTML = "¡Muy bien! &#127894;"
+            dynamicTitle.innerHTML = "¡Muy bien! &#127894;";
             lettersContainer.innerHTML = selectedWordDefinition;
             hangmanImage = 7;
             updateHangmanImage();
 
-            var date = new Date();
-            var d = date.getDate();
-            var m = date.getMonth();
-            var y = date.getFullYear();
-            var dateForSave = `${d}/${m}/${y}`
+            const date = new Date();
+            let d = date.getDate();
+            let m = date.getMonth();
+            let y = date.getFullYear();
+            let dateForSave = `${d}/${m}/${y}`
             let lsHangman = {
                 "date": dateForSave,
                 "succeeded": true
@@ -98,15 +108,15 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     function checkLose() {
         if (hangmanImage === 6) {
-            dynamicTitle.innerHTML = "Fallaste &#128128; ¡Prueba mañana!"
+            dynamicTitle.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
             lettersContainer.innerHTML = selectedWordDefinition;
             wordDisplay.textContent = selectedWord;
 
-            var date = new Date();
-            var d = date.getDate();
-            var m = date.getMonth();
-            var y = date.getFullYear();
-            var dateForSave = `${d}/${m}/${y}`
+            const date = new Date();
+            let d = date.getDate();
+            let m = date.getMonth();
+            let y = date.getFullYear();
+            let dateForSave = `${d}/${m}/${y}`
             let lsHangman = {
                 "date": dateForSave,
                 "succeeded": false
