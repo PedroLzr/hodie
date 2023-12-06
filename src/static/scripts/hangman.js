@@ -32,41 +32,39 @@ document.addEventListener("DOMContentLoaded", async function () {
     let selectedWordDefinition = wordObj.definition;
 
 
-    // LocalStorage: comprobo si el usuario ya jugó hoy
-    try {
-        let lsHangman = localStorage.getItem("hangman");
-        if (lsHangman) {
-            let lsHangmanObj = JSON.parse(lsHangman);
-            const date = new Date();
-            let d = date.getDate();
-            let m = date.getMonth();
-            let y = date.getFullYear();
-            let dateForSave = `${d}/${m}/${y}`
+    // LocalStorage: compruebo si el usuario ya jugó hoy
+    // try {
+    //     let lsHangman = localStorage.getItem("hangman");
+    //     if (lsHangman) {
+    //         let lsHangmanObj = JSON.parse(lsHangman);
+    //         const date = new Date();
+    //         let d = date.getDate();
+    //         let m = date.getMonth();
+    //         let y = date.getFullYear();
+    //         let dateForSave = `${d}/${m}/${y}`
 
-            if (lsHangmanObj && lsHangmanObj.date === dateForSave) {
-                if (lsHangmanObj.succeeded === true) {
-                    dynamicTitle.innerHTML = "¡Muy bien! &#127894;";
-                    lettersContainer.innerHTML = selectedWordDefinition;
-                    wordDisplay.textContent = selectedWord;
-                    hangmanImage = 7;
-                    updateHangmanImage();
-                    return;
-                } else {
-                    dynamicTitle.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
-                    lettersContainer.innerHTML = selectedWordDefinition;
-                    wordDisplay.textContent = selectedWord;
-                    hangmanImage = 6;
-                    updateHangmanImage();
-                    return;
-                }
-            }
-        }
-    } catch (error) {
-        console.log("Error con localstorage");
-        console.log(error);
-    }
-
-
+    //         if (lsHangmanObj && lsHangmanObj.date === dateForSave) {
+    //             if (lsHangmanObj.succeeded === true) {
+    //                 dynamicTitle.innerHTML = "¡Muy bien! &#127894;";
+    //                 lettersContainer.innerHTML = selectedWordDefinition;
+    //                 wordDisplay.textContent = selectedWord;
+    //                 hangmanImage = 7;
+    //                 updateHangmanImage();
+    //                 return;
+    //             } else {
+    //                 dynamicTitle.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
+    //                 lettersContainer.innerHTML = selectedWordDefinition;
+    //                 wordDisplay.textContent = selectedWord;
+    //                 hangmanImage = 6;
+    //                 updateHangmanImage();
+    //                 return;
+    //             }
+    //         }
+    //     }
+    // } catch (error) {
+    //     console.log("Error con localstorage");
+    //     console.log(error);
+    // }
 
     // Funciones del juego
     function displayWord() {
