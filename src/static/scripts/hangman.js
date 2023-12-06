@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
 
-    alert("Entra a js)");
+    alert("Entra a js");
 
     // Inicializar variables
     let guessedLetters = [];
@@ -25,21 +25,32 @@ document.addEventListener("DOMContentLoaded", async function () {
             alert("Antes de await response.json()");
             const data = await response.json();
             alert("Despues de await response.json()");
+            alert(data);
             let date = new Date();
             let month = date.toLocaleString('default', { month: 'long' });
             let day = date.getDate().toString();
 
+            alert(date);
+            alert("Mes: " + month);
+            alert("Dia: " + day);
             alert("antes del return");
 
             return data[month.toLowerCase()][day];
 
         } catch (error) {
+            alert("entra al catch");
+            alert(error);
             console.error(error);
         }
     }
+    alert("antes de llamar a getHangmanWord()");
     let wordObj = await getHangmanWord();
+    alert("despues de letword");
     let selectedWord = wordObj.word.toUpperCase();
     let selectedWordDefinition = wordObj.definition;
+
+    alert("SelectedWord: " + selectedWord);
+    alert("SelectedWordDefinition: " + selectedWordDefinition);
 
     alert("antes de localstorage");
 
@@ -47,12 +58,15 @@ document.addEventListener("DOMContentLoaded", async function () {
     try {
         let lsHangman = localStorage.getItem("hangman");
         if (lsHangman) {
+            alert("Dentro del if de lsHangman");
             let lsHangmanObj = JSON.parse(lsHangman);
             const date = new Date();
             let d = date.getDate();
             let m = date.getMonth();
             let y = date.getFullYear();
             let dateForSave = `${d}/${m}/${y}`
+
+            alert("antes de condicional de fecha");
 
             if (lsHangmanObj && lsHangmanObj.date === dateForSave) {
                 if (lsHangmanObj.succeeded === true) {
@@ -73,6 +87,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         }
     } catch (error) {
+        alert("Error en el localstorage");
+        alert(error);
         console.log("Error con localstorage");
         console.log(error);
     }
