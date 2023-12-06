@@ -31,6 +31,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     let selectedWord = wordObj.word.toUpperCase();
     let selectedWordDefinition = wordObj.definition;
 
+    alert(selectedWord);
+    alert(selectedWordDefinition);
+
     // LocalStorage: compruebo si el usuario ya jugó hoy
     try {
         let lsHangman = localStorage.getItem("hangman");
@@ -92,6 +95,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             hangmanImage = 7;
             updateHangmanImage();
 
+            // Guardar en localStorage que ha ganado
             const date = new Date();
             let d = date.getDate();
             let m = date.getMonth();
@@ -111,6 +115,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             lettersContainer.innerHTML = selectedWordDefinition;
             wordDisplay.textContent = selectedWord;
 
+            // Guardar en localStorage que ha perdido
             const date = new Date();
             let d = date.getDate();
             let m = date.getMonth();
