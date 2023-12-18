@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     let categories = ['animals', 'capitals', 'colors', 'countries', 'fruits', 'jobs', 'names', 'vegetables', 'car_brands', 'home_objects', 'sports'];
     const NUM_CATEGORIES_GAME = categories.length / 3;
     const INPUT_SUFIX = '-input';
-    const MAX_TIME_GAME_IN_SEGS = NUM_CATEGORIES_GAME * 10;
+    const MAX_TIME_GAME_IN_SEGS = Math.round(NUM_CATEGORIES_GAME) * 10;
     let TIME_LEFT_IN_SEGS = MAX_TIME_GAME_IN_SEGS;
 
     const REGEX_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ]+$/;
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     let stopGame = false;
 
     function getRandomLetter() {
-        const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const alphabet = 'abcdefghijklmnopqrstuvwxyz';
         return alphabet[Math.floor(Math.random() * alphabet.length)];
     }
 
@@ -30,44 +30,41 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         const randomIndex = Math.floor(Math.random() * categories.length);
         const randomCategory = categories[randomIndex];
-        categories.splice(randomIndex, 1);
 
-        if(randomCategory){
-            try {
-                const categoryJson = await fetch(`static/jsons/stop/${randomCategory}.json`);
-                if (!categoryJson.ok) {
-                    throw new Error('Error al cargar el archivo JSON en getRandomCategory()');
-                }
-    
-                const data = await categoryJson.json();
-                let options = data[category];
-    
-                options = options.map((item) => removeAccentMark(item));
-    
-                if (options.includes(answer)) {
-                    return true;
-                } else {
-                    return false;
-                }
-    
-            } catch (error) {
-                console.error(error);
+        // TODO: extraer en función para reutilizar
+        try {
+            const categoryJson = await fetch(`static/jsons/stop/${randomCategory}.json`);
+            if (!categoryJson.ok) {
+                throw new Error('Error al cargar el archivo JSON en getRandomCategory()');
             }
-        }
 
-        return randomCategory;
+            const data = await categoryJson.json();
+            let options = data[randomCategory];
+            categories.splice(randomIndex, 1);
+
+            let haveItem = options.some((item) => item.startsWith(randomLetter));
+
+            if (haveItem) {
+                return randomCategory;
+            } else {
+                return await getRandomCategory();
+            }
+
+        } catch (error) {
+            console.error(error);
+        }
     }
 
-    startButton.addEventListener('click', () => {
+    startButton.addEventListener('click', async () => {
         startButton.style.display = "none";
 
         randomLetter = getRandomLetter();
 
         for (let i = 0; i < NUM_CATEGORIES_GAME; i++) {
-            selectedCategories.push(getRandomCategory());
+            selectedCategories.push(await getRandomCategory());
         }
 
-        letterLabel.textContent = `Letra: ${randomLetter}`;
+        letterLabel.textContent = `Letra: ${randomLetter.toUpperCase()}`;
 
         for (let category of selectedCategories) {
             var editText = document.createElement("input");
@@ -113,8 +110,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     async function checkAnswer(category, answer) {
 
-        let letter = randomLetter.toLocaleLowerCase();
-
         if (answer && answer.trim()) {
 
             answer = answer.trim();
@@ -123,7 +118,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             if (REGEX_CORRECT_WORD.test(answer)) {
                 answer = answer.toLowerCase();
 
-                if (answer.startsWith(letter)) {
+                if (answer.startsWith(randomLetter)) {
                     return await isAnswerInCategory(category, answer);
                 } else {
                     return false;
@@ -139,6 +134,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     async function isAnswerInCategory(category, answer) {
+
+        // TODO: extraer en función para reutilizar
         try {
             const categoryJson = await fetch(`static/jsons/stop/${category}.json`);
             if (!categoryJson.ok) {
