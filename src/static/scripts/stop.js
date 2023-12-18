@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const progressBar = document.getElementById('progressBar');
     const progressBarTimer = document.getElementById('progressBarTimer');
 
-    let categories = ['animals', 'capitals', 'colors', 'countries', 'fruits', 'jobs', 'names', 'vegetables'];
+    let categories = ['animals', 'capitals', 'colors', 'countries', 'fruits', 'jobs', 'names', 'vegetables', 'car_brands', 'home_objects', 'sports'];
     const NUM_CATEGORIES_GAME = categories.length / 3;
     const INPUT_SUFIX = '-input';
     const MAX_TIME_GAME_IN_SEGS = 30;
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             editText.type = "text";
             editText.id = category + INPUT_SUFIX;
             editText.name = category;
-            editText.placeholder = category;
+            editText.placeholder = TRANSLATION_CATEGORIES[category];
 
             categoriesContainer.append(editText);
         }
@@ -157,5 +157,19 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     function removeAccentMark(word) {
         return word.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    const TRANSLATION_CATEGORIES = {
+        'animals': 'Animal',
+        'capitals': 'Capital',
+        'colors': 'Color',
+        'countries': 'País',
+        'fruits': 'Fruta',
+        'jobs': 'Oficio',
+        'names': 'Nombre propio',
+        'vegetables': 'Verdura',
+        'car_brands': 'Marca de coche',
+        'home_objects': 'Objeto del hogar',
+        'sports': 'Deporte'
     }
 });
