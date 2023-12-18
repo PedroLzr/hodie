@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     let categories = ['animals', 'capitals', 'colors', 'countries', 'fruits', 'jobs', 'names', 'vegetables', 'car_brands', 'home_objects', 'sports'];
     const NUM_CATEGORIES_GAME = categories.length / 3;
     const INPUT_SUFIX = '-input';
-    const MAX_TIME_GAME_IN_SEGS = 30;
+    const MAX_TIME_GAME_IN_SEGS = NUM_CATEGORIES_GAME * 10;
     let TIME_LEFT_IN_SEGS = MAX_TIME_GAME_IN_SEGS;
 
     const REGEX_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ]+$/;
@@ -26,13 +26,35 @@ document.addEventListener("DOMContentLoaded", async function () {
         return alphabet[Math.floor(Math.random() * alphabet.length)];
     }
 
-    function getRandomCategory() {
-
-        // TODO: Comprobar que para esa categoría existen opciones con la letra seleccionada
+    async function getRandomCategory() {
 
         const randomIndex = Math.floor(Math.random() * categories.length);
         const randomCategory = categories[randomIndex];
         categories.splice(randomIndex, 1);
+
+        if(randomCategory){
+            try {
+                const categoryJson = await fetch(`static/jsons/stop/${randomCategory}.json`);
+                if (!categoryJson.ok) {
+                    throw new Error('Error al cargar el archivo JSON en getRandomCategory()');
+                }
+    
+                const data = await categoryJson.json();
+                let options = data[category];
+    
+                options = options.map((item) => removeAccentMark(item));
+    
+                if (options.includes(answer)) {
+                    return true;
+                } else {
+                    return false;
+                }
+    
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
         return randomCategory;
     }
 
@@ -40,6 +62,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         startButton.style.display = "none";
 
         randomLetter = getRandomLetter();
+
         for (let i = 0; i < NUM_CATEGORIES_GAME; i++) {
             selectedCategories.push(getRandomCategory());
         }
