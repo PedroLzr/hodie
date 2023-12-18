@@ -1,0 +1,32 @@
+{% extends 'general/base.html' %}
+
+{% block title %}Alto el lápiz{% endblock %}
+
+{% block scripts %}
+<script type="module" src="{{ url_for('static', filename='scripts/stop.js') }}"></script>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stop_style.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div id="stop-container">
+    <h2>Alto el Lápiz &#128394;</h2>
+    <button id="start-button">¡Empezar!</button>
+
+    <div id="game-container">
+        <h3 id="letter-selected">Letra: </h3>
+
+        <div id="progressBar">
+            <div id="progressBarTimer"></div>
+        </div>
+
+        <div id="category-inputs"></div>
+
+        <button id="stop-button">¡Alto!</button>
+    </div>
+</div>
+
+{% endblock %}

@@ -22,5 +22,9 @@ def ourApis():
 def hangman():
     return render_template('pages/hangman.html')
 
+@app.route('/stop', methods=['GET'])
+def stop():
+    return render_template('pages/stop.html')
+
 if __name__ == '__main__':
     app.run()

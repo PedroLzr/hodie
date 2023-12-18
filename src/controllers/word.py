@@ -6,13 +6,14 @@ HEADERS = ({'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gec
 DLE_URL = 'https://dle.rae.es'
 
 def get_word_from_dle():
-    url = DLE_URL
-    page = requests.get(url, headers=HEADERS)
-
-    dleSoup = BeautifulSoup(page.content, 'lxml')
-    page.close()
-
     try:
+        print(">> Leyendo palabra del día")
+        url = DLE_URL
+        page = requests.get(url, headers=HEADERS)
+
+        dleSoup = BeautifulSoup(page.content, 'lxml')
+        page.close()
+        
         wordOfDay = dleSoup.find(id="wotd")
         word = wordOfDay.find("a").text
 
@@ -34,3 +35,4 @@ def get_word_from_dle():
         return Word(word, definitions, wordUrl)
     except:
         print('Error buscando la palabra del DLE-RAE')
+        return Word("Palabra no encontrada", "Palabra no encontrada", wordUrl)

@@ -6,13 +6,14 @@ HEADERS = ({'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gec
 CAMBRIDGE_URL = 'https://dictionary.cambridge.org'
 
 def get_english_word_from_cambridge():
-    url = CAMBRIDGE_URL
-    page = requests.get(url, headers=HEADERS)
-
-    cambridgeSoup = BeautifulSoup(page.content, 'lxml')
-    page.close()
-
     try:
+        print(">> Leyendo palabra en inglés del día")
+        url = CAMBRIDGE_URL
+        page = requests.get(url, headers=HEADERS)
+
+        cambridgeSoup = BeautifulSoup(page.content, 'lxml')
+        page.close()
+
         wordOfDayName = cambridgeSoup.find('p', {'class': 'fs36 lmt-5 feature-w-big wotd-hw'})
         wordName = wordOfDayName.find("a").text
 
@@ -22,3 +23,4 @@ def get_english_word_from_cambridge():
         return EnglishWord(wordName, wordDesc, url)
     except:
         print('Error buscando la palabra de Cambridge')
+        return EnglishWord("Palabra no encontrada", "Palabra no encontrada", url)

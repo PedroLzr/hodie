@@ -6,13 +6,14 @@ HEADERS = ({'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gec
 HECHOSHISTORICOS_URL = 'https://www.hechoshistoricos.es'
 
 def get_anniversaries_from_hechoshistoricos():
-    url = HECHOSHISTORICOS_URL
-    page = requests.get(url, headers=HEADERS)
-
-    hhSoup = BeautifulSoup(page.content, 'lxml')
-    page.close()
-
     try:
+        print(">> Leyendo efemérides del día")
+        url = HECHOSHISTORICOS_URL
+        page = requests.get(url, headers=HEADERS)
+
+        hhSoup = BeautifulSoup(page.content, 'lxml')
+        page.close()
+
         anniversariesOfDay = hhSoup.find(id="colcajacent1")
         anniversariesListFacts = anniversariesOfDay.find_all("div", {'class': 'hhtext'})
         anniversariesListYears = anniversariesOfDay.find_all("div", {'class': 'hhanio'})
@@ -27,3 +28,4 @@ def get_anniversaries_from_hechoshistoricos():
         return Anniversaries(anniversaries, url)
     except:
         print('Error buscando efemérides en HechosHistoricos')
+        return Anniversaries(["Efemérides no encontradas"], url)

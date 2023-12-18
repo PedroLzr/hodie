@@ -1,0 +1,73 @@
+#stop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#letter-selected {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #e9ec18;
+}
+
+#start-button {
+    font-size: 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+#stop-button {
+    font-size: 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+input {
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
+    color: #1795c7;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#progressBar {
+    width: 90%;
+    margin: 10px auto;
+    height: 22px;
+    background-color: #0A5F44;
+}
+
+#progressBarTimer {
+    height: 100%;
+    text-align: right;
+    padding: 0 10px;
+    line-height: 22px;
+    /* Same as #progressBar height if we want text middle aligned */
+    width: 0;
+    background-color: #CBEA00;
+    box-sizing: border-box;
+}

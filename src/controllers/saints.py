@@ -6,13 +6,14 @@ HEADERS = ({'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gec
 SANTOPEDIA_URL = 'https://www.santopedia.com'
 
 def get_saints_from_santopedia():
-    url = SANTOPEDIA_URL
-    page = requests.get(url, headers=HEADERS)
-
-    santopediaSoup = BeautifulSoup(page.content, 'lxml')
-    page.close()
-
     try:
+        print(">> Leyendo santos del día")
+        url = SANTOPEDIA_URL
+        page = requests.get(url, headers=HEADERS)
+
+        santopediaSoup = BeautifulSoup(page.content, 'lxml')
+        page.close()
+
         listSaintsOfDay = santopediaSoup.find('ul', {'class': 'saints'})
         saintsOfDay = listSaintsOfDay.find_all('a')
 
@@ -26,3 +27,4 @@ def get_saints_from_santopedia():
 
     except:
         print('Error buscando los santos en Santopedia')
+        return Saints(["Santos no encontrados"], url)
