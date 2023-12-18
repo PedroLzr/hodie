@@ -71,6 +71,7 @@
         "marinero",
         "masajista",
         "meteorólogo",
+        "militar",
         "músico",
         "nutricionista",
         "odontólogo",
@@ -90,7 +91,6 @@
         "terapeuta",
         "traductor",
         "vendedor",
-        "zootecnista",
-        "militar"
+        "zootecnista"
     ]
 }
