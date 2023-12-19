@@ -12,6 +12,9 @@
 #letters-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #hangman-image {
@@ -29,6 +32,15 @@
     font-size: 20px;
     margin: 5px;
     cursor: pointer;
+    background-color: #4c4f52;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.letter-button.disabled {
+    opacity: 0.4;
+    pointer-events: none;
 }
 
 h2{

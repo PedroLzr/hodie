@@ -14,19 +14,24 @@
 }
 
 #letter-selected {
-    margin-bottom: 20px;
+    display: inline-block;
+    text-transform: uppercase;
     text-align: center;
     color: #e9ec18;
+    background-color: #333;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #correctAnswers {
-    margin-bottom: 12px;
+    margin: 10px;
     text-align: center;
     color: #13da1d;
 }
 
 #incorrectAnswers {
-    margin-bottom: 12px;
+    margin: 10px;
     text-align: center;
     color: #da2020;
 }
@@ -64,8 +69,8 @@ input {
 h2 {
     text-align: center;
     color: #1795c7;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
 
 #progressBar {

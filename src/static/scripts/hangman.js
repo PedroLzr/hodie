@@ -140,7 +140,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             if (!guessedLetters.includes(letter)) {
                 guessedLetters.push(letter);
-                event.target.disabled = true;
+                event.target.classList.add('disabled');
+
                 displayWord();
 
                 if (!selectedWord.includes(letter)) {

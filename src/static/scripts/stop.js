@@ -36,7 +36,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     const MAX_GAME_TIME = Math.round(NUM_GAME_CATEGORIES) * 12;
     let timeLeft = MAX_GAME_TIME;
 
-    const REGEX_IS_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ]+$/;
+    // const REGEX_IS_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ]+$/;
+    const REGEX_IS_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ .-]+$/;
 
     let randomLetter = '';
     let randomCategories = [];
@@ -75,7 +76,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         await setRandomLetter();
         await setRandomCategories();
 
-        letterLabel.textContent = randomLetter.toUpperCase();
+        letterLabel.textContent = randomLetter;
 
         for (let category of randomCategories) {
             var editText = document.createElement("input");
@@ -94,7 +95,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         progress();
 
         setTimeout(() => {
-            finishGame();
+            if (!stopGame) {
+                finishGame();
+            }
         }, MAX_GAME_TIME * 1000);
     });
 
@@ -120,16 +123,20 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         }
 
-        counterCorrectAnswers.textContent += `Correctas: ${correctAnswers}`;
-        counterIncorrectAnswers.textContent += `Incorrectas: ${incorrectAnswers}`;
+        counterCorrectAnswers.textContent = `Correctas: ${correctAnswers}`;
+        counterIncorrectAnswers.textContent = `Incorrectas: ${incorrectAnswers}`;
     }
 
     async function checkAnswer(category, answer) {
 
         if (answer && answer.trim()) {
 
+            // Eliminar espacios a los lados
             answer = answer.trim();
+            // Eliminar los acentos
             answer = removeAccentMark(answer);
+            // Eliminar puntos, guiones y espacios
+            answer = answer.replace(/[.\- ]/g, '');
 
             if (REGEX_IS_CORRECT_WORD.test(answer)) {
                 answer = answer.toLowerCase();
@@ -146,6 +153,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     async function isAnswerInCategory(category, answer) {
 
         let categoryItems = await getCategoryItemsFromFile(category);
+
+        // let answerWithO;
+        // let answerWithA;
+        // let answerWithS;
+        // let answerWithoutS;
 
         if (categoryItems.includes(answer)) {
             return true;
@@ -187,7 +199,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             const data = await jsonFile.json();
             let categoryItems = data[category];
 
+            // Eliminar los acentos
             categoryItems = categoryItems.map((item) => removeAccentMark(item));
+            // Eliminar carácteres especiales y espacios
+            categoryItems = categoryItems.map((item) => item.replace(/[.\-\/#!$%^&*;:{}=\-_'~()]/g, '').replace(/\s+/g, ''));
 
             return categoryItems;
 
