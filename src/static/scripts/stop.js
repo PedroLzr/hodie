@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     const stopButton = document.getElementById('stop-button');
     const gameContainer = document.getElementById('game-container');
     const letterLabel = document.getElementById('letter-selected');
+    const counterCorrectAnswers = document.getElementById('correctAnswers');
+    const counterIncorrectAnswers = document.getElementById('incorrectAnswers');
     const categoriesContainer = document.getElementById('category-inputs');
     const progressBar = document.getElementById('progressBar');
     const progressBarTimer = document.getElementById('progressBarTimer');
@@ -31,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     let arrayCategories = Object.keys(CATEGORIES);
     const NUM_GAME_CATEGORIES = Math.round(Object.keys(CATEGORIES).length / 3);
     const INPUT_SUFIX = '-input';
-    const MAX_GAME_TIME = Math.round(NUM_GAME_CATEGORIES) * 13;
+    const MAX_GAME_TIME = Math.round(NUM_GAME_CATEGORIES) * 12;
     let timeLeft = MAX_GAME_TIME;
 
     const REGEX_IS_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ]+$/;
@@ -40,6 +42,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     let randomCategories = [];
 
     let stopGame = false;
+    let correctAnswers = 0;
+    let incorrectAnswers = 0;
 
     async function setRandomLetter() {
         const alphabet = 'abcdefghijklmnñopqrstuvwxyz';
@@ -71,7 +75,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         await setRandomLetter();
         await setRandomCategories();
 
-        letterLabel.textContent = `Letra: ${randomLetter.toUpperCase()}`;
+        letterLabel.textContent = randomLetter.toUpperCase();
 
         for (let category of randomCategories) {
             var editText = document.createElement("input");
@@ -108,11 +112,16 @@ document.addEventListener("DOMContentLoaded", async function () {
             let isCorrect = await checkAnswer(category, categoryInput.value);
 
             if (isCorrect) {
+                correctAnswers++;
                 categoryInput.style.borderColor = "#00ff00";
             } else {
+                incorrectAnswers++;
                 categoryInput.style.borderColor = "#ff0000";
             }
         }
+
+        counterCorrectAnswers.textContent += `Correctas: ${correctAnswers}`;
+        counterIncorrectAnswers.textContent += `Incorrectas: ${incorrectAnswers}`;
     }
 
     async function checkAnswer(category, answer) {
