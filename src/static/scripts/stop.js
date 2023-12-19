@@ -1,5 +1,25 @@
 document.addEventListener("DOMContentLoaded", async function () {
 
+    const CATEGORIES = {
+        'animals': 'Animal',
+        'capitals': 'Capital',
+        'colors': 'Color',
+        'countries': 'País',
+        'fruits': 'Fruta',
+        'jobs': 'Oficio',
+        'names': 'Nombre propio',
+        'vegetables': 'Verdura',
+        'car_brands': 'Marca de coche',
+        'home_objects': 'Objeto del hogar',
+        'sports': 'Deporte',
+        'chemical_elements': 'Elemento químico',
+        'drinks': 'Bebida',
+        'games': 'Juego',
+        'languages': 'Idioma',
+        'minerals': 'Mineral',
+        'music_styles': 'Estilo musical',
+    }
+
     const startButton = document.getElementById('start-button');
     const stopButton = document.getElementById('stop-button');
     const gameContainer = document.getElementById('game-container');
@@ -8,71 +28,58 @@ document.addEventListener("DOMContentLoaded", async function () {
     const progressBar = document.getElementById('progressBar');
     const progressBarTimer = document.getElementById('progressBarTimer');
 
-    let categories = ['animals', 'capitals', 'colors', 'countries', 'fruits', 'jobs', 'names', 'vegetables', 'car_brands', 'home_objects', 'sports'];
-    const NUM_CATEGORIES_GAME = categories.length / 3;
+    let arrayCategories = Object.keys(CATEGORIES);
+    const NUM_GAME_CATEGORIES = Math.round(Object.keys(CATEGORIES).length / 3);
     const INPUT_SUFIX = '-input';
-    const MAX_TIME_GAME_IN_SEGS = Math.round(NUM_CATEGORIES_GAME) * 10;
-    let TIME_LEFT_IN_SEGS = MAX_TIME_GAME_IN_SEGS;
+    const MAX_GAME_TIME = Math.round(NUM_GAME_CATEGORIES) * 13;
+    let timeLeft = MAX_GAME_TIME;
 
-    const REGEX_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ]+$/;
+    const REGEX_IS_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ]+$/;
 
     let randomLetter = '';
-    let selectedCategories = [];
+    let randomCategories = [];
 
     let stopGame = false;
 
-    function getRandomLetter() {
-        const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-        return alphabet[Math.floor(Math.random() * alphabet.length)];
+    async function setRandomLetter() {
+        const alphabet = 'abcdefghijklmnñopqrstuvwxyz';
+        randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
     }
 
-    async function getRandomCategory() {
+    async function setRandomCategories() {
 
-        const randomIndex = Math.floor(Math.random() * categories.length);
-        const randomCategory = categories[randomIndex];
+        for (let i = 0; i < NUM_GAME_CATEGORIES; i++) {
+            const randomIndex = Math.floor(Math.random() * arrayCategories.length);
+            const randomCategory = arrayCategories[randomIndex];
+            arrayCategories.splice(randomIndex, 1);
 
-        // TODO: extraer en función para reutilizar
-        try {
-            const categoryJson = await fetch(`static/jsons/stop/${randomCategory}.json`);
-            if (!categoryJson.ok) {
-                throw new Error('Error al cargar el archivo JSON en getRandomCategory()');
-            }
+            let categoryItems = await getCategoryItemsFromFile(randomCategory);
 
-            const data = await categoryJson.json();
-            let options = data[randomCategory];
-            categories.splice(randomIndex, 1);
-
-            let haveItem = options.some((item) => item.startsWith(randomLetter));
+            let haveItem = categoryItems.some((item) => item.startsWith(randomLetter));
 
             if (haveItem) {
-                return randomCategory;
+                randomCategories.push(randomCategory);
             } else {
-                return await getRandomCategory();
+                i--;
             }
-
-        } catch (error) {
-            console.error(error);
         }
     }
 
     startButton.addEventListener('click', async () => {
         startButton.style.display = "none";
 
-        randomLetter = getRandomLetter();
-
-        for (let i = 0; i < NUM_CATEGORIES_GAME; i++) {
-            selectedCategories.push(await getRandomCategory());
-        }
+        await setRandomLetter();
+        await setRandomCategories();
 
         letterLabel.textContent = `Letra: ${randomLetter.toUpperCase()}`;
 
-        for (let category of selectedCategories) {
+        for (let category of randomCategories) {
             var editText = document.createElement("input");
 
             editText.type = "text";
             editText.id = category + INPUT_SUFIX;
             editText.name = category;
-            editText.placeholder = TRANSLATION_CATEGORIES[category];
+            editText.placeholder = CATEGORIES[category];
 
             categoriesContainer.append(editText);
         }
@@ -84,7 +91,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         setTimeout(() => {
             finishGame();
-        }, MAX_TIME_GAME_IN_SEGS * 1000);
+        }, MAX_GAME_TIME * 1000);
     });
 
     stopButton.addEventListener('click', () => {
@@ -95,7 +102,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         stopGame = true;
         stopButton.style.display = "none";
 
-        for (let category of selectedCategories) {
+        for (let category of randomCategories) {
             const categoryInput = document.getElementById(category + INPUT_SUFIX);
             categoryInput.disabled = true;
             let isCorrect = await checkAnswer(category, categoryInput.value);
@@ -115,62 +122,42 @@ document.addEventListener("DOMContentLoaded", async function () {
             answer = answer.trim();
             answer = removeAccentMark(answer);
 
-            if (REGEX_CORRECT_WORD.test(answer)) {
+            if (REGEX_IS_CORRECT_WORD.test(answer)) {
                 answer = answer.toLowerCase();
 
                 if (answer.startsWith(randomLetter)) {
                     return await isAnswerInCategory(category, answer);
-                } else {
-                    return false;
                 }
-            } else {
-                return false;
             }
-
-        } else {
-            return false;
         }
 
+        return false;
     }
 
     async function isAnswerInCategory(category, answer) {
 
-        // TODO: extraer en función para reutilizar
-        try {
-            const categoryJson = await fetch(`static/jsons/stop/${category}.json`);
-            if (!categoryJson.ok) {
-                throw new Error('Error al cargar el archivo JSON');
-            }
+        let categoryItems = await getCategoryItemsFromFile(category);
 
-            const data = await categoryJson.json();
-            let options = data[category];
-
-            options = options.map((item) => removeAccentMark(item));
-
-            if (options.includes(answer)) {
-                return true;
-            } else {
-                return false;
-            }
-
-        } catch (error) {
-            console.error(error);
+        if (categoryItems.includes(answer)) {
+            return true;
+        } else {
+            return false;
         }
     }
 
     function progress() {
 
         // Barra de progreso
-        var progressBarWidth = (TIME_LEFT_IN_SEGS / MAX_TIME_GAME_IN_SEGS) * progressBar.clientWidth;
+        var progressBarWidth = (timeLeft / MAX_GAME_TIME) * progressBar.clientWidth;
         progressBarTimer.style.width = progressBarWidth + 'px';
 
         // Contador de tiempo
-        var minutes = Math.floor(TIME_LEFT_IN_SEGS / 60);
-        var seconds = TIME_LEFT_IN_SEGS % 60;
+        var minutes = Math.floor(timeLeft / 60);
+        var seconds = timeLeft % 60;
         progressBarTimer.innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
-        if (TIME_LEFT_IN_SEGS > 0 && !stopGame) {
-            TIME_LEFT_IN_SEGS--;
+        if (timeLeft > 0 && !stopGame) {
+            timeLeft--;
             setTimeout(progress, 1000);
         }
     }
@@ -179,17 +166,24 @@ document.addEventListener("DOMContentLoaded", async function () {
         return word.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
-    const TRANSLATION_CATEGORIES = {
-        'animals': 'Animal',
-        'capitals': 'Capital',
-        'colors': 'Color',
-        'countries': 'País',
-        'fruits': 'Fruta',
-        'jobs': 'Oficio',
-        'names': 'Nombre propio',
-        'vegetables': 'Verdura',
-        'car_brands': 'Marca de coche',
-        'home_objects': 'Objeto del hogar',
-        'sports': 'Deporte'
+    async function getCategoryItemsFromFile(category) {
+
+        try {
+            const jsonFile = await fetch(`static/jsons/stop/${category}.json`);
+
+            if (!jsonFile.ok) {
+                throw new Error('Error al cargar el archivo JSON');
+            }
+
+            const data = await jsonFile.json();
+            let categoryItems = data[category];
+
+            categoryItems = categoryItems.map((item) => removeAccentMark(item));
+
+            return categoryItems;
+
+        } catch (error) {
+            console.error(error);
+        }
     }
 });

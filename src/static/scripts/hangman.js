@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Traer la palabra del día
     async function getHangmanWord() {
         try {
-            const response = await fetch('static/jsons/hangman/words_hangman.json');
+            const response = await fetch('static/jsons/hangman/words_2023.json');
             if (!response.ok) {
                 throw new Error('Error al cargar el archivo JSON');
             }
