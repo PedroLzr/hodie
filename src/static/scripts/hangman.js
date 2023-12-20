@@ -3,25 +3,25 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Inicializar variables
     let guessedLetters = [];
     let hangmanImage = 0;
-    const wordDisplay = document.getElementById("word-display");
-    const lettersContainer = document.getElementById("letters-container");
-    const hangmanImageElement = document.getElementById("hangman-image");
-    const dynamicTitle = document.getElementById("dynamic-title");
+    const WORD_DISPLAY = document.getElementById("word-display");
+    const LETTERS_CONTAINER = document.getElementById("letters-container");
+    const HANGMAN_IMAGE = document.getElementById("hangman-image");
+    const DYNAMIC_TITLE = document.getElementById("dynamic-title");
 
     // Traer la palabra del día
     async function getHangmanWord() {
         try {
-            const response = await fetch('static/jsons/hangman/words_2023.json');
-            if (!response.ok) {
+            const RESPONSE = await fetch('static/jsons/hangman/words_2023.json');
+            if (!RESPONSE.ok) {
                 throw new Error('Error al cargar el archivo JSON');
             }
 
-            const data = await response.json();
+            const DATA = await RESPONSE.json();
             let date = new Date();
             let month = date.toLocaleString('en-US', { month: 'long' });
             let day = date.getDate().toString();
 
-            return data[month.toLowerCase()][day];
+            return DATA[month.toLowerCase()][day];
 
         } catch (error) {
             console.error(error);
@@ -36,24 +36,24 @@ document.addEventListener("DOMContentLoaded", async function () {
         let lsHangman = localStorage.getItem("hangman");
         if (lsHangman) {
             let lsHangmanObj = JSON.parse(lsHangman);
-            const date = new Date();
-            let d = date.getDate();
-            let m = date.getMonth();
-            let y = date.getFullYear();
+            const DATE = new Date();
+            let d = DATE.getDate();
+            let m = DATE.getMonth();
+            let y = DATE.getFullYear();
             let dateForSave = `${d}/${m}/${y}`
 
             if (lsHangmanObj && lsHangmanObj.date === dateForSave) {
                 if (lsHangmanObj.succeeded === true) {
-                    dynamicTitle.innerHTML = "¡Muy bien! &#127894;";
-                    lettersContainer.innerHTML = selectedWordDefinition;
-                    wordDisplay.textContent = selectedWord;
+                    DYNAMIC_TITLE.innerHTML = "¡Muy bien! &#127894;";
+                    LETTERS_CONTAINER.innerHTML = selectedWordDefinition;
+                    WORD_DISPLAY.textContent = selectedWord;
                     hangmanImage = 7;
                     updateHangmanImage();
                     return;
                 } else {
-                    dynamicTitle.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
-                    lettersContainer.innerHTML = selectedWordDefinition;
-                    wordDisplay.textContent = selectedWord;
+                    DYNAMIC_TITLE.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
+                    LETTERS_CONTAINER.innerHTML = selectedWordDefinition;
+                    WORD_DISPLAY.textContent = selectedWord;
                     hangmanImage = 6;
                     updateHangmanImage();
                     return;
@@ -75,28 +75,29 @@ document.addEventListener("DOMContentLoaded", async function () {
                 displayText += "_ ";
             }
         }
-        wordDisplay.textContent = displayText;
+        WORD_DISPLAY.textContent = displayText;
     }
 
     function updateHangmanImage() {
-        const currentScheme = window.location.protocol;
-        const imagePath = "static/images/hangman/" + hangmanImage + ".png";
-        const imageUrl = currentScheme + "//" + window.location.host + "/" + imagePath;
-        hangmanImageElement.src = imageUrl;
+        const CURRENT_SCHEME = window.location.protocol;
+        const IMAGE_PATH = "static/images/hangman/" + hangmanImage + ".png";
+        const IMAGE_URL = CURRENT_SCHEME + "//" + window.location.host + "/" + IMAGE_PATH;
+        HANGMAN_IMAGE.src = IMAGE_URL;
     }
 
     function checkWin() {
-        if (!wordDisplay.textContent.includes("_")) {
-            dynamicTitle.innerHTML = "¡Muy bien! &#127894;";
-            lettersContainer.innerHTML = selectedWordDefinition;
+        if (!WORD_DISPLAY.textContent.includes("_")) {
+            DYNAMIC_TITLE.innerHTML = "¡Muy bien! &#127894;";
+            LETTERS_CONTAINER.innerHTML = selectedWordDefinition;
             hangmanImage = 7;
             updateHangmanImage();
 
             // Guardar en localStorage que ha ganado
-            const date = new Date();
-            let d = date.getDate();
-            let m = date.getMonth();
-            let y = date.getFullYear();
+            // TODO: SACAR EN UNA FUNCIÓN
+            const DATE = new Date();
+            let d = DATE.getDate();
+            let m = DATE.getMonth();
+            let y = DATE.getFullYear();
             let dateForSave = `${d}/${m}/${y}`
             let lsHangman = {
                 "date": dateForSave,
@@ -108,15 +109,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     function checkLose() {
         if (hangmanImage === 6) {
-            dynamicTitle.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
-            lettersContainer.innerHTML = selectedWordDefinition;
-            wordDisplay.textContent = selectedWord;
+            DYNAMIC_TITLE.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
+            LETTERS_CONTAINER.innerHTML = selectedWordDefinition;
+            WORD_DISPLAY.textContent = selectedWord;
 
             // Guardar en localStorage que ha perdido
-            const date = new Date();
-            let d = date.getDate();
-            let m = date.getMonth();
-            let y = date.getFullYear();
+            // TODO: SACAR EN UNA FUNCIÓN
+            const DATE = new Date();
+            let d = DATE.getDate();
+            let m = DATE.getMonth();
+            let y = DATE.getFullYear();
             let dateForSave = `${d}/${m}/${y}`
             let lsHangman = {
                 "date": dateForSave,
@@ -127,21 +129,21 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     for (let i = 65; i <= 90; i++) {
-        const letter = String.fromCharCode(i);
-        const button = document.createElement("button");
-        button.textContent = letter;
-        button.classList.add("letter-button");
-        lettersContainer.appendChild(button);
+        const LETTER = String.fromCharCode(i);
+        const BUTTON = document.createElement("button");
+        BUTTON.textContent = LETTER;
+        BUTTON.classList.add("letter-button");
+        LETTERS_CONTAINER.appendChild(BUTTON);
 
-        if (letter === 'N') {
-            const buttonNWithTilde = document.createElement("button");
-            buttonNWithTilde.textContent = "Ñ";
-            buttonNWithTilde.classList.add("letter-button");
-            lettersContainer.appendChild(buttonNWithTilde);
+        if (LETTER === 'N') {
+            const BUTTON_N_WITH_TILDE = document.createElement("button");
+            BUTTON_N_WITH_TILDE.textContent = "Ñ";
+            BUTTON_N_WITH_TILDE.classList.add("letter-button");
+            LETTERS_CONTAINER.appendChild(BUTTON_N_WITH_TILDE);
         }
     }
 
-    lettersContainer.addEventListener("click", function (event) {
+    LETTERS_CONTAINER.addEventListener("click", function (event) {
         if (event.target.classList.contains("letter-button")) {
             let letter = event.target.textContent.toUpperCase();
 

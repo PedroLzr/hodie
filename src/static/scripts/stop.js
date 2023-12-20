@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const CATEGORIES = {
         'animals': 'Animal',
+        'body': 'Cuerpo humano',
         'capitals': 'Capital',
         'car_brands': 'Marca de coche',
         'chemical_elements': 'Elemento químico',
@@ -14,21 +15,22 @@ document.addEventListener("DOMContentLoaded", async function () {
         'jobs': 'Oficio',
         'languages': 'Idioma',
         'minerals': 'Mineral',
+        'multinational': 'Multinacional',
         'music_styles': 'Estilo musical',
         'names': 'Nombre propio',
         'sports': 'Deporte',
         'vegetables': 'Verdura'
     }
 
-    const startButton = document.getElementById('start-button');
-    const stopButton = document.getElementById('stop-button');
-    const gameContainer = document.getElementById('game-container');
-    const letterLabel = document.getElementById('letter-selected');
-    const counterCorrectAnswers = document.getElementById('correctAnswers');
-    const counterIncorrectAnswers = document.getElementById('incorrectAnswers');
-    const categoriesContainer = document.getElementById('category-inputs');
-    const progressBar = document.getElementById('progressBar');
-    const progressBarTimer = document.getElementById('progressBarTimer');
+    const START_BUTTON = document.getElementById('start-button');
+    const STOP_BUTTON = document.getElementById('stop-button');
+    const GAME_CONTAINER = document.getElementById('game-container');
+    const LETTER_LABEL = document.getElementById('letter-selected');
+    const COUNTER_CORRECT_ANSWERS = document.getElementById('correctAnswers');
+    const COUNTER_INCORRECT_ANSWERS = document.getElementById('incorrectAnswers');
+    const CATEGORIES_CONTAINER = document.getElementById('categories-container');
+    const PROGRESS_BAR = document.getElementById('progressBar');
+    const PROGRESS_BAR_TIMER = document.getElementById('progressBarTimer');
 
     let arrayCategories = Object.keys(CATEGORIES);
     const NUM_GAME_CATEGORIES = Math.round(Object.keys(CATEGORIES).length / 3);
@@ -46,28 +48,28 @@ document.addEventListener("DOMContentLoaded", async function () {
     let incorrectAnswers = 0;
 
     async function setRandomLetter() {
-        const alphabet = 'abcdefghijklmnñopqrstuvwxyz';
-        randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+        const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+        randomLetter = ALPHABET[Math.floor(Math.random() * ALPHABET.length)];
     }
 
     async function setRandomCategories() {
 
         for (let i = 0; i < NUM_GAME_CATEGORIES; i++) {
 
-            if (arrayCategories.length  === 0) {
+            if (arrayCategories.length === 0) {
                 break;
             }
 
-            const randomIndex = Math.floor(Math.random() * arrayCategories.length);
-            const randomCategory = arrayCategories[randomIndex];
-            arrayCategories.splice(randomIndex, 1);
+            const RANDOM_INDEX = Math.floor(Math.random() * arrayCategories.length);
+            const RANDOM_CATEGORY = arrayCategories[RANDOM_INDEX];
+            arrayCategories.splice(RANDOM_INDEX, 1);
 
-            let categoryItems = await getCategoryItemsFromFile(randomCategory);
+            let categoryItems = await getCategoryItemsFromFile(RANDOM_CATEGORY);
 
             let haveItem = categoryItems.some((item) => item.startsWith(randomLetter));
 
             if (haveItem) {
-                randomCategories.push(randomCategory);
+                randomCategories.push(RANDOM_CATEGORY);
             } else {
                 i--;
             }
@@ -75,13 +77,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
-    startButton.addEventListener('click', async () => {
-        startButton.style.display = "none";
+    START_BUTTON.addEventListener('click', async () => {
+        START_BUTTON.style.display = "none";
 
         await setRandomLetter();
         await setRandomCategories();
 
-        letterLabel.textContent = randomLetter;
+        LETTER_LABEL.textContent = randomLetter;
 
         for (let category of randomCategories) {
             var editText = document.createElement("input");
@@ -91,11 +93,11 @@ document.addEventListener("DOMContentLoaded", async function () {
             editText.name = category;
             editText.placeholder = CATEGORIES[category];
 
-            categoriesContainer.append(editText);
+            CATEGORIES_CONTAINER.append(editText);
         }
 
-        gameContainer.style.display = "block";
-        startButton.disabled = true;
+        GAME_CONTAINER.style.display = "block";
+        START_BUTTON.disabled = true;
 
         progress();
 
@@ -106,30 +108,30 @@ document.addEventListener("DOMContentLoaded", async function () {
         }, MAX_GAME_TIME * 1000);
     });
 
-    stopButton.addEventListener('click', () => {
+    STOP_BUTTON.addEventListener('click', () => {
         finishGame();
     });
 
     async function finishGame() {
         stopGame = true;
-        stopButton.style.display = "none";
+        STOP_BUTTON.style.display = "none";
 
         for (let category of randomCategories) {
-            const categoryInput = document.getElementById(category + INPUT_SUFIX);
-            categoryInput.disabled = true;
-            let isCorrect = await checkAnswer(category, categoryInput.value);
+            const CATEGORY_INPUT = document.getElementById(category + INPUT_SUFIX);
+            CATEGORY_INPUT.disabled = true;
+            let isCorrect = await checkAnswer(category, CATEGORY_INPUT.value);
 
             if (isCorrect) {
                 correctAnswers++;
-                categoryInput.style.borderColor = "#00ff00";
+                CATEGORY_INPUT.style.borderColor = "#00ff00";
             } else {
                 incorrectAnswers++;
-                categoryInput.style.borderColor = "#ff0000";
+                CATEGORY_INPUT.style.borderColor = "#ff0000";
             }
         }
 
-        counterCorrectAnswers.textContent = `Correctas: ${correctAnswers}`;
-        counterIncorrectAnswers.textContent = `Incorrectas: ${incorrectAnswers}`;
+        COUNTER_CORRECT_ANSWERS.textContent = `Correctas: ${correctAnswers}`;
+        COUNTER_INCORRECT_ANSWERS.textContent = `Incorrectas: ${incorrectAnswers}`;
     }
 
     async function checkAnswer(category, answer) {
@@ -159,6 +161,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         let categoryItems = await getCategoryItemsFromFile(category);
 
+        // Variantes de la palabra
         // let answerWithO;
         // let answerWithA;
         // let answerWithS;
@@ -174,13 +177,13 @@ document.addEventListener("DOMContentLoaded", async function () {
     function progress() {
 
         // Barra de progreso
-        var progressBarWidth = (timeLeft / MAX_GAME_TIME) * progressBar.clientWidth;
-        progressBarTimer.style.width = progressBarWidth + 'px';
+        let progressBarWidth = (timeLeft / MAX_GAME_TIME) * PROGRESS_BAR.clientWidth;
+        PROGRESS_BAR_TIMER.style.width = progressBarWidth + 'px';
 
         // Contador de tiempo
-        var minutes = Math.floor(timeLeft / 60);
-        var seconds = timeLeft % 60;
-        progressBarTimer.innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        PROGRESS_BAR_TIMER.innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
         if (timeLeft > 0 && !stopGame) {
             timeLeft--;
@@ -195,14 +198,14 @@ document.addEventListener("DOMContentLoaded", async function () {
     async function getCategoryItemsFromFile(category) {
 
         try {
-            const jsonFile = await fetch(`static/jsons/stop/${category}.json`);
+            const JSON_FILE = await fetch(`static/jsons/stop/${category}.json`);
 
-            if (!jsonFile.ok) {
+            if (!JSON_FILE.ok) {
                 throw new Error('Error al cargar el archivo JSON');
             }
 
-            const data = await jsonFile.json();
-            let categoryItems = data[category];
+            const DATA = await JSON_FILE.json();
+            let categoryItems = DATA[category];
 
             // Eliminar los acentos
             categoryItems = categoryItems.map((item) => removeAccentMark(item));
