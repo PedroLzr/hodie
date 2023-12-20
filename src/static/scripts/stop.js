@@ -3,21 +3,21 @@ document.addEventListener("DOMContentLoaded", async function () {
     const CATEGORIES = {
         'animals': 'Animal',
         'capitals': 'Capital',
+        'car_brands': 'Marca de coche',
+        'chemical_elements': 'Elemento químico',
         'colors': 'Color',
         'countries': 'País',
-        'fruits': 'Fruta',
-        'jobs': 'Oficio',
-        'names': 'Nombre propio',
-        'vegetables': 'Verdura',
-        'car_brands': 'Marca de coche',
-        'home_objects': 'Objeto del hogar',
-        'sports': 'Deporte',
-        'chemical_elements': 'Elemento químico',
         'drinks': 'Bebida',
+        'fruits': 'Fruta',
         'games': 'Juego',
+        'home_objects': 'Objeto del hogar',
+        'jobs': 'Oficio',
         'languages': 'Idioma',
         'minerals': 'Mineral',
         'music_styles': 'Estilo musical',
+        'names': 'Nombre propio',
+        'sports': 'Deporte',
+        'vegetables': 'Verdura'
     }
 
     const startButton = document.getElementById('start-button');
@@ -36,8 +36,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const MAX_GAME_TIME = Math.round(NUM_GAME_CATEGORIES) * 12;
     let timeLeft = MAX_GAME_TIME;
 
-    // const REGEX_IS_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ]+$/;
-    const REGEX_IS_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ .-]+$/;
+    const REGEX_IS_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ '.-]+$/;
 
     let randomLetter = '';
     let randomCategories = [];
@@ -54,6 +53,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     async function setRandomCategories() {
 
         for (let i = 0; i < NUM_GAME_CATEGORIES; i++) {
+
+            if (arrayCategories.length  === 0) {
+                break;
+            }
+
             const randomIndex = Math.floor(Math.random() * arrayCategories.length);
             const randomCategory = arrayCategories[randomIndex];
             arrayCategories.splice(randomIndex, 1);
@@ -67,6 +71,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             } else {
                 i--;
             }
+
         }
     }
 
@@ -135,8 +140,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             answer = answer.trim();
             // Eliminar los acentos
             answer = removeAccentMark(answer);
-            // Eliminar puntos, guiones y espacios
-            answer = answer.replace(/[.\- ]/g, '');
+            // Eliminar puntos, guiones, comillas y espacios
+            answer = answer.replace(/[.\- ']/g, '');
 
             if (REGEX_IS_CORRECT_WORD.test(answer)) {
                 answer = answer.toLowerCase();

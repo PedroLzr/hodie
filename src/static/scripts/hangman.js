@@ -132,6 +132,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         button.textContent = letter;
         button.classList.add("letter-button");
         lettersContainer.appendChild(button);
+
+        if (letter === 'N') {
+            const buttonNWithTilde = document.createElement("button");
+            buttonNWithTilde.textContent = "Ñ";
+            buttonNWithTilde.classList.add("letter-button");
+            lettersContainer.appendChild(buttonNWithTilde);
+        }
     }
 
     lettersContainer.addEventListener("click", function (event) {
@@ -145,10 +152,12 @@ document.addEventListener("DOMContentLoaded", async function () {
                 displayWord();
 
                 if (!selectedWord.includes(letter)) {
+                    event.target.classList.add('incorrect');
                     hangmanImage++;
                     updateHangmanImage();
                     checkLose();
                 } else {
+                    event.target.classList.add('correct');
                     checkWin();
                 }
             }
