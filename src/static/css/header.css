@@ -16,7 +16,6 @@ nav {
 .btn-menu {
     flex-grow: 1;
     text-align: center;
-
     display: inline-block;
     padding: 5px 25px 5px 25px;
     margin: 3px;

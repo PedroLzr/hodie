@@ -66,6 +66,20 @@ input {
     border-radius: 5px;
 }
 
+.input-correct {
+    padding: 10px;
+    border: 3px solid #11da11;
+    border-radius: 5px;
+    box-shadow: 0px 0px 12px 2px rgba(12, 255, 20, 0.5);
+}
+
+.input-incorrect {
+    padding: 10px;
+    border: 3px solid #db0808;
+    border-radius: 5px;
+    box-shadow: 0px 0px 12px 2px rgba(218, 9, 9, 0.5);
+}
+
 h2 {
     text-align: center;
     color: #1795c7;
@@ -77,7 +91,8 @@ h2 {
     width: 90%;
     margin: 10px auto;
     height: 22px;
-    background-color: #0A5F44;
+    background-color: #333;
+    border-radius: 20px;
 }
 
 #progressBarTimer {
@@ -86,7 +101,9 @@ h2 {
     padding: 0 10px;
     line-height: 22px;
     /* Same as #progressBar height if we want text middle aligned */
-    width: 0;
+    /* width: 0; */
+    width: 100%;
     background-color: #CBEA00;
     box-sizing: border-box;
+    border-radius: 20px;
 }

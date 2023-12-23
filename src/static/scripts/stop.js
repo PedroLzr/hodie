@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     let arrayCategories = Object.keys(CATEGORIES);
     const NUM_GAME_CATEGORIES = Math.round(Object.keys(CATEGORIES).length / 3);
     const INPUT_SUFIX = '-input';
-    const MAX_GAME_TIME = Math.round(NUM_GAME_CATEGORIES) * 12;
+    const MAX_GAME_TIME = Math.round(NUM_GAME_CATEGORIES) * 13;
     let timeLeft = MAX_GAME_TIME;
 
     const REGEX_IS_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ '.-]+$/;
@@ -100,15 +100,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         START_BUTTON.disabled = true;
 
         progress();
-
-        setTimeout(() => {
-            if (!stopGame) {
-                finishGame();
-            }
-        }, MAX_GAME_TIME * 1000);
     });
 
     STOP_BUTTON.addEventListener('click', () => {
+        PROGRESS_BAR_TIMER.style.backgroundColor = "#25db12";
         finishGame();
     });
 
@@ -123,10 +118,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             if (isCorrect) {
                 correctAnswers++;
-                CATEGORY_INPUT.style.borderColor = "#00ff00";
+                CATEGORY_INPUT.classList.add("input-correct");
             } else {
                 incorrectAnswers++;
-                CATEGORY_INPUT.style.borderColor = "#ff0000";
+                CATEGORY_INPUT.classList.add("input-incorrect");
             }
         }
 
@@ -176,16 +171,27 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     function progress() {
 
-        // Barra de progreso
-        let progressBarWidth = (timeLeft / MAX_GAME_TIME) * PROGRESS_BAR.clientWidth;
-        PROGRESS_BAR_TIMER.style.width = progressBarWidth + 'px';
+        if (timeLeft <= 0) {
+            PROGRESS_BAR_TIMER.innerHTML = "0:00";
+            PROGRESS_BAR_TIMER.style.width = "100%";
+            finishGame();
+            return;
+        }
 
-        // Contador de tiempo
-        let minutes = Math.floor(timeLeft / 60);
-        let seconds = timeLeft % 60;
-        PROGRESS_BAR_TIMER.innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        if (timeLeft === 15) {
+            PROGRESS_BAR_TIMER.style.backgroundColor = "#db0808";
+        }
 
-        if (timeLeft > 0 && !stopGame) {
+        if (!stopGame) {
+            // Barra de progreso
+            let progressBarWidth = (timeLeft / MAX_GAME_TIME) * PROGRESS_BAR.clientWidth;
+            PROGRESS_BAR_TIMER.style.width = progressBarWidth + 'px';
+
+            // Contador de tiempo
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = Math.floor(timeLeft % 60);
+            PROGRESS_BAR_TIMER.innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
             timeLeft--;
             setTimeout(progress, 1000);
         }
