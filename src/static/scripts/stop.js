@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 PROGRESS_BAR.style.display = "none";
                 GAME_CONTAINER.style.display = "block";
                 LETTER_LABEL.textContent = savedGameData.randomLetter;
-                COUNTER_CORRECT_ANSWERS.textContent = `Correctas: ${savedGameData.correct_answers}`;
-                COUNTER_INCORRECT_ANSWERS.textContent = `Incorrectas: ${savedGameData.incorrect_answers}`;
+                COUNTER_CORRECT_ANSWERS.textContent = `Hoy hiciste ${savedGameData.correct_answers} correctas`;
+                COUNTER_INCORRECT_ANSWERS.textContent = `Hoy hiciste ${savedGameData.incorrect_answers} incorrectas`;
             }
         }
 
