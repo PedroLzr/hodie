@@ -1,1514 +1,1514 @@
 {
-    "january": {
-        "1": {
-            "word": "murmullo",
-            "definition": "Ruido suave y continuo producido por voces o sonidos apagados."
-        },
-        "2": {
-            "word": "lobrego",
-            "definition": "Que está en penumbra o en la oscuridad."
-        },
-        "3": {
-            "word": "fulgor",
-            "definition": "Brillo intenso y momentáneo."
-        },
-        "4": {
-            "word": "zafiro",
-            "definition": "Gema preciosa de color azul transparente."
-        },
-        "5": {
-            "word": "quimera",
-            "definition": "Ilusión o idea utópica irrealizable."
-        },
-        "6": {
-            "word": "penumbra",
-            "definition": "Semi-oscuridad que precede al anochecer o sigue al amanecer."
-        },
-        "7": {
-            "word": "crisalida",
-            "definition": "Estadio de transformación de algunos insectos, como la mariposa."
-        },
-        "8": {
-            "word": "enfasis",
-            "definition": "Acentuación o realce de una palabra o expresión en el discurso."
-        },
-        "9": {
-            "word": "candor",
-            "definition": "Sinceridad, franqueza y pureza de ánimo."
-        },
-        "10": {
-            "word": "algido",
-            "definition": "Punto culminante o de mayor intensidad en un proceso o situación."
-        },
-        "11": {
-            "word": "torrido",
-            "definition": "Que está extremadamente caliente o ardiente."
-        },
-        "12": {
-            "word": "macula",
-            "definition": "Mancha o imperfección en una superficie."
-        },
-        "13": {
-            "word": "fulgente",
-            "definition": "Que brilla intensamente."
-        },
-        "14": {
-            "word": "indigo",
-            "definition": "Color azul profundo."
-        },
-        "15": {
-            "word": "obice",
-            "definition": "Obstáculo o impedimento que dificulta una acción."
-        },
-        "16": {
-            "word": "pabilo",
-            "definition": "Mecha de una vela o lámpara."
-        },
-        "17": {
-            "word": "alveo",
-            "definition": "Cauce de un río o arroyo."
-        },
-        "18": {
-            "word": "livido",
-            "definition": "De color amoratado o pálido debido a la falta de circulación de la sangre."
-        },
-        "19": {
-            "word": "flebil",
-            "definition": "Débil o delicado, que carece de fuerza."
-        },
-        "20": {
-            "word": "animo",
-            "definition": "Espíritu, energía o disposición para hacer algo."
-        },
-        "21": {
-            "word": "lobulo",
-            "definition": "Parte saliente o prominente de un órgano o estructura."
-        },
-        "22": {
-            "word": "genesis",
-            "definition": "Origen o principio de algo."
-        },
-        "23": {
-            "word": "nacar",
-            "definition": "Sustancia brillante y colorida que forma la capa interna de algunas conchas."
-        },
-        "24": {
-            "word": "ambar",
-            "definition": "Resina fosilizada de color amarillo o marrón."
-        },
-        "25": {
-            "word": "tremulo",
-            "definition": "Que tiembla o se agita con ligereza."
-        },
-        "26": {
-            "word": "cantico",
-            "definition": "Canto religioso o poético."
-        },
-        "27": {
-            "word": "famulo",
-            "definition": "Servidor o criado que realiza tareas auxiliares."
-        },
-        "28": {
-            "word": "anfora",
-            "definition": "Recipiente antiguo con dos asas y cuello largo."
-        },
-        "29": {
-            "word": "fobico",
-            "definition": "Que tiene miedo o aversión patológica a algo."
-        },
-        "30": {
-            "word": "halito",
-            "definition": "Aliento o respiración."
-        },
-        "31": {
-            "word": "lobrego",
-            "definition": "Que está en penumbra o en la oscuridad."
-        }
+  "january": {
+    "1": {
+      "word": "murmullo",
+      "definition": "Ruido suave y continuo producido por voces o sonidos apagados."
     },
-    "february": {
-        "1": {
-            "word": "cazador",
-            "definition": "Persona que se dedica a la caza de animales."
-        },
-        "2": {
-            "word": "relampago",
-            "definition": "Fenómeno luminoso producido por una descarga eléctrica en la atmósfera."
-        },
-        "3": {
-            "word": "murcirlago",
-            "definition": "Mamífero volador de hábitos nocturnos."
-        },
-        "4": {
-            "word": "zancudo",
-            "definition": "Insecto volador con patas largas, como el mosquito."
-        },
-        "5": {
-            "word": "selvatico",
-            "definition": "Perteneciente o relativo a la selva o al bosque espeso."
-        },
-        "6": {
-            "word": "estomago",
-            "definition": "Órgano del sistema digestivo donde se realiza la digestión de los alimentos."
-        },
-        "7": {
-            "word": "aullido",
-            "definition": "Grito largo y lastimero de algunos animales, como el lobo."
-        },
-        "8": {
-            "word": "marquesina",
-            "definition": "Techado saliente que protege la entrada de un edificio."
-        },
-        "9": {
-            "word": "buhardilla",
-            "definition": "Parte de una casa situada en la parte superior, bajo el tejado."
-        },
-        "10": {
-            "word": "carcajada",
-            "definition": "Risa ruidosa y descontrolada."
-        },
-        "11": {
-            "word": "invernadero",
-            "definition": "Recinto cubierto utilizado para el cultivo de plantas en condiciones controladas."
-        },
-        "12": {
-            "word": "esfinge",
-            "definition": "Criatura mitológica con cuerpo de león y cabeza humana."
-        },
-        "13": {
-            "word": "descenso",
-            "definition": "Acción de bajar o disminuir en altura o nivel."
-        },
-        "14": {
-            "word": "cabestrillo",
-            "definition": "Dispositivo que sostiene y sujeta el brazo lesionado."
-        },
-        "15": {
-            "word": "conjuro",
-            "definition": "Fórmula mágica utilizada en rituales o hechizos."
-        },
-        "16": {
-            "word": "abrego",
-            "definition": "Viento cálido y húmedo que sopla en el sur de España."
-        },
-        "17": {
-            "word": "cohete",
-            "definition": "Dispositivo que se lanza al espacio con propósitos científicos o militares."
-        },
-        "18": {
-            "word": "espantapajaros",
-            "definition": "Figura o dispositivo utilizado en los campos para espantar a los pájaros."
-        },
-        "19": {
-            "word": "filamento",
-            "definition": "Hilo delgado de material como el metal o el vidrio."
-        },
-        "20": {
-            "word": "gazapo",
-            "definition": "Error o equivocación en una conversación o escritura."
-        },
-        "21": {
-            "word": "hierbabuena",
-            "definition": "Planta aromática de hojas verdes utilizada en la cocina."
-        },
-        "22": {
-            "word": "jangada",
-            "definition": "Embarcación de madera utilizada en ríos y lagos."
-        },
-        "23": {
-            "word": "luminaria",
-            "definition": "Dispositivo de iluminación, como una lámpara o farol."
-        },
-        "24": {
-            "word": "mazamorra",
-            "definition": "Postre a base de maíz o arroz cocido con leche y azúcar."
-        },
-        "25": {
-            "word": "nube",
-            "definition": "Agregación visible de pequeñas gotas de agua o cristales de hielo en la atmósfera."
-        },
-        "26": {
-            "word": "ovulo",
-            "definition": "Célula sexual femenina que puede ser fertilizada por un espermatozoide."
-        },
-        "27": {
-            "word": "pañuelo",
-            "definition": "Trozo de tela utilizado para limpiar, abrigar o adornar."
-        },
-        "28": {
-            "word": "quetzal",
-            "definition": "Ave de plumaje colorido que habita en América Central."
-        },
-        "29": {
-            "word": "rincon",
-            "definition": "Ángulo formado por dos paredes que se cruzan."
-        },
-        "30": {
-            "word": "sardina",
-            "definition": "Pez de pequeño tamaño comúnmente utilizado en la alimentación."
-        },
-        "31": {
-            "word": "yelmo",
-            "definition": "Pieza de la armadura que protege la cabeza y el rostro."
-        }
+    "2": {
+      "word": "lobrego",
+      "definition": "Que está en penumbra o en la oscuridad."
     },
-    "march": {
-        "1": {
-            "word": "murmullo",
-            "definition": "Ruido suave y continuo producido por voces o sonidos apagados."
-        },
-        "2": {
-            "word": "lobrego",
-            "definition": "Que está en penumbra o en la oscuridad."
-        },
-        "3": {
-            "word": "fulgor",
-            "definition": "Brillo intenso y momentáneo."
-        },
-        "4": {
-            "word": "zafiro",
-            "definition": "Gema preciosa de color azul transparente."
-        },
-        "5": {
-            "word": "quimera",
-            "definition": "Ilusión o idea utópica irrealizable."
-        },
-        "6": {
-            "word": "penumbra",
-            "definition": "Semi-oscuridad que precede al anochecer o sigue al amanecer."
-        },
-        "7": {
-            "word": "crisalida",
-            "definition": "Estadio de transformación de algunos insectos, como la mariposa."
-        },
-        "8": {
-            "word": "enfasis",
-            "definition": "Acentuación o realce de una palabra o expresión en el discurso."
-        },
-        "9": {
-            "word": "candor",
-            "definition": "Sinceridad, franqueza y pureza de ánimo."
-        },
-        "10": {
-            "word": "algido",
-            "definition": "Punto culminante o de mayor intensidad en un proceso o situación."
-        },
-        "11": {
-            "word": "torrido",
-            "definition": "Que está extremadamente caliente o ardiente."
-        },
-        "12": {
-            "word": "macula",
-            "definition": "Mancha o imperfección en una superficie."
-        },
-        "13": {
-            "word": "fulgente",
-            "definition": "Que brilla intensamente."
-        },
-        "14": {
-            "word": "indigo",
-            "definition": "Color azul profundo."
-        },
-        "15": {
-            "word": "obice",
-            "definition": "Obstáculo o impedimento que dificulta una acción."
-        },
-        "16": {
-            "word": "pabilo",
-            "definition": "Mecha de una vela o lámpara."
-        },
-        "17": {
-            "word": "alveo",
-            "definition": "Cauce de un río o arroyo."
-        },
-        "18": {
-            "word": "livido",
-            "definition": "De color amoratado o pálido debido a la falta de circulación de la sangre."
-        },
-        "19": {
-            "word": "flebil",
-            "definition": "Débil o delicado, que carece de fuerza."
-        },
-        "20": {
-            "word": "animo",
-            "definition": "Espíritu, energía o disposición para hacer algo."
-        },
-        "21": {
-            "word": "lobulo",
-            "definition": "Parte saliente o prominente de un órgano o estructura."
-        },
-        "22": {
-            "word": "genesis",
-            "definition": "Origen o principio de algo."
-        },
-        "23": {
-            "word": "nacar",
-            "definition": "Sustancia brillante y colorida que forma la capa interna de algunas conchas."
-        },
-        "24": {
-            "word": "ambar",
-            "definition": "Resina fosilizada de color amarillo o marrón."
-        },
-        "25": {
-            "word": "tremulo",
-            "definition": "Que tiembla o se agita con ligereza."
-        },
-        "26": {
-            "word": "cantico",
-            "definition": "Canto religioso o poético."
-        },
-        "27": {
-            "word": "famulo",
-            "definition": "Servidor o criado que realiza tareas auxiliares."
-        },
-        "28": {
-            "word": "anfora",
-            "definition": "Recipiente antiguo con dos asas y cuello largo."
-        },
-        "29": {
-            "word": "fobico",
-            "definition": "Que tiene miedo o aversión patológica a algo."
-        },
-        "30": {
-            "word": "halito",
-            "definition": "Aliento o respiración."
-        },
-        "31": {
-            "word": "lobrego",
-            "definition": "Que está en penumbra o en la oscuridad."
-        }
+    "3": {
+      "word": "fulgor",
+      "definition": "Brillo intenso y momentáneo."
     },
-    "april": {
-        "1": {
-            "word": "cazador",
-            "definition": "Persona que se dedica a la caza de animales."
-        },
-        "2": {
-            "word": "relampago",
-            "definition": "Fenómeno luminoso producido por una descarga eléctrica en la atmósfera."
-        },
-        "3": {
-            "word": "murcirlago",
-            "definition": "Mamífero volador de hábitos nocturnos."
-        },
-        "4": {
-            "word": "zancudo",
-            "definition": "Insecto volador con patas largas, como el mosquito."
-        },
-        "5": {
-            "word": "selvatico",
-            "definition": "Perteneciente o relativo a la selva o al bosque espeso."
-        },
-        "6": {
-            "word": "estomago",
-            "definition": "Órgano del sistema digestivo donde se realiza la digestión de los alimentos."
-        },
-        "7": {
-            "word": "aullido",
-            "definition": "Grito largo y lastimero de algunos animales, como el lobo."
-        },
-        "8": {
-            "word": "marquesina",
-            "definition": "Techado saliente que protege la entrada de un edificio."
-        },
-        "9": {
-            "word": "buhardilla",
-            "definition": "Parte de una casa situada en la parte superior, bajo el tejado."
-        },
-        "10": {
-            "word": "carcajada",
-            "definition": "Risa ruidosa y descontrolada."
-        },
-        "11": {
-            "word": "invernadero",
-            "definition": "Recinto cubierto utilizado para el cultivo de plantas en condiciones controladas."
-        },
-        "12": {
-            "word": "esfinge",
-            "definition": "Criatura mitológica con cuerpo de león y cabeza humana."
-        },
-        "13": {
-            "word": "descenso",
-            "definition": "Acción de bajar o disminuir en altura o nivel."
-        },
-        "14": {
-            "word": "cabestrillo",
-            "definition": "Dispositivo que sostiene y sujeta el brazo lesionado."
-        },
-        "15": {
-            "word": "conjuro",
-            "definition": "Fórmula mágica utilizada en rituales o hechizos."
-        },
-        "16": {
-            "word": "abrego",
-            "definition": "Viento cálido y húmedo que sopla en el sur de España."
-        },
-        "17": {
-            "word": "cohete",
-            "definition": "Dispositivo que se lanza al espacio con propósitos científicos o militares."
-        },
-        "18": {
-            "word": "espantapajaros",
-            "definition": "Figura o dispositivo utilizado en los campos para espantar a los pájaros."
-        },
-        "19": {
-            "word": "filamento",
-            "definition": "Hilo delgado de material como el metal o el vidrio."
-        },
-        "20": {
-            "word": "gazapo",
-            "definition": "Error o equivocación en una conversación o escritura."
-        },
-        "21": {
-            "word": "hierbabuena",
-            "definition": "Planta aromática de hojas verdes utilizada en la cocina."
-        },
-        "22": {
-            "word": "jangada",
-            "definition": "Embarcación de madera utilizada en ríos y lagos."
-        },
-        "23": {
-            "word": "luminaria",
-            "definition": "Dispositivo de iluminación, como una lámpara o farol."
-        },
-        "24": {
-            "word": "mazamorra",
-            "definition": "Postre a base de maíz o arroz cocido con leche y azúcar."
-        },
-        "25": {
-            "word": "nube",
-            "definition": "Agregación visible de pequeñas gotas de agua o cristales de hielo en la atmósfera."
-        },
-        "26": {
-            "word": "ovulo",
-            "definition": "Célula sexual femenina que puede ser fertilizada por un espermatozoide."
-        },
-        "27": {
-            "word": "pañuelo",
-            "definition": "Trozo de tela utilizado para limpiar, abrigar o adornar."
-        },
-        "28": {
-            "word": "quetzal",
-            "definition": "Ave de plumaje colorido que habita en América Central."
-        },
-        "29": {
-            "word": "rincon",
-            "definition": "Ángulo formado por dos paredes que se cruzan."
-        },
-        "30": {
-            "word": "sardina",
-            "definition": "Pez de pequeño tamaño comúnmente utilizado en la alimentación."
-        },
-        "31": {
-            "word": "yelmo",
-            "definition": "Pieza de la armadura que protege la cabeza y el rostro."
-        }
+    "4": {
+      "word": "zafiro",
+      "definition": "Gema preciosa de color azul transparente."
     },
-    "may": {
-        "1": {
-            "word": "murmullo",
-            "definition": "Ruido suave y continuo producido por voces o sonidos apagados."
-        },
-        "2": {
-            "word": "lobrego",
-            "definition": "Que está en penumbra o en la oscuridad."
-        },
-        "3": {
-            "word": "fulgor",
-            "definition": "Brillo intenso y momentáneo."
-        },
-        "4": {
-            "word": "zafiro",
-            "definition": "Gema preciosa de color azul transparente."
-        },
-        "5": {
-            "word": "quimera",
-            "definition": "Ilusión o idea utópica irrealizable."
-        },
-        "6": {
-            "word": "penumbra",
-            "definition": "Semi-oscuridad que precede al anochecer o sigue al amanecer."
-        },
-        "7": {
-            "word": "crisalida",
-            "definition": "Estadio de transformación de algunos insectos, como la mariposa."
-        },
-        "8": {
-            "word": "enfasis",
-            "definition": "Acentuación o realce de una palabra o expresión en el discurso."
-        },
-        "9": {
-            "word": "candor",
-            "definition": "Sinceridad, franqueza y pureza de ánimo."
-        },
-        "10": {
-            "word": "algido",
-            "definition": "Punto culminante o de mayor intensidad en un proceso o situación."
-        },
-        "11": {
-            "word": "torrido",
-            "definition": "Que está extremadamente caliente o ardiente."
-        },
-        "12": {
-            "word": "macula",
-            "definition": "Mancha o imperfección en una superficie."
-        },
-        "13": {
-            "word": "fulgente",
-            "definition": "Que brilla intensamente."
-        },
-        "14": {
-            "word": "indigo",
-            "definition": "Color azul profundo."
-        },
-        "15": {
-            "word": "obice",
-            "definition": "Obstáculo o impedimento que dificulta una acción."
-        },
-        "16": {
-            "word": "pabilo",
-            "definition": "Mecha de una vela o lámpara."
-        },
-        "17": {
-            "word": "alveo",
-            "definition": "Cauce de un río o arroyo."
-        },
-        "18": {
-            "word": "livido",
-            "definition": "De color amoratado o pálido debido a la falta de circulación de la sangre."
-        },
-        "19": {
-            "word": "flebil",
-            "definition": "Débil o delicado, que carece de fuerza."
-        },
-        "20": {
-            "word": "animo",
-            "definition": "Espíritu, energía o disposición para hacer algo."
-        },
-        "21": {
-            "word": "lobulo",
-            "definition": "Parte saliente o prominente de un órgano o estructura."
-        },
-        "22": {
-            "word": "genesis",
-            "definition": "Origen o principio de algo."
-        },
-        "23": {
-            "word": "nacar",
-            "definition": "Sustancia brillante y colorida que forma la capa interna de algunas conchas."
-        },
-        "24": {
-            "word": "ambar",
-            "definition": "Resina fosilizada de color amarillo o marrón."
-        },
-        "25": {
-            "word": "tremulo",
-            "definition": "Que tiembla o se agita con ligereza."
-        },
-        "26": {
-            "word": "cantico",
-            "definition": "Canto religioso o poético."
-        },
-        "27": {
-            "word": "famulo",
-            "definition": "Servidor o criado que realiza tareas auxiliares."
-        },
-        "28": {
-            "word": "anfora",
-            "definition": "Recipiente antiguo con dos asas y cuello largo."
-        },
-        "29": {
-            "word": "fobico",
-            "definition": "Que tiene miedo o aversión patológica a algo."
-        },
-        "30": {
-            "word": "halito",
-            "definition": "Aliento o respiración."
-        },
-        "31": {
-            "word": "lobrego",
-            "definition": "Que está en penumbra o en la oscuridad."
-        }
+    "5": {
+      "word": "quimera",
+      "definition": "Ilusión o idea utópica irrealizable."
     },
-    "june": {
-        "1": {
-            "word": "cazador",
-            "definition": "Persona que se dedica a la caza de animales."
-        },
-        "2": {
-            "word": "relampago",
-            "definition": "Fenómeno luminoso producido por una descarga eléctrica en la atmósfera."
-        },
-        "3": {
-            "word": "murcirlago",
-            "definition": "Mamífero volador de hábitos nocturnos."
-        },
-        "4": {
-            "word": "zancudo",
-            "definition": "Insecto volador con patas largas, como el mosquito."
-        },
-        "5": {
-            "word": "selvatico",
-            "definition": "Perteneciente o relativo a la selva o al bosque espeso."
-        },
-        "6": {
-            "word": "estomago",
-            "definition": "Órgano del sistema digestivo donde se realiza la digestión de los alimentos."
-        },
-        "7": {
-            "word": "aullido",
-            "definition": "Grito largo y lastimero de algunos animales, como el lobo."
-        },
-        "8": {
-            "word": "marquesina",
-            "definition": "Techado saliente que protege la entrada de un edificio."
-        },
-        "9": {
-            "word": "buhardilla",
-            "definition": "Parte de una casa situada en la parte superior, bajo el tejado."
-        },
-        "10": {
-            "word": "carcajada",
-            "definition": "Risa ruidosa y descontrolada."
-        },
-        "11": {
-            "word": "invernadero",
-            "definition": "Recinto cubierto utilizado para el cultivo de plantas en condiciones controladas."
-        },
-        "12": {
-            "word": "esfinge",
-            "definition": "Criatura mitológica con cuerpo de león y cabeza humana."
-        },
-        "13": {
-            "word": "descenso",
-            "definition": "Acción de bajar o disminuir en altura o nivel."
-        },
-        "14": {
-            "word": "cabestrillo",
-            "definition": "Dispositivo que sostiene y sujeta el brazo lesionado."
-        },
-        "15": {
-            "word": "conjuro",
-            "definition": "Fórmula mágica utilizada en rituales o hechizos."
-        },
-        "16": {
-            "word": "abrego",
-            "definition": "Viento cálido y húmedo que sopla en el sur de España."
-        },
-        "17": {
-            "word": "cohete",
-            "definition": "Dispositivo que se lanza al espacio con propósitos científicos o militares."
-        },
-        "18": {
-            "word": "espantapajaros",
-            "definition": "Figura o dispositivo utilizado en los campos para espantar a los pájaros."
-        },
-        "19": {
-            "word": "filamento",
-            "definition": "Hilo delgado de material como el metal o el vidrio."
-        },
-        "20": {
-            "word": "gazapo",
-            "definition": "Error o equivocación en una conversación o escritura."
-        },
-        "21": {
-            "word": "hierbabuena",
-            "definition": "Planta aromática de hojas verdes utilizada en la cocina."
-        },
-        "22": {
-            "word": "jangada",
-            "definition": "Embarcación de madera utilizada en ríos y lagos."
-        },
-        "23": {
-            "word": "luminaria",
-            "definition": "Dispositivo de iluminación, como una lámpara o farol."
-        },
-        "24": {
-            "word": "mazamorra",
-            "definition": "Postre a base de maíz o arroz cocido con leche y azúcar."
-        },
-        "25": {
-            "word": "nube",
-            "definition": "Agregación visible de pequeñas gotas de agua o cristales de hielo en la atmósfera."
-        },
-        "26": {
-            "word": "ovulo",
-            "definition": "Célula sexual femenina que puede ser fertilizada por un espermatozoide."
-        },
-        "27": {
-            "word": "pañuelo",
-            "definition": "Trozo de tela utilizado para limpiar, abrigar o adornar."
-        },
-        "28": {
-            "word": "quetzal",
-            "definition": "Ave de plumaje colorido que habita en América Central."
-        },
-        "29": {
-            "word": "rincon",
-            "definition": "Ángulo formado por dos paredes que se cruzan."
-        },
-        "30": {
-            "word": "sardina",
-            "definition": "Pez de pequeño tamaño comúnmente utilizado en la alimentación."
-        },
-        "31": {
-            "word": "yelmo",
-            "definition": "Pieza de la armadura que protege la cabeza y el rostro."
-        }
+    "6": {
+      "word": "penumbra",
+      "definition": "Semi-oscuridad que precede al anochecer o sigue al amanecer."
     },
-    "july": {
-        "1": {
-            "word": "murmullo",
-            "definition": "Ruido suave y continuo producido por voces o sonidos apagados."
-        },
-        "2": {
-            "word": "lobrego",
-            "definition": "Que está en penumbra o en la oscuridad."
-        },
-        "3": {
-            "word": "fulgor",
-            "definition": "Brillo intenso y momentáneo."
-        },
-        "4": {
-            "word": "zafiro",
-            "definition": "Gema preciosa de color azul transparente."
-        },
-        "5": {
-            "word": "quimera",
-            "definition": "Ilusión o idea utópica irrealizable."
-        },
-        "6": {
-            "word": "penumbra",
-            "definition": "Semi-oscuridad que precede al anochecer o sigue al amanecer."
-        },
-        "7": {
-            "word": "crisalida",
-            "definition": "Estadio de transformación de algunos insectos, como la mariposa."
-        },
-        "8": {
-            "word": "enfasis",
-            "definition": "Acentuación o realce de una palabra o expresión en el discurso."
-        },
-        "9": {
-            "word": "candor",
-            "definition": "Sinceridad, franqueza y pureza de ánimo."
-        },
-        "10": {
-            "word": "algido",
-            "definition": "Punto culminante o de mayor intensidad en un proceso o situación."
-        },
-        "11": {
-            "word": "torrido",
-            "definition": "Que está extremadamente caliente o ardiente."
-        },
-        "12": {
-            "word": "macula",
-            "definition": "Mancha o imperfección en una superficie."
-        },
-        "13": {
-            "word": "fulgente",
-            "definition": "Que brilla intensamente."
-        },
-        "14": {
-            "word": "indigo",
-            "definition": "Color azul profundo."
-        },
-        "15": {
-            "word": "obice",
-            "definition": "Obstáculo o impedimento que dificulta una acción."
-        },
-        "16": {
-            "word": "pabilo",
-            "definition": "Mecha de una vela o lámpara."
-        },
-        "17": {
-            "word": "alveo",
-            "definition": "Cauce de un río o arroyo."
-        },
-        "18": {
-            "word": "livido",
-            "definition": "De color amoratado o pálido debido a la falta de circulación de la sangre."
-        },
-        "19": {
-            "word": "flebil",
-            "definition": "Débil o delicado, que carece de fuerza."
-        },
-        "20": {
-            "word": "animo",
-            "definition": "Espíritu, energía o disposición para hacer algo."
-        },
-        "21": {
-            "word": "lobulo",
-            "definition": "Parte saliente o prominente de un órgano o estructura."
-        },
-        "22": {
-            "word": "genesis",
-            "definition": "Origen o principio de algo."
-        },
-        "23": {
-            "word": "nacar",
-            "definition": "Sustancia brillante y colorida que forma la capa interna de algunas conchas."
-        },
-        "24": {
-            "word": "ambar",
-            "definition": "Resina fosilizada de color amarillo o marrón."
-        },
-        "25": {
-            "word": "tremulo",
-            "definition": "Que tiembla o se agita con ligereza."
-        },
-        "26": {
-            "word": "cantico",
-            "definition": "Canto religioso o poético."
-        },
-        "27": {
-            "word": "famulo",
-            "definition": "Servidor o criado que realiza tareas auxiliares."
-        },
-        "28": {
-            "word": "anfora",
-            "definition": "Recipiente antiguo con dos asas y cuello largo."
-        },
-        "29": {
-            "word": "fobico",
-            "definition": "Que tiene miedo o aversión patológica a algo."
-        },
-        "30": {
-            "word": "halito",
-            "definition": "Aliento o respiración."
-        },
-        "31": {
-            "word": "lobrego",
-            "definition": "Que está en penumbra o en la oscuridad."
-        }
+    "7": {
+      "word": "crisalida",
+      "definition": "Estadio de transformación de algunos insectos, como la mariposa."
     },
-    "august": {
-        "1": {
-            "word": "cazador",
-            "definition": "Persona que se dedica a la caza de animales."
-        },
-        "2": {
-            "word": "relampago",
-            "definition": "Fenómeno luminoso producido por una descarga eléctrica en la atmósfera."
-        },
-        "3": {
-            "word": "murcirlago",
-            "definition": "Mamífero volador de hábitos nocturnos."
-        },
-        "4": {
-            "word": "zancudo",
-            "definition": "Insecto volador con patas largas, como el mosquito."
-        },
-        "5": {
-            "word": "selvatico",
-            "definition": "Perteneciente o relativo a la selva o al bosque espeso."
-        },
-        "6": {
-            "word": "estomago",
-            "definition": "Órgano del sistema digestivo donde se realiza la digestión de los alimentos."
-        },
-        "7": {
-            "word": "aullido",
-            "definition": "Grito largo y lastimero de algunos animales, como el lobo."
-        },
-        "8": {
-            "word": "marquesina",
-            "definition": "Techado saliente que protege la entrada de un edificio."
-        },
-        "9": {
-            "word": "buhardilla",
-            "definition": "Parte de una casa situada en la parte superior, bajo el tejado."
-        },
-        "10": {
-            "word": "carcajada",
-            "definition": "Risa ruidosa y descontrolada."
-        },
-        "11": {
-            "word": "invernadero",
-            "definition": "Recinto cubierto utilizado para el cultivo de plantas en condiciones controladas."
-        },
-        "12": {
-            "word": "esfinge",
-            "definition": "Criatura mitológica con cuerpo de león y cabeza humana."
-        },
-        "13": {
-            "word": "descenso",
-            "definition": "Acción de bajar o disminuir en altura o nivel."
-        },
-        "14": {
-            "word": "cabestrillo",
-            "definition": "Dispositivo que sostiene y sujeta el brazo lesionado."
-        },
-        "15": {
-            "word": "conjuro",
-            "definition": "Fórmula mágica utilizada en rituales o hechizos."
-        },
-        "16": {
-            "word": "abrego",
-            "definition": "Viento cálido y húmedo que sopla en el sur de España."
-        },
-        "17": {
-            "word": "cohete",
-            "definition": "Dispositivo que se lanza al espacio con propósitos científicos o militares."
-        },
-        "18": {
-            "word": "espantapajaros",
-            "definition": "Figura o dispositivo utilizado en los campos para espantar a los pájaros."
-        },
-        "19": {
-            "word": "filamento",
-            "definition": "Hilo delgado de material como el metal o el vidrio."
-        },
-        "20": {
-            "word": "gazapo",
-            "definition": "Error o equivocación en una conversación o escritura."
-        },
-        "21": {
-            "word": "hierbabuena",
-            "definition": "Planta aromática de hojas verdes utilizada en la cocina."
-        },
-        "22": {
-            "word": "jangada",
-            "definition": "Embarcación de madera utilizada en ríos y lagos."
-        },
-        "23": {
-            "word": "luminaria",
-            "definition": "Dispositivo de iluminación, como una lámpara o farol."
-        },
-        "24": {
-            "word": "mazamorra",
-            "definition": "Postre a base de maíz o arroz cocido con leche y azúcar."
-        },
-        "25": {
-            "word": "nube",
-            "definition": "Agregación visible de pequeñas gotas de agua o cristales de hielo en la atmósfera."
-        },
-        "26": {
-            "word": "ovulo",
-            "definition": "Célula sexual femenina que puede ser fertilizada por un espermatozoide."
-        },
-        "27": {
-            "word": "pañuelo",
-            "definition": "Trozo de tela utilizado para limpiar, abrigar o adornar."
-        },
-        "28": {
-            "word": "quetzal",
-            "definition": "Ave de plumaje colorido que habita en América Central."
-        },
-        "29": {
-            "word": "rincon",
-            "definition": "Ángulo formado por dos paredes que se cruzan."
-        },
-        "30": {
-            "word": "sardina",
-            "definition": "Pez de pequeño tamaño comúnmente utilizado en la alimentación."
-        },
-        "31": {
-            "word": "yelmo",
-            "definition": "Pieza de la armadura que protege la cabeza y el rostro."
-        }
+    "8": {
+      "word": "enfasis",
+      "definition": "Acentuación o realce de una palabra o expresión en el discurso."
     },
-    "september": {
-        "1": {
-            "word": "murmullo",
-            "definition": "Ruido suave y continuo producido por voces o sonidos apagados."
-        },
-        "2": {
-            "word": "lobrego",
-            "definition": "Que está en penumbra o en la oscuridad."
-        },
-        "3": {
-            "word": "fulgor",
-            "definition": "Brillo intenso y momentáneo."
-        },
-        "4": {
-            "word": "zafiro",
-            "definition": "Gema preciosa de color azul transparente."
-        },
-        "5": {
-            "word": "quimera",
-            "definition": "Ilusión o idea utópica irrealizable."
-        },
-        "6": {
-            "word": "penumbra",
-            "definition": "Semi-oscuridad que precede al anochecer o sigue al amanecer."
-        },
-        "7": {
-            "word": "crisalida",
-            "definition": "Estadio de transformación de algunos insectos, como la mariposa."
-        },
-        "8": {
-            "word": "enfasis",
-            "definition": "Acentuación o realce de una palabra o expresión en el discurso."
-        },
-        "9": {
-            "word": "candor",
-            "definition": "Sinceridad, franqueza y pureza de ánimo."
-        },
-        "10": {
-            "word": "algido",
-            "definition": "Punto culminante o de mayor intensidad en un proceso o situación."
-        },
-        "11": {
-            "word": "torrido",
-            "definition": "Que está extremadamente caliente o ardiente."
-        },
-        "12": {
-            "word": "macula",
-            "definition": "Mancha o imperfección en una superficie."
-        },
-        "13": {
-            "word": "fulgente",
-            "definition": "Que brilla intensamente."
-        },
-        "14": {
-            "word": "indigo",
-            "definition": "Color azul profundo."
-        },
-        "15": {
-            "word": "obice",
-            "definition": "Obstáculo o impedimento que dificulta una acción."
-        },
-        "16": {
-            "word": "pabilo",
-            "definition": "Mecha de una vela o lámpara."
-        },
-        "17": {
-            "word": "alveo",
-            "definition": "Cauce de un río o arroyo."
-        },
-        "18": {
-            "word": "livido",
-            "definition": "De color amoratado o pálido debido a la falta de circulación de la sangre."
-        },
-        "19": {
-            "word": "flebil",
-            "definition": "Débil o delicado, que carece de fuerza."
-        },
-        "20": {
-            "word": "animo",
-            "definition": "Espíritu, energía o disposición para hacer algo."
-        },
-        "21": {
-            "word": "lobulo",
-            "definition": "Parte saliente o prominente de un órgano o estructura."
-        },
-        "22": {
-            "word": "genesis",
-            "definition": "Origen o principio de algo."
-        },
-        "23": {
-            "word": "nacar",
-            "definition": "Sustancia brillante y colorida que forma la capa interna de algunas conchas."
-        },
-        "24": {
-            "word": "ambar",
-            "definition": "Resina fosilizada de color amarillo o marrón."
-        },
-        "25": {
-            "word": "tremulo",
-            "definition": "Que tiembla o se agita con ligereza."
-        },
-        "26": {
-            "word": "cantico",
-            "definition": "Canto religioso o poético."
-        },
-        "27": {
-            "word": "famulo",
-            "definition": "Servidor o criado que realiza tareas auxiliares."
-        },
-        "28": {
-            "word": "anfora",
-            "definition": "Recipiente antiguo con dos asas y cuello largo."
-        },
-        "29": {
-            "word": "fobico",
-            "definition": "Que tiene miedo o aversión patológica a algo."
-        },
-        "30": {
-            "word": "halito",
-            "definition": "Aliento o respiración."
-        },
-        "31": {
-            "word": "lobrego",
-            "definition": "Que está en penumbra o en la oscuridad."
-        }
+    "9": {
+      "word": "candor",
+      "definition": "Sinceridad, franqueza y pureza de ánimo."
     },
-    "october": {
-        "1": {
-            "word": "cazador",
-            "definition": "Persona que se dedica a la caza de animales."
-        },
-        "2": {
-            "word": "relampago",
-            "definition": "Fenómeno luminoso producido por una descarga eléctrica en la atmósfera."
-        },
-        "3": {
-            "word": "murcirlago",
-            "definition": "Mamífero volador de hábitos nocturnos."
-        },
-        "4": {
-            "word": "zancudo",
-            "definition": "Insecto volador con patas largas, como el mosquito."
-        },
-        "5": {
-            "word": "selvatico",
-            "definition": "Perteneciente o relativo a la selva o al bosque espeso."
-        },
-        "6": {
-            "word": "estomago",
-            "definition": "Órgano del sistema digestivo donde se realiza la digestión de los alimentos."
-        },
-        "7": {
-            "word": "aullido",
-            "definition": "Grito largo y lastimero de algunos animales, como el lobo."
-        },
-        "8": {
-            "word": "marquesina",
-            "definition": "Techado saliente que protege la entrada de un edificio."
-        },
-        "9": {
-            "word": "buhardilla",
-            "definition": "Parte de una casa situada en la parte superior, bajo el tejado."
-        },
-        "10": {
-            "word": "carcajada",
-            "definition": "Risa ruidosa y descontrolada."
-        },
-        "11": {
-            "word": "invernadero",
-            "definition": "Recinto cubierto utilizado para el cultivo de plantas en condiciones controladas."
-        },
-        "12": {
-            "word": "esfinge",
-            "definition": "Criatura mitológica con cuerpo de león y cabeza humana."
-        },
-        "13": {
-            "word": "descenso",
-            "definition": "Acción de bajar o disminuir en altura o nivel."
-        },
-        "14": {
-            "word": "cabestrillo",
-            "definition": "Dispositivo que sostiene y sujeta el brazo lesionado."
-        },
-        "15": {
-            "word": "conjuro",
-            "definition": "Fórmula mágica utilizada en rituales o hechizos."
-        },
-        "16": {
-            "word": "abrego",
-            "definition": "Viento cálido y húmedo que sopla en el sur de España."
-        },
-        "17": {
-            "word": "cohete",
-            "definition": "Dispositivo que se lanza al espacio con propósitos científicos o militares."
-        },
-        "18": {
-            "word": "espantapajaros",
-            "definition": "Figura o dispositivo utilizado en los campos para espantar a los pájaros."
-        },
-        "19": {
-            "word": "filamento",
-            "definition": "Hilo delgado de material como el metal o el vidrio."
-        },
-        "20": {
-            "word": "gazapo",
-            "definition": "Error o equivocación en una conversación o escritura."
-        },
-        "21": {
-            "word": "hierbabuena",
-            "definition": "Planta aromática de hojas verdes utilizada en la cocina."
-        },
-        "22": {
-            "word": "jangada",
-            "definition": "Embarcación de madera utilizada en ríos y lagos."
-        },
-        "23": {
-            "word": "luminaria",
-            "definition": "Dispositivo de iluminación, como una lámpara o farol."
-        },
-        "24": {
-            "word": "mazamorra",
-            "definition": "Postre a base de maíz o arroz cocido con leche y azúcar."
-        },
-        "25": {
-            "word": "nube",
-            "definition": "Agregación visible de pequeñas gotas de agua o cristales de hielo en la atmósfera."
-        },
-        "26": {
-            "word": "ovulo",
-            "definition": "Célula sexual femenina que puede ser fertilizada por un espermatozoide."
-        },
-        "27": {
-            "word": "pañuelo",
-            "definition": "Trozo de tela utilizado para limpiar, abrigar o adornar."
-        },
-        "28": {
-            "word": "quetzal",
-            "definition": "Ave de plumaje colorido que habita en América Central."
-        },
-        "29": {
-            "word": "rincon",
-            "definition": "Ángulo formado por dos paredes que se cruzan."
-        },
-        "30": {
-            "word": "sardina",
-            "definition": "Pez de pequeño tamaño comúnmente utilizado en la alimentación."
-        },
-        "31": {
-            "word": "yelmo",
-            "definition": "Pieza de la armadura que protege la cabeza y el rostro."
-        }
+    "10": {
+      "word": "algido",
+      "definition": "Punto culminante o de mayor intensidad en un proceso o situación."
     },
-    "november": {
-        "1": {
-            "word": "murmullo",
-            "definition": "Ruido suave y continuo producido por voces o sonidos apagados."
-        },
-        "2": {
-            "word": "lobrego",
-            "definition": "Que está en penumbra o en la oscuridad."
-        },
-        "3": {
-            "word": "fulgor",
-            "definition": "Brillo intenso y momentáneo."
-        },
-        "4": {
-            "word": "zafiro",
-            "definition": "Gema preciosa de color azul transparente."
-        },
-        "5": {
-            "word": "quimera",
-            "definition": "Ilusión o idea utópica irrealizable."
-        },
-        "6": {
-            "word": "penumbra",
-            "definition": "Semi-oscuridad que precede al anochecer o sigue al amanecer."
-        },
-        "7": {
-            "word": "crisalida",
-            "definition": "Estadio de transformación de algunos insectos, como la mariposa."
-        },
-        "8": {
-            "word": "enfasis",
-            "definition": "Acentuación o realce de una palabra o expresión en el discurso."
-        },
-        "9": {
-            "word": "candor",
-            "definition": "Sinceridad, franqueza y pureza de ánimo."
-        },
-        "10": {
-            "word": "algido",
-            "definition": "Punto culminante o de mayor intensidad en un proceso o situación."
-        },
-        "11": {
-            "word": "torrido",
-            "definition": "Que está extremadamente caliente o ardiente."
-        },
-        "12": {
-            "word": "macula",
-            "definition": "Mancha o imperfección en una superficie."
-        },
-        "13": {
-            "word": "fulgente",
-            "definition": "Que brilla intensamente."
-        },
-        "14": {
-            "word": "indigo",
-            "definition": "Color azul profundo."
-        },
-        "15": {
-            "word": "obice",
-            "definition": "Obstáculo o impedimento que dificulta una acción."
-        },
-        "16": {
-            "word": "pabilo",
-            "definition": "Mecha de una vela o lámpara."
-        },
-        "17": {
-            "word": "alveo",
-            "definition": "Cauce de un río o arroyo."
-        },
-        "18": {
-            "word": "livido",
-            "definition": "De color amoratado o pálido debido a la falta de circulación de la sangre."
-        },
-        "19": {
-            "word": "flebil",
-            "definition": "Débil o delicado, que carece de fuerza."
-        },
-        "20": {
-            "word": "animo",
-            "definition": "Espíritu, energía o disposición para hacer algo."
-        },
-        "21": {
-            "word": "lobulo",
-            "definition": "Parte saliente o prominente de un órgano o estructura."
-        },
-        "22": {
-            "word": "genesis",
-            "definition": "Origen o principio de algo."
-        },
-        "23": {
-            "word": "nacar",
-            "definition": "Sustancia brillante y colorida que forma la capa interna de algunas conchas."
-        },
-        "24": {
-            "word": "ambar",
-            "definition": "Resina fosilizada de color amarillo o marrón."
-        },
-        "25": {
-            "word": "tremulo",
-            "definition": "Que tiembla o se agita con ligereza."
-        },
-        "26": {
-            "word": "cantico",
-            "definition": "Canto religioso o poético."
-        },
-        "27": {
-            "word": "famulo",
-            "definition": "Servidor o criado que realiza tareas auxiliares."
-        },
-        "28": {
-            "word": "anfora",
-            "definition": "Recipiente antiguo con dos asas y cuello largo."
-        },
-        "29": {
-            "word": "fobico",
-            "definition": "Que tiene miedo o aversión patológica a algo."
-        },
-        "30": {
-            "word": "halito",
-            "definition": "Aliento o respiración."
-        },
-        "31": {
-            "word": "lobrego",
-            "definition": "Que está en penumbra o en la oscuridad."
-        }
+    "11": {
+      "word": "torrido",
+      "definition": "Que está extremadamente caliente o ardiente."
     },
-    "december": {
-        "1": {
-            "word": "cazador",
-            "definition": "Persona que se dedica a la caza de animales."
-        },
-        "2": {
-            "word": "relampago",
-            "definition": "Fenómeno luminoso producido por una descarga eléctrica en la atmósfera."
-        },
-        "3": {
-            "word": "murcirlago",
-            "definition": "Mamífero volador de hábitos nocturnos."
-        },
-        "4": {
-            "word": "zancudo",
-            "definition": "Insecto volador con patas largas, como el mosquito."
-        },
-        "5": {
-            "word": "selvatico",
-            "definition": "Perteneciente o relativo a la selva o al bosque espeso."
-        },
-        "6": {
-            "word": "estomago",
-            "definition": "Órgano del sistema digestivo donde se realiza la digestión de los alimentos."
-        },
-        "7": {
-            "word": "aullido",
-            "definition": "Grito largo y lastimero de algunos animales, como el lobo."
-        },
-        "8": {
-            "word": "marquesina",
-            "definition": "Techado saliente que protege la entrada de un edificio."
-        },
-        "9": {
-            "word": "buhardilla",
-            "definition": "Parte de una casa situada en la parte superior, bajo el tejado."
-        },
-        "10": {
-            "word": "carcajada",
-            "definition": "Risa ruidosa y descontrolada."
-        },
-        "11": {
-            "word": "invernadero",
-            "definition": "Recinto cubierto utilizado para el cultivo de plantas en condiciones controladas."
-        },
-        "12": {
-            "word": "esfinge",
-            "definition": "Criatura mitológica con cuerpo de león y cabeza humana."
-        },
-        "13": {
-            "word": "descenso",
-            "definition": "Acción de bajar o disminuir en altura o nivel."
-        },
-        "14": {
-            "word": "cabestrillo",
-            "definition": "Dispositivo que sostiene y sujeta el brazo lesionado."
-        },
-        "15": {
-            "word": "conjuro",
-            "definition": "Fórmula mágica utilizada en rituales o hechizos."
-        },
-        "16": {
-            "word": "abrego",
-            "definition": "Viento cálido y húmedo que sopla en el sur de España."
-        },
-        "17": {
-            "word": "cohete",
-            "definition": "Dispositivo que se lanza al espacio con propósitos científicos o militares."
-        },
-        "18": {
-            "word": "espantapajaros",
-            "definition": "Figura o dispositivo utilizado en los campos para espantar a los pájaros."
-        },
-        "19": {
-            "word": "filamento",
-            "definition": "Hilo delgado de material como el metal o el vidrio."
-        },
-        "20": {
-            "word": "gazapo",
-            "definition": "Error o equivocación en una conversación o escritura."
-        },
-        "21": {
-            "word": "hierbabuena",
-            "definition": "Planta aromática de hojas verdes utilizada en la cocina."
-        },
-        "22": {
-            "word": "jangada",
-            "definition": "Embarcación de madera utilizada en ríos y lagos."
-        },
-        "23": {
-            "word": "luminaria",
-            "definition": "Dispositivo de iluminación, como una lámpara o farol."
-        },
-        "24": {
-            "word": "mazamorra",
-            "definition": "Postre a base de maíz o arroz cocido con leche y azúcar."
-        },
-        "25": {
-            "word": "nube",
-            "definition": "Agregación visible de pequeñas gotas de agua o cristales de hielo en la atmósfera."
-        },
-        "26": {
-            "word": "ovulo",
-            "definition": "Célula sexual femenina que puede ser fertilizada por un espermatozoide."
-        },
-        "27": {
-            "word": "pañuelo",
-            "definition": "Trozo de tela utilizado para limpiar, abrigar o adornar."
-        },
-        "28": {
-            "word": "quetzal",
-            "definition": "Ave de plumaje colorido que habita en América Central."
-        },
-        "29": {
-            "word": "rincon",
-            "definition": "Ángulo formado por dos paredes que se cruzan."
-        },
-        "30": {
-            "word": "sardina",
-            "definition": "Pez de pequeño tamaño comúnmente utilizado en la alimentación."
-        },
-        "31": {
-            "word": "yelmo",
-            "definition": "Pieza de la armadura que protege la cabeza y el rostro."
-        }
+    "12": {
+      "word": "macula",
+      "definition": "Mancha o imperfección en una superficie."
+    },
+    "13": {
+      "word": "fulgente",
+      "definition": "Que brilla intensamente."
+    },
+    "14": {
+      "word": "indigo",
+      "definition": "Color azul profundo."
+    },
+    "15": {
+      "word": "obice",
+      "definition": "Obstáculo o impedimento que dificulta una acción."
+    },
+    "16": {
+      "word": "pabilo",
+      "definition": "Mecha de una vela o lámpara."
+    },
+    "17": {
+      "word": "alveo",
+      "definition": "Cauce de un río o arroyo."
+    },
+    "18": {
+      "word": "livido",
+      "definition": "De color amoratado o pálido debido a la falta de circulación de la sangre."
+    },
+    "19": {
+      "word": "flebil",
+      "definition": "Débil o delicado, que carece de fuerza."
+    },
+    "20": {
+      "word": "animo",
+      "definition": "Espíritu, energía o disposición para hacer algo."
+    },
+    "21": {
+      "word": "lobulo",
+      "definition": "Parte saliente o prominente de un órgano o estructura."
+    },
+    "22": {
+      "word": "genesis",
+      "definition": "Origen o principio de algo."
+    },
+    "23": {
+      "word": "nacar",
+      "definition": "Sustancia brillante y colorida que forma la capa interna de algunas conchas."
+    },
+    "24": {
+      "word": "ambar",
+      "definition": "Resina fosilizada de color amarillo o marrón."
+    },
+    "25": {
+      "word": "tremulo",
+      "definition": "Que tiembla o se agita con ligereza."
+    },
+    "26": {
+      "word": "cantico",
+      "definition": "Canto religioso o poético."
+    },
+    "27": {
+      "word": "famulo",
+      "definition": "Servidor o criado que realiza tareas auxiliares."
+    },
+    "28": {
+      "word": "anfora",
+      "definition": "Recipiente antiguo con dos asas y cuello largo."
+    },
+    "29": {
+      "word": "fobico",
+      "definition": "Que tiene miedo o aversión patológica a algo."
+    },
+    "30": {
+      "word": "halito",
+      "definition": "Aliento o respiración."
+    },
+    "31": {
+      "word": "lobrego",
+      "definition": "Que está en penumbra o en la oscuridad."
     }
+  },
+  "february": {
+    "1": {
+      "word": "cazador",
+      "definition": "Persona que se dedica a la caza de animales."
+    },
+    "2": {
+      "word": "relampago",
+      "definition": "Fenómeno luminoso producido por una descarga eléctrica en la atmósfera."
+    },
+    "3": {
+      "word": "murcirlago",
+      "definition": "Mamífero volador de hábitos nocturnos."
+    },
+    "4": {
+      "word": "zancudo",
+      "definition": "Insecto volador con patas largas, como el mosquito."
+    },
+    "5": {
+      "word": "selvatico",
+      "definition": "Perteneciente o relativo a la selva o al bosque espeso."
+    },
+    "6": {
+      "word": "estomago",
+      "definition": "Órgano del sistema digestivo donde se realiza la digestión de los alimentos."
+    },
+    "7": {
+      "word": "aullido",
+      "definition": "Grito largo y lastimero de algunos animales, como el lobo."
+    },
+    "8": {
+      "word": "marquesina",
+      "definition": "Techado saliente que protege la entrada de un edificio."
+    },
+    "9": {
+      "word": "buhardilla",
+      "definition": "Parte de una casa situada en la parte superior, bajo el tejado."
+    },
+    "10": {
+      "word": "carcajada",
+      "definition": "Risa ruidosa y descontrolada."
+    },
+    "11": {
+      "word": "invernadero",
+      "definition": "Recinto cubierto utilizado para el cultivo de plantas en condiciones controladas."
+    },
+    "12": {
+      "word": "esfinge",
+      "definition": "Criatura mitológica con cuerpo de león y cabeza humana."
+    },
+    "13": {
+      "word": "descenso",
+      "definition": "Acción de bajar o disminuir en altura o nivel."
+    },
+    "14": {
+      "word": "cabestrillo",
+      "definition": "Dispositivo que sostiene y sujeta el brazo lesionado."
+    },
+    "15": {
+      "word": "conjuro",
+      "definition": "Fórmula mágica utilizada en rituales o hechizos."
+    },
+    "16": {
+      "word": "abrego",
+      "definition": "Viento cálido y húmedo que sopla en el sur de España."
+    },
+    "17": {
+      "word": "cohete",
+      "definition": "Dispositivo que se lanza al espacio con propósitos científicos o militares."
+    },
+    "18": {
+      "word": "espantapajaros",
+      "definition": "Figura o dispositivo utilizado en los campos para espantar a los pájaros."
+    },
+    "19": {
+      "word": "filamento",
+      "definition": "Hilo delgado de material como el metal o el vidrio."
+    },
+    "20": {
+      "word": "gazapo",
+      "definition": "Error o equivocación en una conversación o escritura."
+    },
+    "21": {
+      "word": "hierbabuena",
+      "definition": "Planta aromática de hojas verdes utilizada en la cocina."
+    },
+    "22": {
+      "word": "jangada",
+      "definition": "Embarcación de madera utilizada en ríos y lagos."
+    },
+    "23": {
+      "word": "luminaria",
+      "definition": "Dispositivo de iluminación, como una lámpara o farol."
+    },
+    "24": {
+      "word": "mazamorra",
+      "definition": "Postre a base de maíz o arroz cocido con leche y azúcar."
+    },
+    "25": {
+      "word": "nube",
+      "definition": "Agregación visible de pequeñas gotas de agua o cristales de hielo en la atmósfera."
+    },
+    "26": {
+      "word": "ovulo",
+      "definition": "Célula sexual femenina que puede ser fertilizada por un espermatozoide."
+    },
+    "27": {
+      "word": "pañuelo",
+      "definition": "Trozo de tela utilizado para limpiar, abrigar o adornar."
+    },
+    "28": {
+      "word": "quetzal",
+      "definition": "Ave de plumaje colorido que habita en América Central."
+    },
+    "29": {
+      "word": "rincon",
+      "definition": "Ángulo formado por dos paredes que se cruzan."
+    },
+    "30": {
+      "word": "sardina",
+      "definition": "Pez de pequeño tamaño comúnmente utilizado en la alimentación."
+    },
+    "31": {
+      "word": "yelmo",
+      "definition": "Pieza de la armadura que protege la cabeza y el rostro."
+    }
+  },
+  "march": {
+    "1": {
+      "word": "murmullo",
+      "definition": "Ruido suave y continuo producido por voces o sonidos apagados."
+    },
+    "2": {
+      "word": "lobrego",
+      "definition": "Que está en penumbra o en la oscuridad."
+    },
+    "3": {
+      "word": "fulgor",
+      "definition": "Brillo intenso y momentáneo."
+    },
+    "4": {
+      "word": "zafiro",
+      "definition": "Gema preciosa de color azul transparente."
+    },
+    "5": {
+      "word": "quimera",
+      "definition": "Ilusión o idea utópica irrealizable."
+    },
+    "6": {
+      "word": "penumbra",
+      "definition": "Semi-oscuridad que precede al anochecer o sigue al amanecer."
+    },
+    "7": {
+      "word": "crisalida",
+      "definition": "Estadio de transformación de algunos insectos, como la mariposa."
+    },
+    "8": {
+      "word": "enfasis",
+      "definition": "Acentuación o realce de una palabra o expresión en el discurso."
+    },
+    "9": {
+      "word": "candor",
+      "definition": "Sinceridad, franqueza y pureza de ánimo."
+    },
+    "10": {
+      "word": "algido",
+      "definition": "Punto culminante o de mayor intensidad en un proceso o situación."
+    },
+    "11": {
+      "word": "torrido",
+      "definition": "Que está extremadamente caliente o ardiente."
+    },
+    "12": {
+      "word": "macula",
+      "definition": "Mancha o imperfección en una superficie."
+    },
+    "13": {
+      "word": "fulgente",
+      "definition": "Que brilla intensamente."
+    },
+    "14": {
+      "word": "indigo",
+      "definition": "Color azul profundo."
+    },
+    "15": {
+      "word": "obice",
+      "definition": "Obstáculo o impedimento que dificulta una acción."
+    },
+    "16": {
+      "word": "pabilo",
+      "definition": "Mecha de una vela o lámpara."
+    },
+    "17": {
+      "word": "alveo",
+      "definition": "Cauce de un río o arroyo."
+    },
+    "18": {
+      "word": "livido",
+      "definition": "De color amoratado o pálido debido a la falta de circulación de la sangre."
+    },
+    "19": {
+      "word": "flebil",
+      "definition": "Débil o delicado, que carece de fuerza."
+    },
+    "20": {
+      "word": "animo",
+      "definition": "Espíritu, energía o disposición para hacer algo."
+    },
+    "21": {
+      "word": "lobulo",
+      "definition": "Parte saliente o prominente de un órgano o estructura."
+    },
+    "22": {
+      "word": "genesis",
+      "definition": "Origen o principio de algo."
+    },
+    "23": {
+      "word": "nacar",
+      "definition": "Sustancia brillante y colorida que forma la capa interna de algunas conchas."
+    },
+    "24": {
+      "word": "ambar",
+      "definition": "Resina fosilizada de color amarillo o marrón."
+    },
+    "25": {
+      "word": "tremulo",
+      "definition": "Que tiembla o se agita con ligereza."
+    },
+    "26": {
+      "word": "cantico",
+      "definition": "Canto religioso o poético."
+    },
+    "27": {
+      "word": "famulo",
+      "definition": "Servidor o criado que realiza tareas auxiliares."
+    },
+    "28": {
+      "word": "anfora",
+      "definition": "Recipiente antiguo con dos asas y cuello largo."
+    },
+    "29": {
+      "word": "fobico",
+      "definition": "Que tiene miedo o aversión patológica a algo."
+    },
+    "30": {
+      "word": "halito",
+      "definition": "Aliento o respiración."
+    },
+    "31": {
+      "word": "lobrego",
+      "definition": "Que está en penumbra o en la oscuridad."
+    }
+  },
+  "april": {
+    "1": {
+      "word": "cazador",
+      "definition": "Persona que se dedica a la caza de animales."
+    },
+    "2": {
+      "word": "relampago",
+      "definition": "Fenómeno luminoso producido por una descarga eléctrica en la atmósfera."
+    },
+    "3": {
+      "word": "murcirlago",
+      "definition": "Mamífero volador de hábitos nocturnos."
+    },
+    "4": {
+      "word": "zancudo",
+      "definition": "Insecto volador con patas largas, como el mosquito."
+    },
+    "5": {
+      "word": "selvatico",
+      "definition": "Perteneciente o relativo a la selva o al bosque espeso."
+    },
+    "6": {
+      "word": "estomago",
+      "definition": "Órgano del sistema digestivo donde se realiza la digestión de los alimentos."
+    },
+    "7": {
+      "word": "aullido",
+      "definition": "Grito largo y lastimero de algunos animales, como el lobo."
+    },
+    "8": {
+      "word": "marquesina",
+      "definition": "Techado saliente que protege la entrada de un edificio."
+    },
+    "9": {
+      "word": "buhardilla",
+      "definition": "Parte de una casa situada en la parte superior, bajo el tejado."
+    },
+    "10": {
+      "word": "carcajada",
+      "definition": "Risa ruidosa y descontrolada."
+    },
+    "11": {
+      "word": "invernadero",
+      "definition": "Recinto cubierto utilizado para el cultivo de plantas en condiciones controladas."
+    },
+    "12": {
+      "word": "esfinge",
+      "definition": "Criatura mitológica con cuerpo de león y cabeza humana."
+    },
+    "13": {
+      "word": "descenso",
+      "definition": "Acción de bajar o disminuir en altura o nivel."
+    },
+    "14": {
+      "word": "cabestrillo",
+      "definition": "Dispositivo que sostiene y sujeta el brazo lesionado."
+    },
+    "15": {
+      "word": "conjuro",
+      "definition": "Fórmula mágica utilizada en rituales o hechizos."
+    },
+    "16": {
+      "word": "abrego",
+      "definition": "Viento cálido y húmedo que sopla en el sur de España."
+    },
+    "17": {
+      "word": "cohete",
+      "definition": "Dispositivo que se lanza al espacio con propósitos científicos o militares."
+    },
+    "18": {
+      "word": "espantapajaros",
+      "definition": "Figura o dispositivo utilizado en los campos para espantar a los pájaros."
+    },
+    "19": {
+      "word": "filamento",
+      "definition": "Hilo delgado de material como el metal o el vidrio."
+    },
+    "20": {
+      "word": "gazapo",
+      "definition": "Error o equivocación en una conversación o escritura."
+    },
+    "21": {
+      "word": "hierbabuena",
+      "definition": "Planta aromática de hojas verdes utilizada en la cocina."
+    },
+    "22": {
+      "word": "jangada",
+      "definition": "Embarcación de madera utilizada en ríos y lagos."
+    },
+    "23": {
+      "word": "luminaria",
+      "definition": "Dispositivo de iluminación, como una lámpara o farol."
+    },
+    "24": {
+      "word": "mazamorra",
+      "definition": "Postre a base de maíz o arroz cocido con leche y azúcar."
+    },
+    "25": {
+      "word": "nube",
+      "definition": "Agregación visible de pequeñas gotas de agua o cristales de hielo en la atmósfera."
+    },
+    "26": {
+      "word": "ovulo",
+      "definition": "Célula sexual femenina que puede ser fertilizada por un espermatozoide."
+    },
+    "27": {
+      "word": "pañuelo",
+      "definition": "Trozo de tela utilizado para limpiar, abrigar o adornar."
+    },
+    "28": {
+      "word": "quetzal",
+      "definition": "Ave de plumaje colorido que habita en América Central."
+    },
+    "29": {
+      "word": "rincon",
+      "definition": "Ángulo formado por dos paredes que se cruzan."
+    },
+    "30": {
+      "word": "sardina",
+      "definition": "Pez de pequeño tamaño comúnmente utilizado en la alimentación."
+    },
+    "31": {
+      "word": "yelmo",
+      "definition": "Pieza de la armadura que protege la cabeza y el rostro."
+    }
+  },
+  "may": {
+    "1": {
+      "word": "murmullo",
+      "definition": "Ruido suave y continuo producido por voces o sonidos apagados."
+    },
+    "2": {
+      "word": "lobrego",
+      "definition": "Que está en penumbra o en la oscuridad."
+    },
+    "3": {
+      "word": "fulgor",
+      "definition": "Brillo intenso y momentáneo."
+    },
+    "4": {
+      "word": "zafiro",
+      "definition": "Gema preciosa de color azul transparente."
+    },
+    "5": {
+      "word": "quimera",
+      "definition": "Ilusión o idea utópica irrealizable."
+    },
+    "6": {
+      "word": "penumbra",
+      "definition": "Semi-oscuridad que precede al anochecer o sigue al amanecer."
+    },
+    "7": {
+      "word": "crisalida",
+      "definition": "Estadio de transformación de algunos insectos, como la mariposa."
+    },
+    "8": {
+      "word": "enfasis",
+      "definition": "Acentuación o realce de una palabra o expresión en el discurso."
+    },
+    "9": {
+      "word": "candor",
+      "definition": "Sinceridad, franqueza y pureza de ánimo."
+    },
+    "10": {
+      "word": "algido",
+      "definition": "Punto culminante o de mayor intensidad en un proceso o situación."
+    },
+    "11": {
+      "word": "torrido",
+      "definition": "Que está extremadamente caliente o ardiente."
+    },
+    "12": {
+      "word": "macula",
+      "definition": "Mancha o imperfección en una superficie."
+    },
+    "13": {
+      "word": "fulgente",
+      "definition": "Que brilla intensamente."
+    },
+    "14": {
+      "word": "indigo",
+      "definition": "Color azul profundo."
+    },
+    "15": {
+      "word": "obice",
+      "definition": "Obstáculo o impedimento que dificulta una acción."
+    },
+    "16": {
+      "word": "pabilo",
+      "definition": "Mecha de una vela o lámpara."
+    },
+    "17": {
+      "word": "alveo",
+      "definition": "Cauce de un río o arroyo."
+    },
+    "18": {
+      "word": "livido",
+      "definition": "De color amoratado o pálido debido a la falta de circulación de la sangre."
+    },
+    "19": {
+      "word": "flebil",
+      "definition": "Débil o delicado, que carece de fuerza."
+    },
+    "20": {
+      "word": "animo",
+      "definition": "Espíritu, energía o disposición para hacer algo."
+    },
+    "21": {
+      "word": "lobulo",
+      "definition": "Parte saliente o prominente de un órgano o estructura."
+    },
+    "22": {
+      "word": "genesis",
+      "definition": "Origen o principio de algo."
+    },
+    "23": {
+      "word": "nacar",
+      "definition": "Sustancia brillante y colorida que forma la capa interna de algunas conchas."
+    },
+    "24": {
+      "word": "ambar",
+      "definition": "Resina fosilizada de color amarillo o marrón."
+    },
+    "25": {
+      "word": "tremulo",
+      "definition": "Que tiembla o se agita con ligereza."
+    },
+    "26": {
+      "word": "cantico",
+      "definition": "Canto religioso o poético."
+    },
+    "27": {
+      "word": "famulo",
+      "definition": "Servidor o criado que realiza tareas auxiliares."
+    },
+    "28": {
+      "word": "anfora",
+      "definition": "Recipiente antiguo con dos asas y cuello largo."
+    },
+    "29": {
+      "word": "fobico",
+      "definition": "Que tiene miedo o aversión patológica a algo."
+    },
+    "30": {
+      "word": "halito",
+      "definition": "Aliento o respiración."
+    },
+    "31": {
+      "word": "lobrego",
+      "definition": "Que está en penumbra o en la oscuridad."
+    }
+  },
+  "june": {
+    "1": {
+      "word": "cazador",
+      "definition": "Persona que se dedica a la caza de animales."
+    },
+    "2": {
+      "word": "relampago",
+      "definition": "Fenómeno luminoso producido por una descarga eléctrica en la atmósfera."
+    },
+    "3": {
+      "word": "murcirlago",
+      "definition": "Mamífero volador de hábitos nocturnos."
+    },
+    "4": {
+      "word": "zancudo",
+      "definition": "Insecto volador con patas largas, como el mosquito."
+    },
+    "5": {
+      "word": "selvatico",
+      "definition": "Perteneciente o relativo a la selva o al bosque espeso."
+    },
+    "6": {
+      "word": "estomago",
+      "definition": "Órgano del sistema digestivo donde se realiza la digestión de los alimentos."
+    },
+    "7": {
+      "word": "aullido",
+      "definition": "Grito largo y lastimero de algunos animales, como el lobo."
+    },
+    "8": {
+      "word": "marquesina",
+      "definition": "Techado saliente que protege la entrada de un edificio."
+    },
+    "9": {
+      "word": "buhardilla",
+      "definition": "Parte de una casa situada en la parte superior, bajo el tejado."
+    },
+    "10": {
+      "word": "carcajada",
+      "definition": "Risa ruidosa y descontrolada."
+    },
+    "11": {
+      "word": "invernadero",
+      "definition": "Recinto cubierto utilizado para el cultivo de plantas en condiciones controladas."
+    },
+    "12": {
+      "word": "esfinge",
+      "definition": "Criatura mitológica con cuerpo de león y cabeza humana."
+    },
+    "13": {
+      "word": "descenso",
+      "definition": "Acción de bajar o disminuir en altura o nivel."
+    },
+    "14": {
+      "word": "cabestrillo",
+      "definition": "Dispositivo que sostiene y sujeta el brazo lesionado."
+    },
+    "15": {
+      "word": "conjuro",
+      "definition": "Fórmula mágica utilizada en rituales o hechizos."
+    },
+    "16": {
+      "word": "abrego",
+      "definition": "Viento cálido y húmedo que sopla en el sur de España."
+    },
+    "17": {
+      "word": "cohete",
+      "definition": "Dispositivo que se lanza al espacio con propósitos científicos o militares."
+    },
+    "18": {
+      "word": "espantapajaros",
+      "definition": "Figura o dispositivo utilizado en los campos para espantar a los pájaros."
+    },
+    "19": {
+      "word": "filamento",
+      "definition": "Hilo delgado de material como el metal o el vidrio."
+    },
+    "20": {
+      "word": "gazapo",
+      "definition": "Error o equivocación en una conversación o escritura."
+    },
+    "21": {
+      "word": "hierbabuena",
+      "definition": "Planta aromática de hojas verdes utilizada en la cocina."
+    },
+    "22": {
+      "word": "jangada",
+      "definition": "Embarcación de madera utilizada en ríos y lagos."
+    },
+    "23": {
+      "word": "luminaria",
+      "definition": "Dispositivo de iluminación, como una lámpara o farol."
+    },
+    "24": {
+      "word": "mazamorra",
+      "definition": "Postre a base de maíz o arroz cocido con leche y azúcar."
+    },
+    "25": {
+      "word": "nube",
+      "definition": "Agregación visible de pequeñas gotas de agua o cristales de hielo en la atmósfera."
+    },
+    "26": {
+      "word": "ovulo",
+      "definition": "Célula sexual femenina que puede ser fertilizada por un espermatozoide."
+    },
+    "27": {
+      "word": "pañuelo",
+      "definition": "Trozo de tela utilizado para limpiar, abrigar o adornar."
+    },
+    "28": {
+      "word": "quetzal",
+      "definition": "Ave de plumaje colorido que habita en América Central."
+    },
+    "29": {
+      "word": "rincon",
+      "definition": "Ángulo formado por dos paredes que se cruzan."
+    },
+    "30": {
+      "word": "sardina",
+      "definition": "Pez de pequeño tamaño comúnmente utilizado en la alimentación."
+    },
+    "31": {
+      "word": "yelmo",
+      "definition": "Pieza de la armadura que protege la cabeza y el rostro."
+    }
+  },
+  "july": {
+    "1": {
+      "word": "murmullo",
+      "definition": "Ruido suave y continuo producido por voces o sonidos apagados."
+    },
+    "2": {
+      "word": "lobrego",
+      "definition": "Que está en penumbra o en la oscuridad."
+    },
+    "3": {
+      "word": "fulgor",
+      "definition": "Brillo intenso y momentáneo."
+    },
+    "4": {
+      "word": "zafiro",
+      "definition": "Gema preciosa de color azul transparente."
+    },
+    "5": {
+      "word": "quimera",
+      "definition": "Ilusión o idea utópica irrealizable."
+    },
+    "6": {
+      "word": "penumbra",
+      "definition": "Semi-oscuridad que precede al anochecer o sigue al amanecer."
+    },
+    "7": {
+      "word": "crisalida",
+      "definition": "Estadio de transformación de algunos insectos, como la mariposa."
+    },
+    "8": {
+      "word": "enfasis",
+      "definition": "Acentuación o realce de una palabra o expresión en el discurso."
+    },
+    "9": {
+      "word": "candor",
+      "definition": "Sinceridad, franqueza y pureza de ánimo."
+    },
+    "10": {
+      "word": "algido",
+      "definition": "Punto culminante o de mayor intensidad en un proceso o situación."
+    },
+    "11": {
+      "word": "torrido",
+      "definition": "Que está extremadamente caliente o ardiente."
+    },
+    "12": {
+      "word": "macula",
+      "definition": "Mancha o imperfección en una superficie."
+    },
+    "13": {
+      "word": "fulgente",
+      "definition": "Que brilla intensamente."
+    },
+    "14": {
+      "word": "indigo",
+      "definition": "Color azul profundo."
+    },
+    "15": {
+      "word": "obice",
+      "definition": "Obstáculo o impedimento que dificulta una acción."
+    },
+    "16": {
+      "word": "pabilo",
+      "definition": "Mecha de una vela o lámpara."
+    },
+    "17": {
+      "word": "alveo",
+      "definition": "Cauce de un río o arroyo."
+    },
+    "18": {
+      "word": "livido",
+      "definition": "De color amoratado o pálido debido a la falta de circulación de la sangre."
+    },
+    "19": {
+      "word": "flebil",
+      "definition": "Débil o delicado, que carece de fuerza."
+    },
+    "20": {
+      "word": "animo",
+      "definition": "Espíritu, energía o disposición para hacer algo."
+    },
+    "21": {
+      "word": "lobulo",
+      "definition": "Parte saliente o prominente de un órgano o estructura."
+    },
+    "22": {
+      "word": "genesis",
+      "definition": "Origen o principio de algo."
+    },
+    "23": {
+      "word": "nacar",
+      "definition": "Sustancia brillante y colorida que forma la capa interna de algunas conchas."
+    },
+    "24": {
+      "word": "ambar",
+      "definition": "Resina fosilizada de color amarillo o marrón."
+    },
+    "25": {
+      "word": "tremulo",
+      "definition": "Que tiembla o se agita con ligereza."
+    },
+    "26": {
+      "word": "cantico",
+      "definition": "Canto religioso o poético."
+    },
+    "27": {
+      "word": "famulo",
+      "definition": "Servidor o criado que realiza tareas auxiliares."
+    },
+    "28": {
+      "word": "anfora",
+      "definition": "Recipiente antiguo con dos asas y cuello largo."
+    },
+    "29": {
+      "word": "fobico",
+      "definition": "Que tiene miedo o aversión patológica a algo."
+    },
+    "30": {
+      "word": "halito",
+      "definition": "Aliento o respiración."
+    },
+    "31": {
+      "word": "lobrego",
+      "definition": "Que está en penumbra o en la oscuridad."
+    }
+  },
+  "august": {
+    "1": {
+      "word": "cazador",
+      "definition": "Persona que se dedica a la caza de animales."
+    },
+    "2": {
+      "word": "relampago",
+      "definition": "Fenómeno luminoso producido por una descarga eléctrica en la atmósfera."
+    },
+    "3": {
+      "word": "murcirlago",
+      "definition": "Mamífero volador de hábitos nocturnos."
+    },
+    "4": {
+      "word": "zancudo",
+      "definition": "Insecto volador con patas largas, como el mosquito."
+    },
+    "5": {
+      "word": "selvatico",
+      "definition": "Perteneciente o relativo a la selva o al bosque espeso."
+    },
+    "6": {
+      "word": "estomago",
+      "definition": "Órgano del sistema digestivo donde se realiza la digestión de los alimentos."
+    },
+    "7": {
+      "word": "aullido",
+      "definition": "Grito largo y lastimero de algunos animales, como el lobo."
+    },
+    "8": {
+      "word": "marquesina",
+      "definition": "Techado saliente que protege la entrada de un edificio."
+    },
+    "9": {
+      "word": "buhardilla",
+      "definition": "Parte de una casa situada en la parte superior, bajo el tejado."
+    },
+    "10": {
+      "word": "carcajada",
+      "definition": "Risa ruidosa y descontrolada."
+    },
+    "11": {
+      "word": "invernadero",
+      "definition": "Recinto cubierto utilizado para el cultivo de plantas en condiciones controladas."
+    },
+    "12": {
+      "word": "esfinge",
+      "definition": "Criatura mitológica con cuerpo de león y cabeza humana."
+    },
+    "13": {
+      "word": "descenso",
+      "definition": "Acción de bajar o disminuir en altura o nivel."
+    },
+    "14": {
+      "word": "cabestrillo",
+      "definition": "Dispositivo que sostiene y sujeta el brazo lesionado."
+    },
+    "15": {
+      "word": "conjuro",
+      "definition": "Fórmula mágica utilizada en rituales o hechizos."
+    },
+    "16": {
+      "word": "abrego",
+      "definition": "Viento cálido y húmedo que sopla en el sur de España."
+    },
+    "17": {
+      "word": "cohete",
+      "definition": "Dispositivo que se lanza al espacio con propósitos científicos o militares."
+    },
+    "18": {
+      "word": "espantapajaros",
+      "definition": "Figura o dispositivo utilizado en los campos para espantar a los pájaros."
+    },
+    "19": {
+      "word": "filamento",
+      "definition": "Hilo delgado de material como el metal o el vidrio."
+    },
+    "20": {
+      "word": "gazapo",
+      "definition": "Error o equivocación en una conversación o escritura."
+    },
+    "21": {
+      "word": "hierbabuena",
+      "definition": "Planta aromática de hojas verdes utilizada en la cocina."
+    },
+    "22": {
+      "word": "jangada",
+      "definition": "Embarcación de madera utilizada en ríos y lagos."
+    },
+    "23": {
+      "word": "luminaria",
+      "definition": "Dispositivo de iluminación, como una lámpara o farol."
+    },
+    "24": {
+      "word": "mazamorra",
+      "definition": "Postre a base de maíz o arroz cocido con leche y azúcar."
+    },
+    "25": {
+      "word": "nube",
+      "definition": "Agregación visible de pequeñas gotas de agua o cristales de hielo en la atmósfera."
+    },
+    "26": {
+      "word": "ovulo",
+      "definition": "Célula sexual femenina que puede ser fertilizada por un espermatozoide."
+    },
+    "27": {
+      "word": "pañuelo",
+      "definition": "Trozo de tela utilizado para limpiar, abrigar o adornar."
+    },
+    "28": {
+      "word": "quetzal",
+      "definition": "Ave de plumaje colorido que habita en América Central."
+    },
+    "29": {
+      "word": "rincon",
+      "definition": "Ángulo formado por dos paredes que se cruzan."
+    },
+    "30": {
+      "word": "sardina",
+      "definition": "Pez de pequeño tamaño comúnmente utilizado en la alimentación."
+    },
+    "31": {
+      "word": "yelmo",
+      "definition": "Pieza de la armadura que protege la cabeza y el rostro."
+    }
+  },
+  "september": {
+    "1": {
+      "word": "murmullo",
+      "definition": "Ruido suave y continuo producido por voces o sonidos apagados."
+    },
+    "2": {
+      "word": "lobrego",
+      "definition": "Que está en penumbra o en la oscuridad."
+    },
+    "3": {
+      "word": "fulgor",
+      "definition": "Brillo intenso y momentáneo."
+    },
+    "4": {
+      "word": "zafiro",
+      "definition": "Gema preciosa de color azul transparente."
+    },
+    "5": {
+      "word": "quimera",
+      "definition": "Ilusión o idea utópica irrealizable."
+    },
+    "6": {
+      "word": "penumbra",
+      "definition": "Semi-oscuridad que precede al anochecer o sigue al amanecer."
+    },
+    "7": {
+      "word": "crisalida",
+      "definition": "Estadio de transformación de algunos insectos, como la mariposa."
+    },
+    "8": {
+      "word": "enfasis",
+      "definition": "Acentuación o realce de una palabra o expresión en el discurso."
+    },
+    "9": {
+      "word": "candor",
+      "definition": "Sinceridad, franqueza y pureza de ánimo."
+    },
+    "10": {
+      "word": "algido",
+      "definition": "Punto culminante o de mayor intensidad en un proceso o situación."
+    },
+    "11": {
+      "word": "torrido",
+      "definition": "Que está extremadamente caliente o ardiente."
+    },
+    "12": {
+      "word": "macula",
+      "definition": "Mancha o imperfección en una superficie."
+    },
+    "13": {
+      "word": "fulgente",
+      "definition": "Que brilla intensamente."
+    },
+    "14": {
+      "word": "indigo",
+      "definition": "Color azul profundo."
+    },
+    "15": {
+      "word": "obice",
+      "definition": "Obstáculo o impedimento que dificulta una acción."
+    },
+    "16": {
+      "word": "pabilo",
+      "definition": "Mecha de una vela o lámpara."
+    },
+    "17": {
+      "word": "alveo",
+      "definition": "Cauce de un río o arroyo."
+    },
+    "18": {
+      "word": "livido",
+      "definition": "De color amoratado o pálido debido a la falta de circulación de la sangre."
+    },
+    "19": {
+      "word": "flebil",
+      "definition": "Débil o delicado, que carece de fuerza."
+    },
+    "20": {
+      "word": "animo",
+      "definition": "Espíritu, energía o disposición para hacer algo."
+    },
+    "21": {
+      "word": "lobulo",
+      "definition": "Parte saliente o prominente de un órgano o estructura."
+    },
+    "22": {
+      "word": "genesis",
+      "definition": "Origen o principio de algo."
+    },
+    "23": {
+      "word": "nacar",
+      "definition": "Sustancia brillante y colorida que forma la capa interna de algunas conchas."
+    },
+    "24": {
+      "word": "ambar",
+      "definition": "Resina fosilizada de color amarillo o marrón."
+    },
+    "25": {
+      "word": "tremulo",
+      "definition": "Que tiembla o se agita con ligereza."
+    },
+    "26": {
+      "word": "cantico",
+      "definition": "Canto religioso o poético."
+    },
+    "27": {
+      "word": "famulo",
+      "definition": "Servidor o criado que realiza tareas auxiliares."
+    },
+    "28": {
+      "word": "anfora",
+      "definition": "Recipiente antiguo con dos asas y cuello largo."
+    },
+    "29": {
+      "word": "fobico",
+      "definition": "Que tiene miedo o aversión patológica a algo."
+    },
+    "30": {
+      "word": "halito",
+      "definition": "Aliento o respiración."
+    },
+    "31": {
+      "word": "lobrego",
+      "definition": "Que está en penumbra o en la oscuridad."
+    }
+  },
+  "october": {
+    "1": {
+      "word": "cazador",
+      "definition": "Persona que se dedica a la caza de animales."
+    },
+    "2": {
+      "word": "relampago",
+      "definition": "Fenómeno luminoso producido por una descarga eléctrica en la atmósfera."
+    },
+    "3": {
+      "word": "murcirlago",
+      "definition": "Mamífero volador de hábitos nocturnos."
+    },
+    "4": {
+      "word": "zancudo",
+      "definition": "Insecto volador con patas largas, como el mosquito."
+    },
+    "5": {
+      "word": "selvatico",
+      "definition": "Perteneciente o relativo a la selva o al bosque espeso."
+    },
+    "6": {
+      "word": "estomago",
+      "definition": "Órgano del sistema digestivo donde se realiza la digestión de los alimentos."
+    },
+    "7": {
+      "word": "aullido",
+      "definition": "Grito largo y lastimero de algunos animales, como el lobo."
+    },
+    "8": {
+      "word": "marquesina",
+      "definition": "Techado saliente que protege la entrada de un edificio."
+    },
+    "9": {
+      "word": "buhardilla",
+      "definition": "Parte de una casa situada en la parte superior, bajo el tejado."
+    },
+    "10": {
+      "word": "carcajada",
+      "definition": "Risa ruidosa y descontrolada."
+    },
+    "11": {
+      "word": "invernadero",
+      "definition": "Recinto cubierto utilizado para el cultivo de plantas en condiciones controladas."
+    },
+    "12": {
+      "word": "esfinge",
+      "definition": "Criatura mitológica con cuerpo de león y cabeza humana."
+    },
+    "13": {
+      "word": "descenso",
+      "definition": "Acción de bajar o disminuir en altura o nivel."
+    },
+    "14": {
+      "word": "cabestrillo",
+      "definition": "Dispositivo que sostiene y sujeta el brazo lesionado."
+    },
+    "15": {
+      "word": "conjuro",
+      "definition": "Fórmula mágica utilizada en rituales o hechizos."
+    },
+    "16": {
+      "word": "abrego",
+      "definition": "Viento cálido y húmedo que sopla en el sur de España."
+    },
+    "17": {
+      "word": "cohete",
+      "definition": "Dispositivo que se lanza al espacio con propósitos científicos o militares."
+    },
+    "18": {
+      "word": "espantapajaros",
+      "definition": "Figura o dispositivo utilizado en los campos para espantar a los pájaros."
+    },
+    "19": {
+      "word": "filamento",
+      "definition": "Hilo delgado de material como el metal o el vidrio."
+    },
+    "20": {
+      "word": "gazapo",
+      "definition": "Error o equivocación en una conversación o escritura."
+    },
+    "21": {
+      "word": "hierbabuena",
+      "definition": "Planta aromática de hojas verdes utilizada en la cocina."
+    },
+    "22": {
+      "word": "jangada",
+      "definition": "Embarcación de madera utilizada en ríos y lagos."
+    },
+    "23": {
+      "word": "luminaria",
+      "definition": "Dispositivo de iluminación, como una lámpara o farol."
+    },
+    "24": {
+      "word": "mazamorra",
+      "definition": "Postre a base de maíz o arroz cocido con leche y azúcar."
+    },
+    "25": {
+      "word": "nube",
+      "definition": "Agregación visible de pequeñas gotas de agua o cristales de hielo en la atmósfera."
+    },
+    "26": {
+      "word": "ovulo",
+      "definition": "Célula sexual femenina que puede ser fertilizada por un espermatozoide."
+    },
+    "27": {
+      "word": "pañuelo",
+      "definition": "Trozo de tela utilizado para limpiar, abrigar o adornar."
+    },
+    "28": {
+      "word": "quetzal",
+      "definition": "Ave de plumaje colorido que habita en América Central."
+    },
+    "29": {
+      "word": "rincon",
+      "definition": "Ángulo formado por dos paredes que se cruzan."
+    },
+    "30": {
+      "word": "sardina",
+      "definition": "Pez de pequeño tamaño comúnmente utilizado en la alimentación."
+    },
+    "31": {
+      "word": "yelmo",
+      "definition": "Pieza de la armadura que protege la cabeza y el rostro."
+    }
+  },
+  "november": {
+    "1": {
+      "word": "murmullo",
+      "definition": "Ruido suave y continuo producido por voces o sonidos apagados."
+    },
+    "2": {
+      "word": "lobrego",
+      "definition": "Que está en penumbra o en la oscuridad."
+    },
+    "3": {
+      "word": "fulgor",
+      "definition": "Brillo intenso y momentáneo."
+    },
+    "4": {
+      "word": "zafiro",
+      "definition": "Gema preciosa de color azul transparente."
+    },
+    "5": {
+      "word": "quimera",
+      "definition": "Ilusión o idea utópica irrealizable."
+    },
+    "6": {
+      "word": "penumbra",
+      "definition": "Semi-oscuridad que precede al anochecer o sigue al amanecer."
+    },
+    "7": {
+      "word": "crisalida",
+      "definition": "Estadio de transformación de algunos insectos, como la mariposa."
+    },
+    "8": {
+      "word": "enfasis",
+      "definition": "Acentuación o realce de una palabra o expresión en el discurso."
+    },
+    "9": {
+      "word": "candor",
+      "definition": "Sinceridad, franqueza y pureza de ánimo."
+    },
+    "10": {
+      "word": "algido",
+      "definition": "Punto culminante o de mayor intensidad en un proceso o situación."
+    },
+    "11": {
+      "word": "torrido",
+      "definition": "Que está extremadamente caliente o ardiente."
+    },
+    "12": {
+      "word": "macula",
+      "definition": "Mancha o imperfección en una superficie."
+    },
+    "13": {
+      "word": "fulgente",
+      "definition": "Que brilla intensamente."
+    },
+    "14": {
+      "word": "indigo",
+      "definition": "Color azul profundo."
+    },
+    "15": {
+      "word": "obice",
+      "definition": "Obstáculo o impedimento que dificulta una acción."
+    },
+    "16": {
+      "word": "pabilo",
+      "definition": "Mecha de una vela o lámpara."
+    },
+    "17": {
+      "word": "alveo",
+      "definition": "Cauce de un río o arroyo."
+    },
+    "18": {
+      "word": "livido",
+      "definition": "De color amoratado o pálido debido a la falta de circulación de la sangre."
+    },
+    "19": {
+      "word": "flebil",
+      "definition": "Débil o delicado, que carece de fuerza."
+    },
+    "20": {
+      "word": "animo",
+      "definition": "Espíritu, energía o disposición para hacer algo."
+    },
+    "21": {
+      "word": "lobulo",
+      "definition": "Parte saliente o prominente de un órgano o estructura."
+    },
+    "22": {
+      "word": "genesis",
+      "definition": "Origen o principio de algo."
+    },
+    "23": {
+      "word": "nacar",
+      "definition": "Sustancia brillante y colorida que forma la capa interna de algunas conchas."
+    },
+    "24": {
+      "word": "ambar",
+      "definition": "Resina fosilizada de color amarillo o marrón."
+    },
+    "25": {
+      "word": "tremulo",
+      "definition": "Que tiembla o se agita con ligereza."
+    },
+    "26": {
+      "word": "cantico",
+      "definition": "Canto religioso o poético."
+    },
+    "27": {
+      "word": "famulo",
+      "definition": "Servidor o criado que realiza tareas auxiliares."
+    },
+    "28": {
+      "word": "anfora",
+      "definition": "Recipiente antiguo con dos asas y cuello largo."
+    },
+    "29": {
+      "word": "fobico",
+      "definition": "Que tiene miedo o aversión patológica a algo."
+    },
+    "30": {
+      "word": "halito",
+      "definition": "Aliento o respiración."
+    },
+    "31": {
+      "word": "lobrego",
+      "definition": "Que está en penumbra o en la oscuridad."
+    }
+  },
+  "december": {
+    "1": {
+      "word": "cazador",
+      "definition": "Persona que se dedica a la caza de animales."
+    },
+    "2": {
+      "word": "relampago",
+      "definition": "Fenómeno luminoso producido por una descarga eléctrica en la atmósfera."
+    },
+    "3": {
+      "word": "murcirlago",
+      "definition": "Mamífero volador de hábitos nocturnos."
+    },
+    "4": {
+      "word": "zancudo",
+      "definition": "Insecto volador con patas largas, como el mosquito."
+    },
+    "5": {
+      "word": "selvatico",
+      "definition": "Perteneciente o relativo a la selva o al bosque espeso."
+    },
+    "6": {
+      "word": "estomago",
+      "definition": "Órgano del sistema digestivo donde se realiza la digestión de los alimentos."
+    },
+    "7": {
+      "word": "aullido",
+      "definition": "Grito largo y lastimero de algunos animales, como el lobo."
+    },
+    "8": {
+      "word": "marquesina",
+      "definition": "Techado saliente que protege la entrada de un edificio."
+    },
+    "9": {
+      "word": "buhardilla",
+      "definition": "Parte de una casa situada en la parte superior, bajo el tejado."
+    },
+    "10": {
+      "word": "carcajada",
+      "definition": "Risa ruidosa y descontrolada."
+    },
+    "11": {
+      "word": "invernadero",
+      "definition": "Recinto cubierto utilizado para el cultivo de plantas en condiciones controladas."
+    },
+    "12": {
+      "word": "esfinge",
+      "definition": "Criatura mitológica con cuerpo de león y cabeza humana."
+    },
+    "13": {
+      "word": "descenso",
+      "definition": "Acción de bajar o disminuir en altura o nivel."
+    },
+    "14": {
+      "word": "cabestrillo",
+      "definition": "Dispositivo que sostiene y sujeta el brazo lesionado."
+    },
+    "15": {
+      "word": "conjuro",
+      "definition": "Fórmula mágica utilizada en rituales o hechizos."
+    },
+    "16": {
+      "word": "abrego",
+      "definition": "Viento cálido y húmedo que sopla en el sur de España."
+    },
+    "17": {
+      "word": "cohete",
+      "definition": "Dispositivo que se lanza al espacio con propósitos científicos o militares."
+    },
+    "18": {
+      "word": "espantapajaros",
+      "definition": "Figura o dispositivo utilizado en los campos para espantar a los pájaros."
+    },
+    "19": {
+      "word": "filamento",
+      "definition": "Hilo delgado de material como el metal o el vidrio."
+    },
+    "20": {
+      "word": "gazapo",
+      "definition": "Error o equivocación en una conversación o escritura."
+    },
+    "21": {
+      "word": "hierbabuena",
+      "definition": "Planta aromática de hojas verdes utilizada en la cocina."
+    },
+    "22": {
+      "word": "jangada",
+      "definition": "Embarcación de madera utilizada en ríos y lagos."
+    },
+    "23": {
+      "word": "luminaria",
+      "definition": "Dispositivo de iluminación, como una lámpara o farol."
+    },
+    "24": {
+      "word": "mazamorra",
+      "definition": "Postre a base de maíz o arroz cocido con leche y azúcar."
+    },
+    "25": {
+      "word": "nube",
+      "definition": "Agregación visible de pequeñas gotas de agua o cristales de hielo en la atmósfera."
+    },
+    "26": {
+      "word": "ovulo",
+      "definition": "Célula sexual femenina que puede ser fertilizada por un espermatozoide."
+    },
+    "27": {
+      "word": "pañuelo",
+      "definition": "Trozo de tela utilizado para limpiar, abrigar o adornar."
+    },
+    "28": {
+      "word": "quetzal",
+      "definition": "Ave de plumaje colorido que habita en América Central."
+    },
+    "29": {
+      "word": "rincon",
+      "definition": "Ángulo formado por dos paredes que se cruzan."
+    },
+    "30": {
+      "word": "sardina",
+      "definition": "Pez de pequeño tamaño comúnmente utilizado en la alimentación."
+    },
+    "31": {
+      "word": "yelmo",
+      "definition": "Pieza de la armadura que protege la cabeza y el rostro."
+    }
+  }
 }

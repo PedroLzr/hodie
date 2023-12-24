@@ -1,26 +1,28 @@
 document.addEventListener("DOMContentLoaded", async function () {
 
     // Inicializar variables
-    let guessedLetters = [];
-    let hangmanImage = 0;
     const WORD_DISPLAY = document.getElementById("word-display");
     const LETTERS_CONTAINER = document.getElementById("letters-container");
     const HANGMAN_IMAGE = document.getElementById("hangman-image");
     const DYNAMIC_TITLE = document.getElementById("dynamic-title");
+    const BUTTON_SUFIX = "-button-letter";
+
+    let guessedLetters = [];
+    let hangmanImage = 0;
 
     // Dibujar botones de las letras
     for (let i = 65; i <= 90; i++) {
         const LETTER = String.fromCharCode(i);
         const BUTTON = document.createElement("button");
         BUTTON.textContent = LETTER;
-        BUTTON.id = LETTER + "-button-letter";
+        BUTTON.id = LETTER + BUTTON_SUFIX;
         BUTTON.classList.add("letter-button");
         LETTERS_CONTAINER.appendChild(BUTTON);
 
         if (LETTER === 'N') {
             const BUTTON_N_WITH_TILDE = document.createElement("button");
             BUTTON_N_WITH_TILDE.textContent = "Ñ";
-            BUTTON_N_WITH_TILDE.id = "Ñ-button-letter";
+            BUTTON_N_WITH_TILDE.id = "Ñ" + BUTTON_SUFIX;
             BUTTON_N_WITH_TILDE.classList.add("letter-button");
             LETTERS_CONTAINER.appendChild(BUTTON_N_WITH_TILDE);
         }
@@ -52,24 +54,25 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // LocalStorage: compruebo si el usuario ya jugó hoy
     try {
-        let lsHangman = localStorage.getItem("hangman");
-        if (lsHangman) {
-            let lsHangmanObj = JSON.parse(lsHangman);
+        let savedGame = localStorage.getItem("hangman");
+
+        if (savedGame) {
+            let savedGameData = JSON.parse(savedGame);
             const DATE = new Date();
             let d = DATE.getDate();
             let m = DATE.getMonth();
             let y = DATE.getFullYear();
-            let dateForSave = `${d}/${m}/${y}`
+            let dateNow = `${d}/${m}/${y}`
 
-            if (lsHangmanObj && lsHangmanObj.date === dateForSave) {
-                if (lsHangmanObj.succeeded === true) {
+            if (savedGameData && savedGameData.date === dateNow) {
+                if (savedGameData.succeeded === true) {
                     DYNAMIC_TITLE.innerHTML = "¡Muy bien! &#127894;";
                     LETTERS_CONTAINER.innerHTML = selectedWordDefinition;
                     WORD_DISPLAY.textContent = selectedWord;
                     hangmanImage = 7;
                     updateHangmanImage();
                     return;
-                } else if ((lsHangmanObj.succeeded === false)) {
+                } else if ((savedGameData.succeeded === false)) {
                     DYNAMIC_TITLE.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
                     LETTERS_CONTAINER.innerHTML = selectedWordDefinition;
                     WORD_DISPLAY.textContent = selectedWord;
@@ -77,11 +80,11 @@ document.addEventListener("DOMContentLoaded", async function () {
                     updateHangmanImage();
                     return;
                 } else {
-                    guessedLetters = lsHangmanObj.guessedLetters;
-                    hangmanImage = lsHangmanObj.hangmanImage;
+                    guessedLetters = savedGameData.guessedLetters;
+                    hangmanImage = savedGameData.hangmanImage;
 
                     for (let letter of guessedLetters) {
-                        const BUTTON_LETTER = document.getElementById(letter + "-button-letter");
+                        const BUTTON_LETTER = document.getElementById(letter + BUTTON_SUFIX);
                         BUTTON_LETTER.classList.add('disabled');
 
                         if (selectedWord.includes(letter)) {
@@ -178,13 +181,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         let y = DATE.getFullYear();
         let dateForSave = `${d}/${m}/${y}`
 
-        let lsHangman = {
+        let savedGame = {
             "date": dateForSave,
             "guessedLetters": guessedLetters,
             "hangmanImage": hangmanImage,
             "succeeded": result
         };
 
-        localStorage.setItem("hangman", JSON.stringify(lsHangman));
+        localStorage.setItem("hangman", JSON.stringify(savedGame));
     }
 });

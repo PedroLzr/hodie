@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         'sports': 'Deporte',
         'vegetables': 'Verdura'
     }
-
     const START_BUTTON = document.getElementById('start-button');
     const STOP_BUTTON = document.getElementById('stop-button');
     const GAME_CONTAINER = document.getElementById('game-container');
@@ -31,51 +30,45 @@ document.addEventListener("DOMContentLoaded", async function () {
     const CATEGORIES_CONTAINER = document.getElementById('categories-container');
     const PROGRESS_BAR = document.getElementById('progressBar');
     const PROGRESS_BAR_TIMER = document.getElementById('progressBarTimer');
-
-    let arrayCategories = Object.keys(CATEGORIES);
     const NUM_GAME_CATEGORIES = Math.round(Object.keys(CATEGORIES).length / 3);
-    const INPUT_SUFIX = '-input';
+    const INPUT_SUFIX = '-category-input';
     const MAX_GAME_TIME = Math.round(NUM_GAME_CATEGORIES) * 13;
-    let timeLeft = MAX_GAME_TIME;
-
     const REGEX_IS_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ '.-]+$/;
 
+    let arrayCategories = Object.keys(CATEGORIES);
+    let timeLeft = MAX_GAME_TIME;
     let randomLetter = '';
     let randomCategories = [];
-
     let stopGame = false;
     let correctAnswers = 0;
     let incorrectAnswers = 0;
 
-    async function setRandomLetter() {
-        const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
-        randomLetter = ALPHABET[Math.floor(Math.random() * ALPHABET.length)];
-    }
+    try {
 
-    async function setRandomCategories() {
+        let savedGame = localStorage.getItem("stop");
 
-        for (let i = 0; i < NUM_GAME_CATEGORIES; i++) {
+        if (savedGame) {
+            let savedGameData = JSON.parse(savedGame);
+            const DATE = new Date();
+            let d = DATE.getDate();
+            let m = DATE.getMonth();
+            let y = DATE.getFullYear();
+            let dateNow = `${d}/${m}/${y}`
 
-            if (arrayCategories.length === 0) {
-                break;
+            if (savedGameData && savedGameData.date === dateNow) {
+                START_BUTTON.style.display = "none";
+                STOP_BUTTON.style.display = "none";
+                PROGRESS_BAR.style.display = "none";
+                GAME_CONTAINER.style.display = "block";
+                LETTER_LABEL.textContent = savedGameData.randomLetter;
+                COUNTER_CORRECT_ANSWERS.textContent = `Correctas: ${savedGameData.correct_answers}`;
+                COUNTER_INCORRECT_ANSWERS.textContent = `Incorrectas: ${savedGameData.incorrect_answers}`;
             }
-
-            const RANDOM_INDEX = Math.floor(Math.random() * arrayCategories.length);
-            const RANDOM_CATEGORY = arrayCategories[RANDOM_INDEX];
-            arrayCategories.splice(RANDOM_INDEX, 1);
-
-            let categoryItems = await getCategoryItemsFromFile(RANDOM_CATEGORY);
-
-            let haveItem = categoryItems.some((item) => item.startsWith(randomLetter));
-
-            if (haveItem) {
-                randomCategories.push(RANDOM_CATEGORY);
-            } else {
-                i--;
-            }
-
         }
-    }
+
+    } catch (error) {
+        console.error(error);
+    };
 
     START_BUTTON.addEventListener('click', async () => {
         START_BUTTON.style.display = "none";
@@ -107,6 +100,36 @@ document.addEventListener("DOMContentLoaded", async function () {
         finishGame();
     });
 
+    async function setRandomLetter() {
+        const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+        randomLetter = ALPHABET[Math.floor(Math.random() * ALPHABET.length)];
+    }
+
+    async function setRandomCategories() {
+
+        for (let i = 0; i < NUM_GAME_CATEGORIES; i++) {
+
+            if (arrayCategories.length === 0) {
+                break;
+            }
+
+            const RANDOM_INDEX = Math.floor(Math.random() * arrayCategories.length);
+            const RANDOM_CATEGORY = arrayCategories[RANDOM_INDEX];
+            arrayCategories.splice(RANDOM_INDEX, 1);
+
+            let categoryItems = await getCategoryItemsFromFile(RANDOM_CATEGORY);
+
+            let haveItem = categoryItems.some((item) => item.startsWith(randomLetter));
+
+            if (haveItem) {
+                randomCategories.push(RANDOM_CATEGORY);
+            } else {
+                i--;
+            }
+
+        }
+    }
+
     async function finishGame() {
         stopGame = true;
         STOP_BUTTON.style.display = "none";
@@ -127,6 +150,26 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         COUNTER_CORRECT_ANSWERS.textContent = `Correctas: ${correctAnswers}`;
         COUNTER_INCORRECT_ANSWERS.textContent = `Incorrectas: ${incorrectAnswers}`;
+
+        saveResult();
+    }
+
+    function saveResult() {
+
+        const DATE = new Date();
+        let d = DATE.getDate();
+        let m = DATE.getMonth();
+        let y = DATE.getFullYear();
+        let dateForSave = `${d}/${m}/${y}`
+
+        let savedGame = {
+            "date": dateForSave,
+            "randomLetter": randomLetter,
+            "correct_answers": correctAnswers,
+            "incorrect_answers": incorrectAnswers
+        };
+
+        localStorage.setItem("stop", JSON.stringify(savedGame));
     }
 
     async function checkAnswer(category, answer) {
