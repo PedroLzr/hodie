@@ -8,6 +8,24 @@ document.addEventListener("DOMContentLoaded", async function () {
     const HANGMAN_IMAGE = document.getElementById("hangman-image");
     const DYNAMIC_TITLE = document.getElementById("dynamic-title");
 
+    // Dibujar botones de las letras
+    for (let i = 65; i <= 90; i++) {
+        const LETTER = String.fromCharCode(i);
+        const BUTTON = document.createElement("button");
+        BUTTON.textContent = LETTER;
+        BUTTON.id = LETTER + "-button-letter";
+        BUTTON.classList.add("letter-button");
+        LETTERS_CONTAINER.appendChild(BUTTON);
+
+        if (LETTER === 'N') {
+            const BUTTON_N_WITH_TILDE = document.createElement("button");
+            BUTTON_N_WITH_TILDE.textContent = "Ñ";
+            BUTTON_N_WITH_TILDE.id = "Ñ-button-letter";
+            BUTTON_N_WITH_TILDE.classList.add("letter-button");
+            LETTERS_CONTAINER.appendChild(BUTTON_N_WITH_TILDE);
+        }
+    }
+
     // Traer la palabra del día
     async function getHangmanWord() {
         try {
@@ -27,9 +45,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             console.error(error);
         }
     }
-    let wordObj = await getHangmanWord();
-    let selectedWord = wordObj.word.toUpperCase();
-    let selectedWordDefinition = wordObj.definition;
+
+    let word = await getHangmanWord();
+    let selectedWord = word.word.toUpperCase();
+    let selectedWordDefinition = word.definition;
 
     // LocalStorage: compruebo si el usuario ya jugó hoy
     try {
@@ -50,19 +69,35 @@ document.addEventListener("DOMContentLoaded", async function () {
                     hangmanImage = 7;
                     updateHangmanImage();
                     return;
-                } else {
+                } else if ((lsHangmanObj.succeeded === false)) {
                     DYNAMIC_TITLE.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
                     LETTERS_CONTAINER.innerHTML = selectedWordDefinition;
                     WORD_DISPLAY.textContent = selectedWord;
                     hangmanImage = 6;
                     updateHangmanImage();
                     return;
+                } else {
+                    guessedLetters = lsHangmanObj.guessedLetters;
+                    hangmanImage = lsHangmanObj.hangmanImage;
+
+                    for (let letter of guessedLetters) {
+                        const BUTTON_LETTER = document.getElementById(letter + "-button-letter");
+                        BUTTON_LETTER.classList.add('disabled');
+
+                        if (selectedWord.includes(letter)) {
+                            BUTTON_LETTER.classList.add('correct');
+                        } else {
+                            BUTTON_LETTER.classList.add('incorrect');
+                        }
+
+                        updateHangmanImage();
+                    }
+                    displayWord();
                 }
             }
         }
     } catch (error) {
-        console.log("Error con localstorage");
-        console.log(error);
+        console.error(error);
     }
 
     // Funciones del juego
@@ -93,17 +128,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             updateHangmanImage();
 
             // Guardar en localStorage que ha ganado
-            // TODO: SACAR EN UNA FUNCIÓN
-            const DATE = new Date();
-            let d = DATE.getDate();
-            let m = DATE.getMonth();
-            let y = DATE.getFullYear();
-            let dateForSave = `${d}/${m}/${y}`
-            let lsHangman = {
-                "date": dateForSave,
-                "succeeded": true
-            };
-            localStorage.setItem("hangman", JSON.stringify(lsHangman));
+            saveResult(true);
         }
     }
 
@@ -114,32 +139,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             WORD_DISPLAY.textContent = selectedWord;
 
             // Guardar en localStorage que ha perdido
-            // TODO: SACAR EN UNA FUNCIÓN
-            const DATE = new Date();
-            let d = DATE.getDate();
-            let m = DATE.getMonth();
-            let y = DATE.getFullYear();
-            let dateForSave = `${d}/${m}/${y}`
-            let lsHangman = {
-                "date": dateForSave,
-                "succeeded": false
-            };
-            localStorage.setItem("hangman", JSON.stringify(lsHangman));
-        }
-    }
-
-    for (let i = 65; i <= 90; i++) {
-        const LETTER = String.fromCharCode(i);
-        const BUTTON = document.createElement("button");
-        BUTTON.textContent = LETTER;
-        BUTTON.classList.add("letter-button");
-        LETTERS_CONTAINER.appendChild(BUTTON);
-
-        if (LETTER === 'N') {
-            const BUTTON_N_WITH_TILDE = document.createElement("button");
-            BUTTON_N_WITH_TILDE.textContent = "Ñ";
-            BUTTON_N_WITH_TILDE.classList.add("letter-button");
-            LETTERS_CONTAINER.appendChild(BUTTON_N_WITH_TILDE);
+            saveResult(false);
         }
     }
 
@@ -156,10 +156,12 @@ document.addEventListener("DOMContentLoaded", async function () {
                 if (!selectedWord.includes(letter)) {
                     event.target.classList.add('incorrect');
                     hangmanImage++;
+                    saveResult(null);
                     updateHangmanImage();
                     checkLose();
                 } else {
                     event.target.classList.add('correct');
+                    saveResult(null);
                     checkWin();
                 }
             }
@@ -167,4 +169,22 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     displayWord();
+
+    function saveResult(result) {
+
+        const DATE = new Date();
+        let d = DATE.getDate();
+        let m = DATE.getMonth();
+        let y = DATE.getFullYear();
+        let dateForSave = `${d}/${m}/${y}`
+
+        let lsHangman = {
+            "date": dateForSave,
+            "guessedLetters": guessedLetters,
+            "hangmanImage": hangmanImage,
+            "succeeded": result
+        };
+
+        localStorage.setItem("hangman", JSON.stringify(lsHangman));
+    }
 });
