@@ -268,3 +268,24 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 });
+
+// if (navigator.share) {
+//     var textoCompartir = "¡Echa un vistazo a esta página web increíble!";
+//     var urlCompartir = window.location.href;
+
+//     var datosCompartir = {
+//         title: document.title,
+//         text: textoCompartir,
+//         url: urlCompartir,
+//     };
+
+//     navigator.share(datosCompartir)
+//         .then(function () {
+//             console.log("Contenido compartido con éxito");
+//         })
+//         .catch(function (error) {
+//             console.error("Error al compartir:", error);
+//         });
+// } else {
+//     console.error("La API de Web Share no está soportada en este navegador.");
+// }
