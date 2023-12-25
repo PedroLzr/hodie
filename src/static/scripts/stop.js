@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const PROGRESS_BAR_TIMER = document.getElementById('progressBarTimer');
     const NUM_GAME_CATEGORIES = Math.round(Object.keys(CATEGORIES).length / 3);
     const INPUT_SUFIX = '-category-input';
-    const MAX_GAME_TIME = Math.round(NUM_GAME_CATEGORIES) * 13;
+    const MAX_GAME_TIME = Math.round(NUM_GAME_CATEGORIES) * 14;
     const REGEX_IS_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ '.-]+$/;
 
     let arrayCategories = Object.keys(CATEGORIES);
@@ -268,24 +268,3 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 });
-
-// if (navigator.share) {
-//     var textoCompartir = "¡Echa un vistazo a esta página web increíble!";
-//     var urlCompartir = window.location.href;
-
-//     var datosCompartir = {
-//         title: document.title,
-//         text: textoCompartir,
-//         url: urlCompartir,
-//     };
-
-//     navigator.share(datosCompartir)
-//         .then(function () {
-//             console.log("Contenido compartido con éxito");
-//         })
-//         .catch(function (error) {
-//             console.error("Error al compartir:", error);
-//         });
-// } else {
-//     console.error("La API de Web Share no está soportada en este navegador.");
-// }

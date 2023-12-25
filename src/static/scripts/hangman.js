@@ -190,4 +190,38 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         localStorage.setItem("hangman", JSON.stringify(savedGame));
     }
+
+    // function addShareButton() {
+
+    //     // if (navigator.share) {
+    //         const SHARE_BUTTON = document.createElement("button");
+    //         SHARE_BUTTON.textContent = "Compartir";
+    //         SHARE_BUTTON.id = "BUTTON_SHARE";
+    //         SHARE_BUTTON.classList.add("share-button");
+    //         WORD_DISPLAY.appendChild(SHARE_BUTTON);
+
+    //         SHARE_BUTTON.addEventListener("click", () => {
+    //             alert("hola");
+    //             // var text = "¡Echa un vistazo a esta página web increíble!";
+    //             // var url = window.location.href;
+
+    //             // var datosCompartir = {
+    //             //     title: document.title,
+    //             //     text: text,
+    //             //     url: url,
+    //             // };
+
+    //             // navigator.share(datosCompartir)
+    //             //     .then(function () {
+    //             //         console.log("Contenido compartido con éxito");
+    //             //     })
+    //             //     .catch(function (error) {
+    //             //         console.error("Error al compartir:", error);
+    //             //     });
+    //         });
+
+    //     // } else {
+    //     //     console.error("La API de Web Share no está soportada en este navegador.");
+    //     // }
+    // }
 });
