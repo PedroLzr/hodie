@@ -7,6 +7,7 @@ SANTOPEDIA_URL = 'https://www.santopedia.com'
 
 def get_saints_from_santopedia():
     try:
+
         print(">> Leyendo santos del día")
         url = SANTOPEDIA_URL
         page = requests.get(url, headers=HEADERS)

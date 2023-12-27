@@ -7,6 +7,7 @@ WIKIPEDIA_URL = 'https://es.wikipedia.org'
 
 def get_article_from_wikipedia():
     try:
+
         print(">> Leyendo artículo del día")
         url = WIKIPEDIA_URL
         page = requests.get(url, headers=HEADERS)
@@ -18,6 +19,7 @@ def get_article_from_wikipedia():
         divs = article.find_all('div')
 
         return Article(divs[1].a.text, article.p.text, url)
+
     except:
         print('Error buscando el artículo de Wikipedia')
         return Article("Artículo no encontrado", "Artículo no encontrado", url)

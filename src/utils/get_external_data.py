@@ -10,7 +10,7 @@ from utils.write_json_file import write_json_file
 def save_scrap_day():
 
     print("Ejecutando save_scrap_day()...")
-    
+
     word = get_word_from_dle()
     english_word = get_english_word_from_cambridge()
     saying = get_phrase_from_proverbia()
@@ -54,7 +54,4 @@ def save_scrap_day():
         }
     }
 
-    try:
-        write_json_file(day_data)
-    except Exception as e:
-        print(f"Error al guardar el archivo: {e}")
+    write_json_file(day_data)

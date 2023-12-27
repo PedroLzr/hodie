@@ -4,6 +4,7 @@ from models.curiosity import *
 
 def get_curiosity_from_json():
     try:
+
         print(">> Leyendo curiosidad del día")
         current_date = datetime.now()
         current_month = current_date.strftime("%B").lower()

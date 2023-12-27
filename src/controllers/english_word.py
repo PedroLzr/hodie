@@ -7,6 +7,7 @@ CAMBRIDGE_URL = 'https://dictionary.cambridge.org'
 
 def get_english_word_from_cambridge():
     try:
+
         print(">> Leyendo palabra en inglés del día")
         url = CAMBRIDGE_URL
         page = requests.get(url, headers=HEADERS)
@@ -21,6 +22,7 @@ def get_english_word_from_cambridge():
         wordDesc = wordOfDayDesc.text
 
         return EnglishWord(wordName, wordDesc, url)
+
     except:
         print('Error buscando la palabra de Cambridge')
         return EnglishWord("Palabra no encontrada", "Palabra no encontrada", url)

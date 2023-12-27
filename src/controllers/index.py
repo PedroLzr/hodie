@@ -5,8 +5,8 @@ from utils.read_json_file import read_json_file
 from config.config_parameters import EXTERNAL_DATA
 
 def getToday():
-
     try:
+
         date = datetime.now().strftime("%Y-%m-%d")
         file_name = f'{EXTERNAL_DATA["path"]}/{date}.json'
 
@@ -21,6 +21,7 @@ def getToday():
         except Exception as ex:
             print(f"Error al procesar el archivo: {ex}")
             today = {}
+
     except Exception as e:
         print(f"Error en getToday(): {e}")
 

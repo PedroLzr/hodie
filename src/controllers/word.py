@@ -7,6 +7,7 @@ DLE_URL = 'https://dle.rae.es'
 
 def get_word_from_dle():
     try:
+
         print(">> Leyendo palabra del día")
         url = DLE_URL
         page = requests.get(url, headers=HEADERS)
@@ -33,6 +34,7 @@ def get_word_from_dle():
             definitions.append(definition)
 
         return Word(word, definitions, wordUrl)
+
     except:
         print('Error buscando la palabra del DLE-RAE')
         return Word("Palabra no encontrada", "Palabra no encontrada", wordUrl)

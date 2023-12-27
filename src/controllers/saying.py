@@ -7,6 +7,7 @@ PROVERBIA_URL = 'https://proverbia.net/frase-del-dia'
 
 def get_phrase_from_proverbia():
     try:
+
         print(">> Leyendo frase del día")
         url = PROVERBIA_URL
         page = requests.get(url, headers=HEADERS)
@@ -21,6 +22,7 @@ def get_phrase_from_proverbia():
         desc_author = footer.em
 
         return Saying(phrase.text, author.text, desc_author.text, url)
+
     except:
         print('Error buscando la frase de Proverbia')
         return Saying("Frase no encontrada", "Frase no encontrada", "Frase no encontrada", url)

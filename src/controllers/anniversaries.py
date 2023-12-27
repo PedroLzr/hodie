@@ -7,6 +7,7 @@ HECHOSHISTORICOS_URL = 'https://www.hechoshistoricos.es'
 
 def get_anniversaries_from_hechoshistoricos():
     try:
+
         print(">> Leyendo efemérides del día")
         url = HECHOSHISTORICOS_URL
         page = requests.get(url, headers=HEADERS)
@@ -26,6 +27,7 @@ def get_anniversaries_from_hechoshistoricos():
             ann.year = anniversariesListYears[index].text
 
         return Anniversaries(anniversaries, url)
+
     except:
         print('Error buscando efemérides en HechosHistoricos')
         return Anniversaries(["Efemérides no encontradas"], url)

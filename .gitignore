@@ -1,10 +1,110 @@
-.idea/
-.vscode/
-__pycache__/
-.tox/
-.coverage
-.coverage.*
-htmlcov/
-docs/_build/
-dist/
-venv/
+# Byte-compiled / optimized / DLL files
+__pycache__/   # Compiled Python files
+*.py[cod]      # Compiled Python files
+*.pyc          # Compiled Python files
+*$py.class     # Python class files
+
+# C extensions
+*.so           # Compiled C files
+
+# Distribution / packaging
+.Python        # Python build folder
+build/         # Build folder
+dist/          # Distribution folder
+*.egg-info/    # Egg metadata
+*.egg          # Egg package
+
+# Python virtual environments
+venv/          # Virtual environment folder
+.env           # Environment variables file
+
+# IDE - Visual Studio Code
+.vscode/       # VS Code project settings
+
+# IDE - PyCharm
+.idea/         # PyCharm project settings
+
+# IDE - Spyder
+.spyderproject # Spyder project settings
+.spyproject    # Spyder project settings
+
+# IDE - Rope
+.ropeproject   # Rope project settings
+
+# Jupyter Notebook
+.ipynb_checkpoints # Jupyter checkpoints
+
+# Python interactive shell
+python-version # Python version file (pyenv, etc.)
+
+# Coverage reports
+.coverage      # Coverage report
+htmlcov/       # HTML coverage report
+.coverage.*    # Coverage report
+.cache         # General cache folder
+nosetests.xml  # Nose test reports
+coverage.xml   # Coverage XML reports
+*.cover        # Coverage files
+.hypothesis/   # Hypothesis library files
+.pytest_cache/ # Pytest cache folder
+
+# Test and documentation
+.tox/          # Tox test environments folder
+docs/_build/   # Sphinx documentation build folder
+
+# Project's specific files or folders
+# Add here any file or folder you don't want to track, e.g.:
+# config.yaml
+# secret_data.csv
+
+# Other tools
+.scrapy       # Scrapy data folder
+celerybeat-schedule # Celery beat schedule file
+celerybeat.pid      # Celery beat process ID file
+
+# Translation files
+*.mo          # Compiled translation file
+*.pot         # Translation template
+
+# Logs and databases
+*.log         # Log files
+local_settings.py   # Local settings
+db.sqlite3           # SQLite database
+db.sqlite3-journal   # SQLite journal
+
+# PyInstaller
+*.manifest    # PyInstaller manifest
+*.spec        # PyInstaller spec
+
+# Temporary files
+*.bak         # Backup files
+*.tmp         # Temporary files
+*.temp        # Temporary files
+
+# Other files
+.dmypy.json   # Mypy daemon file
+dmypy.json    # Mypy daemon file
+.mypy_cache/  # Mypy cache
+.pytype/      # Pytype static type analyzer files
+.pyre/        # Pyre type checker files
+cython_debug/ # Cython debug symbols
+
+# Packaging
+pip-log.txt               # Pip log
+pip-delete-this-directory.txt # Pip delete this directory file
+wheels/                   # Wheel packages
+share/python-wheels/      # Python shared wheels
+
+# Build tools
+target/                   # Build target folder
+lib/                      # Libraries
+lib64/                    # 64-bit libraries
+parts/                    # Parts folder
+var/                      # Variable data folder
+sdist/                    # Source distribution
+.eggs/                    # Eggs folder
+develop-eggs/             # Develop eggs folder
+downloads/                # Downloads folder
+eggs/                     # Eggs folder
+pip-wheel-metadata/       # Pip wheel metadata
+.installed.cfg            # Installed configuration
