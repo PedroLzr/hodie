@@ -2,8 +2,10 @@
 __pycache__/   # Compiled Python files
 *.py[cod]      # Compiled Python files
 *.pyc          # Compiled Python files
+**/*.pyc          # Compiled Python files
+**/__pycache__ # Compiled Python files
+**/__pycache__/** # Compiled Python files
 *$py.class     # Python class files
-**/__pycache__
 
 # C extensions
 *.so           # Compiled C files
