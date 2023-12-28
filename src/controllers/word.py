@@ -9,20 +9,21 @@ def get_word_from_dle():
     try:
 
         print(">> Leyendo palabra del día")
+
         url = DLE_URL
         page = requests.get(url, headers=HEADERS)
+        page.close()
 
         dleSoup = BeautifulSoup(page.content, 'lxml')
-        page.close()
-        
+
         wordOfDay = dleSoup.find(id="wotd")
         word = wordOfDay.find("a").text
 
         wordUrl = url + '/' + word.split(",")[0]
         wordPage = requests.get(wordUrl, headers=HEADERS)
+        wordPage.close()
 
         wordSoup = BeautifulSoup(wordPage.content, 'lxml')
-        wordPage.close()
 
         result = wordSoup.find(id="resultados")
         article = result.article
@@ -30,7 +31,12 @@ def get_word_from_dle():
 
         definitions = []
         for p in def_word_array:
-            definition = ' '.join(span.get_text() for span in p.find_all('span'))
+            definition = ''
+
+            for span in p.find_all('span', recursive=False):
+                if 'h' not in span.get('class', []):
+                    definition += ' ' + span.text
+
             definitions.append(definition)
 
         return Word(word, definitions, wordUrl)

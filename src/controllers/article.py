@@ -9,16 +9,19 @@ def get_article_from_wikipedia():
     try:
 
         print(">> Leyendo artículo del día")
+
         url = WIKIPEDIA_URL
         page = requests.get(url, headers=HEADERS)
+        page.close()
 
         wikipediaSoup = BeautifulSoup(page.content, 'lxml')
-        page.close()
-        
-        article = wikipediaSoup.find(id="main-tfa")
-        divs = article.find_all('div')
 
-        return Article(divs[1].a.text, article.p.text, url)
+        article = wikipediaSoup.find(id="main-tfa")
+
+        title = article.find('h2').find_all('span')[1].find('a').text
+        body = article.find('p').text
+
+        return Article(title, body, url)
 
     except:
         print('Error buscando el artículo de Wikipedia')

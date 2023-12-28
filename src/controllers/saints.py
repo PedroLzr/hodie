@@ -9,11 +9,12 @@ def get_saints_from_santopedia():
     try:
 
         print(">> Leyendo santos del día")
+
         url = SANTOPEDIA_URL
         page = requests.get(url, headers=HEADERS)
+        page.close()
 
         santopediaSoup = BeautifulSoup(page.content, 'lxml')
-        page.close()
 
         listSaintsOfDay = santopediaSoup.find('ul', {'class': 'saints'})
         saintsOfDay = listSaintsOfDay.find_all('a')

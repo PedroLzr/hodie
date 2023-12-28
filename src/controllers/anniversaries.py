@@ -9,11 +9,12 @@ def get_anniversaries_from_hechoshistoricos():
     try:
 
         print(">> Leyendo efemérides del día")
+
         url = HECHOSHISTORICOS_URL
         page = requests.get(url, headers=HEADERS)
+        page.close()
 
         hhSoup = BeautifulSoup(page.content, 'lxml')
-        page.close()
 
         anniversariesOfDay = hhSoup.find(id="colcajacent1")
         anniversariesListFacts = anniversariesOfDay.find_all("div", {'class': 'hhtext'})

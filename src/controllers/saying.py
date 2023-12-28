@@ -9,11 +9,12 @@ def get_phrase_from_proverbia():
     try:
 
         print(">> Leyendo frase del día")
+
         url = PROVERBIA_URL
         page = requests.get(url, headers=HEADERS)
+        page.close()
 
         proverbiaSoup = BeautifulSoup(page.content, 'lxml')
-        page.close()
 
         blockquote = proverbiaSoup.blockquote
         phrase = blockquote.p

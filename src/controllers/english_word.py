@@ -9,11 +9,12 @@ def get_english_word_from_cambridge():
     try:
 
         print(">> Leyendo palabra en inglés del día")
+
         url = CAMBRIDGE_URL
         page = requests.get(url, headers=HEADERS)
+        page.close()
 
         cambridgeSoup = BeautifulSoup(page.content, 'lxml')
-        page.close()
 
         wordOfDayName = cambridgeSoup.find('p', {'class': 'fs36 lmt-5 feature-w-big wotd-hw'})
         wordName = wordOfDayName.find("a").text
