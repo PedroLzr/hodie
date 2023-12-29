@@ -1,8 +1,5 @@
 class Saints:
-    def __init__(self, list):
-        self.list = list
-
-    def __init__(self, list, link):
+    def __init__(self, list, link = None):
         self.list = list
         self.link = link
 

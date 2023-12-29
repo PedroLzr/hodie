@@ -18,7 +18,7 @@ def get_article_from_wikipedia():
 
         article = wikipediaSoup.find(id="main-tfa")
 
-        title = article.find('h2').find_all('span')[1].find('a').text
+        title = article.find('h2').find('a').text
         body = article.find('p').text
 
         return Article(title, body, url)

@@ -20,10 +20,8 @@ def get_saints_from_santopedia():
         saintsOfDay = listSaintsOfDay.find_all('a')
 
         saints = []
-        for s in saintsOfDay:
-            saint = s.text
-            if saint.startswith('San'):
-                saints.append(Saint(saint))
+        cleaned_saints = [saint.text.strip() for saint in saintsOfDay]
+        [saints.append(Saint(saint)) for saint in cleaned_saints if saint.startswith('San')]
 
         return Saints(saints, url)
 

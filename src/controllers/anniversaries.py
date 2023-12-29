@@ -21,11 +21,8 @@ def get_anniversaries_from_hechoshistoricos():
         anniversariesListYears = anniversariesOfDay.find_all("div", {'class': 'hhanio'})
 
         anniversaries = []
-        for ann in anniversariesListFacts:
-            anniversaries.append(Anniversarie(ann.text, ann.span.text))
-
-        for index, ann in enumerate(anniversaries):
-            ann.year = anniversariesListYears[index].text
+        for fact, year in zip(anniversariesListFacts, anniversariesListYears):
+            anniversaries.append(Anniversarie(fact.text, fact.span.text, year.text))
 
         return Anniversaries(anniversaries, url)
 

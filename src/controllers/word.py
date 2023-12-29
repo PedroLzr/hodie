@@ -31,13 +31,13 @@ def get_word_from_dle():
 
         definitions = []
         for p in def_word_array:
-            definition = ''
 
-            for span in p.find_all('span', recursive=False):
-                if 'h' not in span.get('class', []):
-                    definition += ' ' + span.text
+            # Eliminar todos los abbr (Abreviaturas)
+            [abbr.decompose() for abbr in p.find_all('abbr')]
+            # Eliminar spans con la clase 'h' que es la de los ejemplos
+            [span.decompose() for span in p.find_all('span', recursive=False) if 'h' in span.get('class', [])]
 
-            definitions.append(definition)
+            definitions.append(p.text)
 
         return Word(word, definitions, wordUrl)
 
