@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const PROGRESS_BAR_TIMER = document.getElementById('progressBarTimer');
     const NUM_GAME_CATEGORIES = Math.round(Object.keys(CATEGORIES).length / 3);
     const INPUT_SUFIX = '-category-input';
+    const SPAN_SUFIX = '-category-option-span';
     const MAX_GAME_TIME = Math.round(NUM_GAME_CATEGORIES) * 14;
     const REGEX_IS_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ '.-]+$/;
 
@@ -79,12 +80,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         LETTER_LABEL.textContent = randomLetter;
 
         for (let category of randomCategories) {
-            var editText = document.createElement("input");
+            let editText = document.createElement("input");
 
             editText.type = "text";
             editText.id = category + INPUT_SUFIX;
             editText.name = category;
             editText.placeholder = CATEGORIES[category];
+            editText.style.display = "block";
 
             CATEGORIES_CONTAINER.append(editText);
         }
@@ -137,14 +139,23 @@ document.addEventListener("DOMContentLoaded", async function () {
         for (let category of randomCategories) {
             const CATEGORY_INPUT = document.getElementById(category + INPUT_SUFIX);
             CATEGORY_INPUT.disabled = true;
-            let isCorrect = await checkAnswer(category, CATEGORY_INPUT.value);
+            let result = await checkAnswer(category, CATEGORY_INPUT.value);
 
-            if (isCorrect) {
+            if (result === true) {
                 correctAnswers++;
                 CATEGORY_INPUT.classList.add("input-correct");
             } else {
                 incorrectAnswers++;
                 CATEGORY_INPUT.classList.add("input-incorrect");
+
+                let spanOption = document.createElement("span");
+                spanOption.type = "span";
+                spanOption.id = category + SPAN_SUFIX;
+                spanOption.style.display = "block";
+                spanOption.textContent = result;
+                spanOption.classList.add("span-option");
+
+                CATEGORY_INPUT.insertAdjacentElement('afterend', spanOption);
             }
         }
 
@@ -187,12 +198,14 @@ document.addEventListener("DOMContentLoaded", async function () {
                 answer = answer.toLowerCase();
 
                 if (answer.startsWith(randomLetter)) {
-                    return await isAnswerInCategory(category, answer);
+                    if (await isAnswerInCategory(category, answer)) {
+                        return true;
+                    }
                 }
             }
         }
 
-        return false;
+        return await getOptionForCategory(category);
     }
 
     async function isAnswerInCategory(category, answer) {
@@ -200,15 +213,23 @@ document.addEventListener("DOMContentLoaded", async function () {
         let categoryItems = await getCategoryItemsFromFile(category);
 
         // Variantes de la palabra
-        // let answerWithO;
-        // let answerWithA;
-        // let answerWithS;
-        // let answerWithoutS;
+        let answerWithO = answer.substring(0, (answer.length - 1)) + "o";
+        let answerWithA = answer.substring(0, (answer.length - 1)) + "a";
+        let answerWithS = answer + "s";
+        let answerWithoutS = answer.substring(0, (answer.length - 1));
 
-        if (categoryItems.includes(answer)) {
+        if (categoryItems.includes(answer) ||
+            categoryItems.includes(answerWithO) ||
+            categoryItems.includes(answerWithA) ||
+            categoryItems.includes(answerWithS) ||
+            categoryItems.includes(answerWithoutS)) {
+
             return true;
+
         } else {
+
             return false;
+
         }
     }
 
@@ -266,5 +287,12 @@ document.addEventListener("DOMContentLoaded", async function () {
         } catch (error) {
             console.error(error);
         }
+    }
+
+    async function getOptionForCategory(category) {
+
+        let categoryItems = await getCategoryItemsFromFile(category);
+
+        return await categoryItems.find(item => item.startsWith(randomLetter));
     }
 });
