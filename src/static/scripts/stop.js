@@ -62,8 +62,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 PROGRESS_BAR.style.display = "none";
                 GAME_CONTAINER.style.display = "block";
                 LETTER_LABEL.textContent = savedGameData.randomLetter;
-                COUNTER_CORRECT_ANSWERS.textContent = `Hoy hiciste ${savedGameData.correct_answers} correctas`;
-                COUNTER_INCORRECT_ANSWERS.textContent = `Hoy hiciste ${savedGameData.incorrect_answers} incorrectas`;
+                COUNTER_CORRECT_ANSWERS.textContent = `Hoy has hecho ${savedGameData.correct_answers} correctas`;
+                COUNTER_INCORRECT_ANSWERS.textContent = `y ${savedGameData.incorrect_answers} incorrectas`;
             }
         }
 
@@ -148,14 +148,16 @@ document.addEventListener("DOMContentLoaded", async function () {
                 incorrectAnswers++;
                 CATEGORY_INPUT.classList.add("input-incorrect");
 
-                let spanOption = document.createElement("span");
-                spanOption.type = "span";
-                spanOption.id = category + SPAN_SUFIX;
-                spanOption.style.display = "block";
-                spanOption.textContent = result;
-                spanOption.classList.add("span-option");
+                for (let option of result) {
+                    let spanOption = document.createElement("span");
+                    spanOption.type = "span";
+                    spanOption.id = category + SPAN_SUFIX;
+                    spanOption.style.display = "block";
+                    spanOption.textContent = option;
+                    spanOption.classList.add("span-option");
 
-                CATEGORY_INPUT.insertAdjacentElement('afterend', spanOption);
+                    CATEGORY_INPUT.insertAdjacentElement('afterend', spanOption);
+                }
             }
         }
 
@@ -211,6 +213,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     async function isAnswerInCategory(category, answer) {
 
         let categoryItems = await getCategoryItemsFromFile(category);
+        // Eliminar los acentos
+        categoryItems = categoryItems.map((item) => removeAccentMark(item));
+        // Eliminar carácteres especiales y espacios
+        categoryItems = categoryItems.map((item) => item.replace(/[.\-\/#!$%^&*;:{}=\-_'~()]/g, '').replace(/\s+/g, ''));
 
         // Variantes de la palabra
         let answerWithO = answer.substring(0, (answer.length - 1)) + "o";
@@ -278,9 +284,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             let categoryItems = DATA[category];
 
             // Eliminar los acentos
-            categoryItems = categoryItems.map((item) => removeAccentMark(item));
+            // categoryItems = categoryItems.map((item) => removeAccentMark(item));
             // Eliminar carácteres especiales y espacios
-            categoryItems = categoryItems.map((item) => item.replace(/[.\-\/#!$%^&*;:{}=\-_'~()]/g, '').replace(/\s+/g, ''));
+            // categoryItems = categoryItems.map((item) => item.replace(/[.\-\/#!$%^&*;:{}=\-_'~()]/g, '').replace(/\s+/g, ''));
 
             return categoryItems;
 
@@ -293,6 +299,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         let categoryItems = await getCategoryItemsFromFile(category);
 
-        return await categoryItems.find(item => item.startsWith(randomLetter));
+        // return await categoryItems.find(item => item.startsWith(randomLetter));
+
+        return await categoryItems.filter(item => item.startsWith(randomLetter)).slice(0, 2);
     }
 });
