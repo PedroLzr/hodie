@@ -104,9 +104,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     async function setRandomLetter() {
-        // const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
-        // randomLetter = ALPHABET[Math.floor(Math.random() * ALPHABET.length)];
-
         const DATE = new Date();
         const d = DATE.getDate() - 1;
 
@@ -293,11 +290,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             const DATA = await JSON_FILE.json();
             let categoryItems = DATA[category];
 
-            // Eliminar los acentos
-            // categoryItems = categoryItems.map((item) => removeAccentMark(item));
-            // Eliminar carácteres especiales y espacios
-            // categoryItems = categoryItems.map((item) => item.replace(/[.\-\/#!$%^&*;:{}=\-_'~()]/g, '').replace(/\s+/g, ''));
-
             return categoryItems;
 
         } catch (error) {
@@ -308,8 +300,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     async function getOptionForCategory(category) {
 
         let categoryItems = await getCategoryItemsFromFile(category);
-
-        // return await categoryItems.find(item => item.startsWith(randomLetter));
 
         return await categoryItems.filter(item => item.startsWith(randomLetter)).slice(0, 2);
     }
