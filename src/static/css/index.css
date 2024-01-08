@@ -4,3 +4,7 @@ h3{
     margin-top: 1rem;
     margin-bottom: 0.5rem;
 }
+
+h4:first-letter, p:first-letter {
+    text-transform: uppercase;
+}
