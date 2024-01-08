@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             editText.type = "text";
             editText.id = category + INPUT_SUFIX;
             editText.name = category;
+            editText.autocomplete = "off";
             editText.placeholder = CATEGORIES[category];
             editText.style.display = "block";
 
