@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const SQRT_RESULT = document.getElementById('sqrt-result');
     const PERCENT_RESULT = document.getElementById('percent-result');
 
-    const MAX_GAME_TIME = 60;
+    const MAX_GAME_TIME = 120;
 
     let timeLeft = MAX_GAME_TIME;
     let randomNumber;
@@ -107,13 +107,14 @@ document.addEventListener("DOMContentLoaded", async function () {
         let m = DATE.getMonth();
 
         // Usar el día y mes para hacer un conjunto de operaciones y sacar números "aleatorios"
-        randomNumber = Math.abs(Math.floor(((d * d) / 4) * ((m * 3) / 2) - 3));
+        // randomNumber = Math.abs(Math.floor(((d * d) / 4) * ((m * 3) / 2) - 3));
+        randomNumber = getRandomNumber(11, 99);
 
-        randomNumberSum = ((d * d) + 27) + ((m * 5) + 212);
-        randomNumberSubstraction = (d + 127) + ((m * 7) + 88);
-        randomNumberMultiplication = Math.floor(((d * m) * 3) + 37);
-        randomNumberDivision = Math.floor(((m + d) / 2) + 4);
-        randomNumberPercent = Math.floor(((m + d) / 2) + 2) * 10;
+        randomNumberSum = getRandomNumber(300, 999);
+        randomNumberSubstraction = getRandomNumber(300, 999);
+        randomNumberMultiplication = getRandomNumber(11, 99);
+        randomNumberDivision = getRandomNumber(11, 30);
+        randomNumberPercent = getRandomNumber(1, 9) * 10;
     }
 
     function finishGame() {
@@ -128,6 +129,15 @@ document.addEventListener("DOMContentLoaded", async function () {
         let cubeAnswer = CUBE_INPUT.value;
         let sqrtAnswer = SQRT_INPUT.value;
         let percentAnswer = PERCENT_INPUT.value;
+
+        SUM_INPUT.disabled = true;
+        SUBSTRACTION_INPUT.disabled = true;
+        MULTIPLICATION_INPUT.disabled = true;
+        DIVISION_INPUT.disabled = true;
+        POW_INPUT.disabled = true;
+        CUBE_INPUT.disabled = true;
+        SQRT_INPUT.disabled = true;
+        PERCENT_INPUT.disabled = true;
 
         if ((randomNumber + randomNumberSum) == sumAnswer) {
             SUM_INPUT.classList.add("input-correct");
@@ -251,5 +261,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             timeLeft--;
             setTimeout(progress, 1000);
         }
+    }
+
+    function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 });
