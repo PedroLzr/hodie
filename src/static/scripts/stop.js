@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const CATEGORIES = {
         'animals': 'Animal',
         'body': 'Cuerpo humano',
-        'capitals': 'Capital',
+        'capitals': 'Capital de País',
         'car_brands': 'Marca de coche',
         'chemical_elements': 'Elemento químico',
         'colors': 'Color',

@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     const SUBSTRACTION_LABEL = document.getElementById('subtraction-label');
     const MULTIPLICATION_LABEL = document.getElementById('multiplication-label');
     const DIVISION_LABEL = document.getElementById('division-label');
-    // const POW_LABEL = document.getElementById('pow-label');
-    // const CUBE_LABEL = document.getElementById('cube-label');
-    // const SQRT_LABEL = document.getElementById('sqrt-label');
+    const POW_LABEL = document.getElementById('pow-label');
+    const CUBE_LABEL = document.getElementById('cube-label');
+    const SQRT_LABEL = document.getElementById('sqrt-label');
     const PERCENT_LABEL = document.getElementById('percent-label');
 
     const SUM_INPUT = document.getElementById('sum-input');
@@ -83,12 +83,15 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         setRandomNumbers();
 
-        NUMBER_LABEL.textContent = randomNumber;
-        SUM_LABEL.textContent = "Sumarle " + randomNumberSum;
-        SUBSTRACTION_LABEL.textContent = "Restarle " + randomNumberSubstraction;
-        MULTIPLICATION_LABEL.textContent = "Multiplicarlo por " + randomNumberMultiplication;
-        DIVISION_LABEL.textContent = "Dividirlo entre " + randomNumberDivision;
-        PERCENT_LABEL.textContent = "Sacar el " + randomNumberPercent + "%";
+        NUMBER_LABEL.innerHTML = randomNumber;
+        SUM_LABEL.innerHTML = `<b>${randomNumber}</b> + ${randomNumberSum}`;
+        SUBSTRACTION_LABEL.innerHTML = `<b>${randomNumber}</b> - ${randomNumberSubstraction}`;
+        MULTIPLICATION_LABEL.innerHTML = `<b>${randomNumber}</b> x ${randomNumberMultiplication}`;
+        DIVISION_LABEL.innerHTML = `<b>${randomNumber}</b> / ${randomNumberDivision}`;
+        POW_LABEL.innerHTML = `<b>${randomNumber}</b><sup>2</sup>`;
+        CUBE_LABEL.innerHTML = `<b>${randomNumber}</b><sup>3</sup>`;
+        SQRT_LABEL.innerHTML = `√<b>${randomNumber}</b>`;
+        PERCENT_LABEL.innerHTML = `${randomNumberPercent}% de <b>${randomNumber}</b>`;
 
         GAME_CONTAINER.style.display = "block";
         START_BUTTON.disabled = true;
@@ -166,12 +169,14 @@ document.addEventListener("DOMContentLoaded", async function () {
             incorrectAnswers++;
         }
 
-        if (Math.round((randomNumber / randomNumberDivision)) == divisionAnswer) {
+        if (Math.trunc((randomNumber / randomNumberDivision)) == Math.trunc(divisionAnswer)) {
             DIVISION_INPUT.classList.add("input-correct");
             correctAnswers++;
         } else {
             DIVISION_INPUT.classList.add("input-incorrect");
-            DIVISION_RESULT.textContent = "Resultado correcto: " + Math.round((randomNumber / randomNumberDivision));
+            let correctResult = randomNumber / randomNumberDivision;
+            // DIVISION_RESULT.textContent = "Resultado correcto: " + Math.trunc(correctResult) + " (" + correctResult + ")";
+            DIVISION_RESULT.textContent = "Resultado correcto: " + Math.trunc(correctResult);
             incorrectAnswers++;
         }
 
@@ -193,21 +198,25 @@ document.addEventListener("DOMContentLoaded", async function () {
             incorrectAnswers++;
         }
 
-        if (Math.round(Math.sqrt(randomNumber)) == sqrtAnswer) {
+        if (Math.trunc(Math.sqrt(randomNumber)) == Math.trunc(sqrtAnswer)) {
             SQRT_INPUT.classList.add("input-correct");
             correctAnswers++;
         } else {
             SQRT_INPUT.classList.add("input-incorrect");
-            SQRT_RESULT.textContent = "Resultado correcto: " + Math.round(Math.sqrt(randomNumber));
+            let correctResult = Math.sqrt(randomNumber);
+            // SQRT_RESULT.textContent = "Resultado correcto: " + Math.trunc(correctResult) + " (" + correctResult + ")";
+            SQRT_RESULT.textContent = "Resultado correcto: " + Math.trunc(correctResult);
             incorrectAnswers++;
         }
 
-        if (Math.round(((randomNumber * randomNumberPercent) / 100)) == percentAnswer) {
+        if (Math.trunc(((randomNumber * randomNumberPercent) / 100)) == Math.trunc(percentAnswer)) {
             PERCENT_INPUT.classList.add("input-correct");
             correctAnswers++;
         } else {
             PERCENT_INPUT.classList.add("input-incorrect");
-            PERCENT_RESULT.textContent = "Resultado correcto: " + Math.round(((randomNumber * randomNumberPercent) / 100));
+            let correctResult = (randomNumber * randomNumberPercent) / 100;
+            // PERCENT_RESULT.textContent = "Resultado correcto: " + Math.trunc(correctResult) + " (" + correctResult + ")";
+            PERCENT_RESULT.textContent = "Resultado correcto: " + Math.trunc(correctResult);
             incorrectAnswers++;
         }
 
