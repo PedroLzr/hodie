@@ -6,6 +6,23 @@ from models.curiosity import *
 api_bp = Blueprint('api', __name__)
 
 # Curiosidad del día
+@api_bp.route('/v1/external/today/all', methods=['GET'])
+def api_external_today_all():
+    try:
+
+        date = datetime.now().strftime("%Y-%m-%d")
+        file_name = f'./external_data/{date}.json'
+
+        with open(file_name, 'r') as today_file:
+            today = json.load(today_file)
+
+        return jsonify({'today': today})
+
+    except Exception as e:
+            print(f"Error en api_external_today_all(): {e}")
+
+
+# Curiosidad del día
 @api_bp.route('/v1/internal/curiosity/today', methods=['GET'])
 def api_internal_curiosity_today():
     try:
