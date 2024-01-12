@@ -5,7 +5,7 @@ from controllers.saints import *
 from controllers.anniversaries import *
 from controllers.curiosities import *
 from controllers.english_word import *
-from utils.write_json_file import write_json_file
+from controllers.utils.write_json_file import write_json_file
 
 def save_scrap_day():
 

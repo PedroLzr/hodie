@@ -1,7 +1,7 @@
 from datetime import datetime
 import os
-from utils.get_external_data import save_scrap_day
-from utils.read_json_file import read_json_file
+from controllers.utils.get_external_data import save_scrap_day
+from controllers.utils.read_json_file import read_json_file
 from config.config_parameters import EXTERNAL_DATA
 
 def getToday():
