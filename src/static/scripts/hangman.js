@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", async function () {
+import { removeAccentMark, saveResultInLocalStorage } from './utils.js';
+
+document.addEventListener("DOMContentLoaded", async () => {
 
     // Inicializar variables
     const WORD_DISPLAY = document.getElementById("word-display");
@@ -31,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Traer la palabra del día
     async function getHangmanWord() {
         try {
-            const RESPONSE = await fetch('static/jsons/hangman/words_2023.json');
+            const RESPONSE = await fetch('static/jsons/hangman/words_2024.json');
             if (!RESPONSE.ok) {
                 throw new Error('Error al cargar el archivo JSON');
             }
@@ -107,7 +109,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     function displayWord() {
         let displayText = "";
         for (let letter of selectedWord) {
-            if (guessedLetters.includes(letter)) {
+            if (guessedLetters.includes(removeAccentMark(letter))) {
                 displayText += letter + " ";
             } else {
                 displayText += "_ ";
@@ -175,53 +177,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     function saveResult(result) {
 
-        const DATE = new Date();
-        let d = DATE.getDate();
-        let m = DATE.getMonth();
-        let y = DATE.getFullYear();
-        let dateForSave = `${d}/${m}/${y}`
-
-        let savedGame = {
-            "date": dateForSave,
+        let obj = {
             "guessedLetters": guessedLetters,
             "hangmanImage": hangmanImage,
             "succeeded": result
         };
 
-        localStorage.setItem("hangman", JSON.stringify(savedGame));
+        saveResultInLocalStorage("hangman", obj);
     }
-
-    // function addShareButton() {
-
-    //     // if (navigator.share) {
-    //         const SHARE_BUTTON = document.createElement("button");
-    //         SHARE_BUTTON.textContent = "Compartir";
-    //         SHARE_BUTTON.id = "BUTTON_SHARE";
-    //         SHARE_BUTTON.classList.add("share-button");
-    //         WORD_DISPLAY.appendChild(SHARE_BUTTON);
-
-    //         SHARE_BUTTON.addEventListener("click", () => {
-    //             alert("hola");
-    //             // var text = "¡Echa un vistazo a esta página web increíble!";
-    //             // var url = window.location.href;
-
-    //             // var datosCompartir = {
-    //             //     title: document.title,
-    //             //     text: text,
-    //             //     url: url,
-    //             // };
-
-    //             // navigator.share(datosCompartir)
-    //             //     .then(function () {
-    //             //         console.log("Contenido compartido con éxito");
-    //             //     })
-    //             //     .catch(function (error) {
-    //             //         console.error("Error al compartir:", error);
-    //             //     });
-    //         });
-
-    //     // } else {
-    //     //     console.error("La API de Web Share no está soportada en este navegador.");
-    //     // }
-    // }
 });

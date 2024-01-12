@@ -11,7 +11,7 @@ def get_curiosity_from_json():
         current_month = current_date.strftime("%B").lower()
         current_day = current_date.day
 
-        with open('internal_data/curiosities_2023.json', 'r') as curiosities_file:
+        with open('internal_data/curiosities_2024.json', 'r') as curiosities_file:
             curiosities_obj = json.load(curiosities_file)
 
         month = curiosities_obj[current_month]

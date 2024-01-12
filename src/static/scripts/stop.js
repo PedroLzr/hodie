@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", async function () {
+import { removeAccentMark, saveResultInLocalStorage } from './utils.js';
+
+document.addEventListener("DOMContentLoaded", async () => {
 
     const CATEGORIES = {
         'animals': 'Animal',
@@ -172,25 +174,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         COUNTER_CORRECT_ANSWERS.textContent = `Correctas: ${correctAnswers}`;
         COUNTER_INCORRECT_ANSWERS.textContent = `Incorrectas: ${incorrectAnswers}`;
 
-        saveResult();
-    }
-
-    function saveResult() {
-
-        const DATE = new Date();
-        let d = DATE.getDate();
-        let m = DATE.getMonth();
-        let y = DATE.getFullYear();
-        let dateForSave = `${d}/${m}/${y}`
-
-        let savedGame = {
-            "date": dateForSave,
+        let obj = {
             "randomLetter": randomLetter,
             "correct_answers": correctAnswers,
             "incorrect_answers": incorrectAnswers
         };
 
-        localStorage.setItem("stop", JSON.stringify(savedGame));
+        saveResultInLocalStorage("stop", obj);
     }
 
     async function checkAnswer(category, answer) {
@@ -275,10 +265,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
-    function removeAccentMark(word) {
-        return word.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    }
-
     async function getCategoryItemsFromFile(category) {
 
         try {
@@ -299,9 +285,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     async function getOptionForCategory(category) {
-
         let categoryItems = await getCategoryItemsFromFile(category);
-
         return await categoryItems.filter(item => item.startsWith(randomLetter)).slice(0, 2);
     }
 });

@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", async function () {
+import { getRandomNumber, saveResultInLocalStorage } from './utils.js';
+
+document.addEventListener("DOMContentLoaded", async () => {
 
     const START_BUTTON = document.getElementById('start-button');
     const STOP_BUTTON = document.getElementById('stop-button');
@@ -105,12 +107,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     function setRandomNumbers() {
-        const DATE = new Date();
-        const d = DATE.getDate();
-        let m = DATE.getMonth();
-
-        // Usar el día y mes para hacer un conjunto de operaciones y sacar números "aleatorios"
-        // randomNumber = Math.abs(Math.floor(((d * d) / 4) * ((m * 3) / 2) - 3));
         randomNumber = getRandomNumber(11, 99);
 
         randomNumberSum = getRandomNumber(300, 999);
@@ -175,7 +171,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         } else {
             DIVISION_INPUT.classList.add("input-incorrect");
             let correctResult = randomNumber / randomNumberDivision;
-            // DIVISION_RESULT.textContent = "Resultado correcto: " + Math.trunc(correctResult) + " (" + correctResult + ")";
             DIVISION_RESULT.textContent = "Resultado correcto: " + Math.trunc(correctResult);
             incorrectAnswers++;
         }
@@ -204,7 +199,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         } else {
             SQRT_INPUT.classList.add("input-incorrect");
             let correctResult = Math.sqrt(randomNumber);
-            // SQRT_RESULT.textContent = "Resultado correcto: " + Math.trunc(correctResult) + " (" + correctResult + ")";
             SQRT_RESULT.textContent = "Resultado correcto: " + Math.trunc(correctResult);
             incorrectAnswers++;
         }
@@ -215,7 +209,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         } else {
             PERCENT_INPUT.classList.add("input-incorrect");
             let correctResult = (randomNumber * randomNumberPercent) / 100;
-            // PERCENT_RESULT.textContent = "Resultado correcto: " + Math.trunc(correctResult) + " (" + correctResult + ")";
             PERCENT_RESULT.textContent = "Resultado correcto: " + Math.trunc(correctResult);
             incorrectAnswers++;
         }
@@ -223,25 +216,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         COUNTER_CORRECT_ANSWERS.textContent = `Correctas: ${correctAnswers}`;
         COUNTER_INCORRECT_ANSWERS.textContent = `Incorrectas: ${incorrectAnswers}`;
 
-        saveResult();
-    }
-
-    function saveResult() {
-
-        const DATE = new Date();
-        let d = DATE.getDate();
-        let m = DATE.getMonth();
-        let y = DATE.getFullYear();
-        let dateForSave = `${d}/${m}/${y}`
-
-        let savedGame = {
-            "date": dateForSave,
+        let obj = {
             "randomNumber": randomNumber,
             "correct_answers": correctAnswers,
             "incorrect_answers": incorrectAnswers
         };
 
-        localStorage.setItem("stop_mat", JSON.stringify(savedGame));
+        saveResultInLocalStorage("stop_mat", obj);
     }
 
     function progress() {
@@ -270,9 +251,5 @@ document.addEventListener("DOMContentLoaded", async function () {
             timeLeft--;
             setTimeout(progress, 1000);
         }
-    }
-
-    function getRandomNumber(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 });
