@@ -1,14 +1,17 @@
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+{% endblock %}
+
 <header>
     <nav class="navbar">
-        <a class="navbar-brand header-title" href="{{ url_for('index') }}">Alqvimia &#129418;</a>
+        <a class="header-title" href="{{ url_for('index') }}">Hodie &#129418;</a>
 
         <div class="ml-auto d-flex">
             <span class="navbar-text d-none d-md-block" style="margin-right: 10px;" id="dateToday"></span>
             <span class="navbar-text d-block d-md-none" style="margin-right: 10px;" id="dateTodaySmall"></span>
 
             <button class="navbar-toggler" style="margin-right: 10px;" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>

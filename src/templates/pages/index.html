@@ -11,7 +11,7 @@
 <section>
     <div class="row">
         <div class="col">
-            <h3>Palabra del día</h3>
+            <h3 class="title">Palabra del día</h3>
             <h4>{{ today.word.name }}</h4>
             {% for def_word in today.word.defs_word %}
             <p>{{ def_word }}</p>
@@ -23,7 +23,7 @@
 <section>
     <div class="row">
         <div class="col">
-            <h3>Palabra en inglés del día</h3>
+            <h3 class="title">Palabra en inglés del día</h3>
             <h4>{{ today.english_word.name }}</h4>
             <p>{{ today.english_word.def_word }}</p>
         </div>
@@ -33,7 +33,7 @@
 <section>
     <div class="row">
         <div class="col">
-            <h3>Frase del día</h3>
+            <h3 class="title">Frase del día</h3>
             <h4>{{ today.saying.phrase }}</h4>
             <p>{{ today.saying.author }} - {{ today.saying.desc_author }}</p>
         </div>
@@ -43,7 +43,7 @@
 <section>
     <div class="row">
         <div class="col">
-            <h3>Curiosidad del día</h3>
+            <h3 class="title">Curiosidad del día</h3>
             <h4>{{ today.curiosity.curiosity }}</h4>
         </div>
     </div>
@@ -52,7 +52,7 @@
 <section>
     <div class="row">
         <div class="col">
-            <h3>Artículo del día</h3>
+            <h3 class="title">Artículo del día</h3>
             <h4>{{ today.article.title }}</h4>
             <p>{{ today.article.body }}</p>
         </div>
@@ -62,7 +62,7 @@
 <section>
     <div class="row">
         <div class="col">
-            <h3>Santos del día</h3>
+            <h3 class="title">Santos del día</h3>
 
             <div id="carouselSaintsControls" class="carousel slide" data-bs-interval="false">
                 <div class="carousel-indicators">
@@ -112,7 +112,7 @@
 <section>
     <div class="row">
         <div class="col">
-            <h3>Efemérides del día</h3>
+            <h3 class="title">Efemérides del día</h3>
 
             <div id="carouselAnniversariesControls" class="carousel slide" data-bs-interval="false">
                 <div class="carousel-indicators">

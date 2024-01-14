@@ -3,14 +3,10 @@ nav {
 }
 
 .header-title {
-    color: rgb(56, 55, 55);
+    color: rgb(39, 38, 38);
     text-decoration: none;
     font-size: 1.5em;
     margin-left: 1rem;
-}
-
-.header-title:hover {
-    color: rgb(56, 55, 55);
 }
 
 .btn-menu {
@@ -34,9 +30,4 @@ nav {
 
 li {
     display: flex;
-}
-
-body{
-    background-color: rgb(39, 38, 38);
-    color: aliceblue;
 }
