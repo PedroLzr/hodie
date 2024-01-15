@@ -21,4 +21,4 @@ def get_curiosity_from_json():
 
     except:
         print('Error buscando la curiosidad en JSON')
-        return "Curiosidad no encontrada"
+        return Curiosity("Curiosidad no encontrada")
