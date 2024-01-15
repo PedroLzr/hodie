@@ -4,6 +4,9 @@ WORKDIR /app
 
 COPY . .
 
+ENV EXTERNAL_DATA_PATH=../external_data
+ENV INTERNAL_DATA_PATH=../internal_data
+
 RUN pip install -r requirements.txt
 
 EXPOSE 8000

@@ -1,11 +1,12 @@
 import json
 from datetime import datetime
+from config.config_parameters import EXTERNAL_DATA
 
 def write_json_file(data):
 
     try:
         date = datetime.now().strftime("%Y-%m-%d")
-        file_name = f'./external_data/{date}.json'
+        file_name = f'{EXTERNAL_DATA["path"]}/{date}.json'
 
         with open(file_name, 'w') as file:
             json.dump(data, file)

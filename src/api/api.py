@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify
 from datetime import datetime
 import json
 from models.curiosity import *
+from config.config_parameters import EXTERNAL_DATA, INTERNAL_DATA
 
 api_bp = Blueprint('api', __name__)
 
@@ -11,7 +12,7 @@ def api_external_today_all():
     try:
 
         date = datetime.now().strftime("%Y-%m-%d")
-        file_name = f'./external_data/{date}.json'
+        file_name = f'{EXTERNAL_DATA["path"]}/{date}.json'
 
         with open(file_name, 'r') as today_file:
             today = json.load(today_file)
@@ -31,7 +32,7 @@ def api_internal_curiosity_today():
         current_month = current_date.strftime("%B").lower()
         current_day = current_date.day
 
-        with open('internal_data/curiosities_2024.json', 'r') as curiosities_file:
+        with open(f'{INTERNAL_DATA["path"]}/curiosities_2024.json', 'r') as curiosities_file:
             curiosities_obj = json.load(curiosities_file)
 
         month = curiosities_obj[current_month]
@@ -51,7 +52,7 @@ def api_internal_curiosity_random():
         current_month = current_date.strftime("%B").lower()
         current_day = current_date.day
 
-        with open('internal_data/curiosities_2024.json', 'r') as curiosities_file:
+        with open(f'{INTERNAL_DATA["path"]}/curiosities_2024.json', 'r') as curiosities_file:
             curiosities_obj = json.load(curiosities_file)
 
         month = curiosities_obj[current_month]
@@ -71,7 +72,7 @@ def api_internal_phrase_today():
         current_month = current_date.strftime("%B").lower()
         current_day = current_date.day
 
-        with open('internal_data/phrases_2024.json', 'r') as curiosities_file:
+        with open(f'{INTERNAL_DATA["path"]}/phrases_2024.json', 'r') as curiosities_file:
             curiosities_obj = json.load(curiosities_file)
 
         month = curiosities_obj[current_month]
@@ -91,7 +92,7 @@ def api_internal_phrase_random():
         current_month = current_date.strftime("%B").lower()
         current_day = current_date.day
 
-        with open('internal_data/phrases_2024.json', 'r') as curiosities_file:
+        with open(f'{INTERNAL_DATA["path"]}/phrases_2024.json', 'r') as curiosities_file:
             curiosities_obj = json.load(curiosities_file)
 
         month = curiosities_obj[current_month]
