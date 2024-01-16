@@ -55,11 +55,6 @@ coverage.xml   # Coverage XML reports
 .tox/          # Tox test environments folder
 docs/_build/   # Sphinx documentation build folder
 
-# Project's specific files or folders
-# Add here any file or folder you don't want to track, e.g.:
-# config.yaml
-# secret_data.csv
-
 # Other tools
 .scrapy       # Scrapy data folder
 celerybeat-schedule # Celery beat schedule file

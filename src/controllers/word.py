@@ -17,10 +17,9 @@ def get_word_from_dle():
         dleSoup = BeautifulSoup(page.content, 'lxml')
 
         wordOfDay = dleSoup.find(id="wotd")
-        # word = wordOfDay.find("a").text
         word = wordOfDay.find("a").text.split(",")[0]
+        word = ''.join([caracter for caracter in word if not caracter.isdigit()])
 
-        # wordUrl = url + '/' + word.split(",")[0]
         wordUrl = url + '/' + word
         wordPage = requests.get(wordUrl, headers=HEADERS)
         wordPage.close()
