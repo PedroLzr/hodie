@@ -70,14 +70,14 @@ document.addEventListener("DOMContentLoaded", async () => {
                 if (savedGameData.succeeded === true) {
                     DYNAMIC_TITLE.innerHTML = "¡Muy bien! &#127894;";
                     LETTERS_CONTAINER.innerHTML = selectedWordDefinition;
-                    WORD_DISPLAY.textContent = selectedWord;
+                    WORD_DISPLAY.textContent = selectedWord.split('').join(' ');
                     hangmanImage = 7;
                     updateHangmanImage();
                     return;
                 } else if ((savedGameData.succeeded === false)) {
-                    DYNAMIC_TITLE.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
+                    DYNAMIC_TITLE.innerHTML = "Fallaste &#128128; ¡Prueba cras!";
                     LETTERS_CONTAINER.innerHTML = selectedWordDefinition;
-                    WORD_DISPLAY.textContent = selectedWord;
+                    WORD_DISPLAY.textContent = selectedWord.split('').join(' ');
                     hangmanImage = 6;
                     updateHangmanImage();
                     return;
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         const BUTTON_LETTER = document.getElementById(letter + BUTTON_SUFIX);
                         BUTTON_LETTER.classList.add('disabled');
 
-                        if (selectedWord.includes(letter)) {
+                        if (removeAccentMark(selectedWord).includes(letter)) {
                             BUTTON_LETTER.classList.add('correct');
                         } else {
                             BUTTON_LETTER.classList.add('incorrect');
@@ -139,9 +139,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     function checkLose() {
         if (hangmanImage === 6) {
-            DYNAMIC_TITLE.innerHTML = "Fallaste &#128128; ¡Prueba mañana!";
+            DYNAMIC_TITLE.innerHTML = "Fallaste &#128128; ¡Prueba cras!";
             LETTERS_CONTAINER.innerHTML = selectedWordDefinition;
-            WORD_DISPLAY.textContent = selectedWord;
+            WORD_DISPLAY.textContent = selectedWord.split('').join(' ');
 
             // Guardar en localStorage que ha perdido
             saveResult(false);
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 displayWord();
 
-                if (!selectedWord.includes(letter)) {
+                if (!removeAccentMark(selectedWord).includes(letter)) {
                     event.target.classList.add('incorrect');
                     hangmanImage++;
                     saveResult(null);
