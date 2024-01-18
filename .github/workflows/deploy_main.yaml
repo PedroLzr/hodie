@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           password: ${{ secrets.VPS_PASSWORD }}
           script: |
-            cd path-to-your-project
-            git pull
-            docker build -t your-app-name .
-            docker run -d --name your-app-container -p 80:80 your-app-name
+            cd Hodiernus
+            git pull origin main
+            docker build -t hodie:ghactions .
+            docker run -d -v ./certs:/certs -p 443:8000 hodie:ghactions
