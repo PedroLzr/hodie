@@ -21,5 +21,6 @@ jobs:
           script: |
             cd Hodiernus
             git pull origin main
+            docker stop $(docker ps -a -q)
             docker build -t hodie:ghactions .
             docker run -d -v ./certs:/certs -p 443:8000 hodie:ghactions
