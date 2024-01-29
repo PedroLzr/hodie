@@ -1,4 +1,4 @@
-import { removeAccentMark, saveResultInLocalStorage } from './utils.js';
+import { removeAccentMark, saveResultInLocalStorage } from './utils_games.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -68,7 +68,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             if (savedGameData && savedGameData.date === dateNow) {
                 if (savedGameData.succeeded === true) {
-                    DYNAMIC_TITLE.innerHTML = "¡Muy bien! &#127894;";
+                    if (savedGameData.attempts === 0) {
+                        DYNAMIC_TITLE.innerHTML = "¡Perfecto! &#127942;";
+                    } else if (savedGameData.attempts > 0 && savedGameData.attempts <= 4) {
+                        DYNAMIC_TITLE.innerHTML = "¡Muy bien! &#127941;";
+                    } else {
+                        DYNAMIC_TITLE.innerHTML = "¡Lo lograste! &#128170;";
+                    }
                     LETTERS_CONTAINER.innerHTML = selectedWordDefinition;
                     WORD_DISPLAY.textContent = selectedWord.split('').join(' ');
                     hangmanImage = 7;
@@ -127,13 +133,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     function checkWin() {
         if (!WORD_DISPLAY.textContent.includes("_")) {
-            DYNAMIC_TITLE.innerHTML = "¡Muy bien! &#127894;";
+            if (hangmanImage === 0) {
+                DYNAMIC_TITLE.innerHTML = "¡Perfecto! &#127942;";
+            } else if (hangmanImage > 0 && hangmanImage <= 4) {
+                DYNAMIC_TITLE.innerHTML = "¡Muy bien! &#127941;";
+            } else {
+                DYNAMIC_TITLE.innerHTML = "¡Lo lograste! &#128170;";
+            }
+
             LETTERS_CONTAINER.innerHTML = selectedWordDefinition;
-            hangmanImage = 7;
-            updateHangmanImage();
 
             // Guardar en localStorage que ha ganado
             saveResult(true);
+
+            hangmanImage = 7;
+            updateHangmanImage();
         }
     }
 
@@ -180,7 +194,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         let obj = {
             "guessedLetters": guessedLetters,
             "hangmanImage": hangmanImage,
-            "succeeded": result
+            "succeeded": result,
+            "attempts": hangmanImage
         };
 
         saveResultInLocalStorage("hangman", obj);

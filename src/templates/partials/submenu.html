@@ -1,0 +1,14 @@
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/submenu.css') }}">
+{% endblock %}
+
+<header>
+
+    <nav class="navbar">
+        <div class="d-flex justify-content-center w-100">
+            <a class="nav-link btn-menu" href="{{ url_for('index') }}">Cultura</a>
+            <a class="nav-link btn-menu" href="{{ url_for('economy') }}">Economía</a>
+        </div>
+    </nav>
+
+</header>

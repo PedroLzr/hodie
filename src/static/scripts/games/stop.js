@@ -1,4 +1,4 @@
-import { removeAccentMark, saveResultInLocalStorage } from './utils.js';
+import { removeAccentMark, saveResultInLocalStorage } from './utils_games.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
 

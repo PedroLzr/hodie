@@ -1,7 +1,8 @@
 import os
 
 EXTERNAL_DATA = {
-    "path": os.getenv("EXTERNAL_DATA_PATH", "./external_data")
+    "culture_path": os.getenv("EXTERNAL_DATA_CULTURE_PATH", "./external_data/culture"),
+    "economy_path": os.getenv("EXTERNAL_DATA_ECONOMY_PATH", "./external_data/economy")
 }
 
 INTERNAL_DATA = {

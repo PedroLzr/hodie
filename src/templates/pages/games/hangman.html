@@ -3,11 +3,11 @@
 {% block title %}Adivina la palabra{% endblock %}
 
 {% block scripts %}
-<script type="module" src="{{ url_for('static', filename='scripts/hangman.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='scripts/games/hangman.js') }}"></script>
 {% endblock %}
 
 {% block styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/hangman.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/games/hangman.css') }}">
 {% endblock %}
 
 {% block content %}

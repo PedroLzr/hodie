@@ -1,4 +1,4 @@
-import { getRandomNumber, saveResultInLocalStorage } from './utils.js';
+import { getRandomNumber, saveResultInLocalStorage } from './utils_games.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
 

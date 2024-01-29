@@ -12,7 +12,7 @@ def api_external_today_all():
     try:
 
         date = datetime.now().strftime("%Y-%m-%d")
-        file_name = f'{EXTERNAL_DATA["path"]}/{date}.json'
+        file_name = f'{EXTERNAL_DATA["culture_path"]}/{date}.json'
 
         with open(file_name, 'r') as today_file:
             today = json.load(today_file)
