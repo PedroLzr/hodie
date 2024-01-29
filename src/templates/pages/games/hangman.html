@@ -3,7 +3,7 @@
 {% block title %}Adivina la palabra{% endblock %}
 
 {% block scripts %}
-<script type="module" src="{{ url_for('static', filename='scripts/games/hangman.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='js/games/hangman.js') }}"></script>
 {% endblock %}
 
 {% block styles %}
@@ -16,7 +16,7 @@
     <h2 class="title" id="dynamic-title">Adivina la palabra &#128064;</h2>
     <div id="word-display"></div>
     <div id="letters-container"></div>
-    <img id="hangman-image" src="{{ url_for('static', filename='images/hangman/0.png') }}" alt="Zorrito">
+    <img id="hangman-image" src="{{ url_for('static', filename='img/hangman/0.png') }}" alt="Zorrito">
 </div>
 
 {% endblock %}

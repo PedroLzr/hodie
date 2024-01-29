@@ -1,0 +1,44 @@
+.currency-table {
+    margin: 0 auto;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.currency-table th,
+.currency-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.currency-table th:nth-child(1),
+.currency-table td:nth-child(1) {
+    background-color: #113041;
+    font-weight: bold;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.increased {
+    color: green;
+}
+
+.decreased {
+    color: red;
+}
+
+.increased::before {
+    content: '▲';
+    color: green;
+    margin-right: 5px;
+}
+
+.decreased::before {
+    content: '▼';
+    color: red;
+    margin-right: 5px;
+}

@@ -3,13 +3,50 @@
 {% block title %}Inicio{% endblock %}
 
 {% block styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/economy.css') }}">
 {% endblock %}
 
 {% block content %}
 
 {% include 'partials/submenu.html' %}
 
-<h1>Próximamente</h1>
+<h1 class="title">Economía</h1>
+
+<section>
+    <h3 class="title">Ratios de monedas</h3>
+
+    <div class="table-container">
+        <table class="currency-table">
+            <thead>
+                <tr>
+                    <th>Euro (EUR)</th>
+                    <th>Dólar Americano (USD)</th>
+                    <th>Libra Esterlina (GBP)</th>
+                    <th>Yuan Chino (CNY)</th>
+                    <th>Yen Japonés (JPY)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="{{ 'increased' if rates.rates.EUR.change == 'increased' else 'decreased' if rates.rates.EUR.change == 'decreased' else '' }}">
+                        {{ rates.rates.EUR.rate }}€
+                    </td>
+                    <td class="{{ 'increased' if rates.rates.USD.change == 'increased' else 'decreased' if rates.rates.USD.change == 'decreased' else '' }}">
+                        {{ rates.rates.USD.rate }}$
+                    </td>
+                    <td class="{{ 'increased' if rates.rates.GBP.change == 'increased' else 'decreased' if rates.rates.GBP.change == 'decreased' else '' }}">
+                        {{ rates.rates.GBP.rate }}£
+                    </td>
+                    <td class="{{ 'increased' if rates.rates.CNY.change == 'increased' else 'decreased' if rates.rates.CNY.change == 'decreased' else '' }}">
+                        {{ rates.rates.CNY.rate }}¥
+                    </td>
+                    <td class="{{ 'increased' if rates.rates.JPY.change == 'increased' else 'decreased' if rates.rates.JPY.change == 'decreased' else '' }}">
+                        {{ rates.rates.JPY.rate }}¥
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
 
 {% endblock %}
