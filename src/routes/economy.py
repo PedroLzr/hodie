@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
 from services.economy.get_rates import get_rates
+from services.economy.get_metals import get_metals
 
 economy_bp = Blueprint('economy', __name__)
 
@@ -8,4 +9,5 @@ economy_bp = Blueprint('economy', __name__)
 def economy():
 
     rates = get_rates()
-    return render_template('pages/economy.html', rates = rates)
+    metals = get_metals()
+    return render_template('pages/economy.html', rates = rates, metals = metals)
