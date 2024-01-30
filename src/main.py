@@ -1,10 +1,10 @@
 from flask import Flask
-from modules.index import index_bp
-from modules.economy import economy_bp
-from modules.credits import credits_bp
-from modules.our_apis import our_apis_bp
-from modules.games import games_bp
-from modules.api_culture_v1 import api_culture_v1_bp
+from routes.index import index_bp
+from routes.economy import economy_bp
+from routes.credits import credits_bp
+from routes.our_apis import our_apis_bp
+from routes.games import games_bp
+from routes.api_culture_v1 import api_culture_v1_bp
 
 app = Flask(__name__, static_folder="static")
 
