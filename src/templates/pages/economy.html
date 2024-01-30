@@ -63,16 +63,16 @@
             <tbody>
                 <tr>
                     <td>
-                        {{ metals.metals.gold }} {{ metals.currency }}/{{ metals.unit }}
+                        {{ metals.metals.gold }}{{'€' if metals.currency == 'EUR'}} por {{ metals.unit }}
                     </td>
                     <td>
-                        {{ metals.metals.silver }} {{ metals.currency }}/{{ metals.unit }}
+                        {{ metals.metals.silver }}{{'€' if metals.currency == 'EUR'}} por {{ metals.unit }}
                     </td>
                     <td>
-                        {{ metals.metals.platinum }} {{ metals.currency }}/{{ metals.unit }}
+                        {{ metals.metals.platinum }}{{'€' if metals.currency == 'EUR'}} por {{ metals.unit }}
                     </td>
                     <td>
-                        {{ metals.metals.palladium }} {{ metals.currency }}/{{ metals.unit }}
+                        {{ metals.metals.palladium }}{{'€' if metals.currency == 'EUR'}} por {{ metals.unit }}
                     </td>
                 </tr>
             </tbody>
