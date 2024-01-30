@@ -6,8 +6,8 @@
 
     <nav class="navbar">
         <div class="d-flex justify-content-center w-100">
-            <a class="nav-link btn-menu" href="{{ url_for('index.index') }}">Cultura</a>
-            <a class="nav-link btn-menu" href="{{ url_for('economy.economy') }}">Economía</a>
+            <a class="nav-link btn-menu {% if request.path == url_for('index.index') %}active{% endif %}" href="{{ url_for('index.index') }}">Cultura</a>
+            <a class="nav-link btn-menu {% if request.path == url_for('economy.economy') %}active{% endif %}" href="{{ url_for('economy.economy') }}">Economía</a>
         </div>
     </nav>
 
