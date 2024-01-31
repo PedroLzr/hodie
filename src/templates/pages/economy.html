@@ -10,6 +10,7 @@
 
 {% include 'partials/submenu.html' %}
 
+{% if rates %}
 <section>
     <h3 class="title">Ratios de monedas</h3>
 
@@ -26,19 +27,24 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="{{ 'increased' if rates.rates.EUR.change == 'increased' else 'decreased' if rates.rates.EUR.change == 'decreased' else '' }}">
+                    <td
+                        class="{{ 'increased' if rates.rates.EUR.change == 'increased' else 'decreased' if rates.rates.EUR.change == 'decreased' else '' }}">
                         {{ rates.rates.EUR.rate }}€
                     </td>
-                    <td class="{{ 'increased' if rates.rates.USD.change == 'increased' else 'decreased' if rates.rates.USD.change == 'decreased' else '' }}">
+                    <td
+                        class="{{ 'increased' if rates.rates.USD.change == 'increased' else 'decreased' if rates.rates.USD.change == 'decreased' else '' }}">
                         {{ rates.rates.USD.rate }}$
                     </td>
-                    <td class="{{ 'increased' if rates.rates.GBP.change == 'increased' else 'decreased' if rates.rates.GBP.change == 'decreased' else '' }}">
+                    <td
+                        class="{{ 'increased' if rates.rates.GBP.change == 'increased' else 'decreased' if rates.rates.GBP.change == 'decreased' else '' }}">
                         {{ rates.rates.GBP.rate }}£
                     </td>
-                    <td class="{{ 'increased' if rates.rates.CNY.change == 'increased' else 'decreased' if rates.rates.CNY.change == 'decreased' else '' }}">
+                    <td
+                        class="{{ 'increased' if rates.rates.CNY.change == 'increased' else 'decreased' if rates.rates.CNY.change == 'decreased' else '' }}">
                         {{ rates.rates.CNY.rate }}¥
                     </td>
-                    <td class="{{ 'increased' if rates.rates.JPY.change == 'increased' else 'decreased' if rates.rates.JPY.change == 'decreased' else '' }}">
+                    <td
+                        class="{{ 'increased' if rates.rates.JPY.change == 'increased' else 'decreased' if rates.rates.JPY.change == 'decreased' else '' }}">
                         {{ rates.rates.JPY.rate }}¥
                     </td>
                 </tr>
@@ -46,7 +52,9 @@
         </table>
     </div>
 </section>
+{% endif %}
 
+{% if metals %}
 <section>
     <h3 class="title">Precios de metales</h3>
 
@@ -79,5 +87,23 @@
         </table>
     </div>
 </section>
+{% endif %}
+
+{% if open_markets %}
+<section>
+    <h3 class="title">Mercados abiertos</h3>
+
+    <div class="open-markets-container">
+        {% for market in open_markets %}
+        <div class="market-card">
+            <h5>{{ market.region }} ({{ market.market_type }})</h5>
+            <p><strong>Exchanges:</strong> {{ market.primary_exchanges }}</p>
+            <p><strong>Horario:</strong> {{ market.local_open }} - {{ market.local_close }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+{% endif %}
 
 {% endblock %}

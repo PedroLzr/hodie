@@ -1,22 +1,16 @@
 import requests
-from requests.structures import CaseInsensitiveDict
 
-METALS_DEV_URL = "https://api.metals.dev/v1"
-API_KEY = "7RVBJZTJEJGSIQ4P045A4124P045A"
+ALPHA_VANTAGE_URL = "https://www.alphavantage.co"
+API_KEY = "1699MSUFTB1IT5QC"
 
-class MetalsDevClient:
+class AlphaVantageClient:
 
-    def get_metal_prices_latest(self):
+    def get_global_market_status(self):
         try:
-            url = METALS_DEV_URL + "/latest?api_key=" + API_KEY + "&currency=EUR&unit=kg"
-
-            headers = CaseInsensitiveDict()
-            headers["Accept"] = "application/json"
-
-            response = requests.get(url, headers=headers)
+            url = ALPHA_VANTAGE_URL + "/query?function=MARKET_STATUS&apikey=" + API_KEY
+            response = requests.get(url)
             
             return response.json()
-    
         except requests.exceptions.HTTPError as errh:
                 print(f"Http Error: {errh}")
         except requests.exceptions.ConnectionError as errc:

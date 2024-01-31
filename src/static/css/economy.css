@@ -40,6 +40,7 @@
 }
 
 @media only screen and (max-width: 768px) {
+
     .currency-table th:nth-child(5),
     .currency-table td:nth-child(5) {
         display: none;
@@ -62,8 +63,32 @@
 }
 
 @media only screen and (max-width: 768px) {
+
     .metals-table th:nth-child(4),
     .metals-table td:nth-child(4) {
         display: none;
     }
+}
+
+/* Mercados abiertos */
+.open-markets-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.market-card {
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 0.9em;
+}
+
+.market-card h5,
+.market-card p {
+    margin: 2px 0;
 }

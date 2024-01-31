@@ -3,19 +3,24 @@ from datetime import datetime, timedelta
 
 def get_rates():
 
-    today = datetime.now()
-    yesterday = today - timedelta(days=1)
-    formatted_yesterday = yesterday.strftime("%Y-%m-%d")
+    try:
+        today = datetime.now()
+        yesterday = today - timedelta(days=1)
+        formatted_yesterday = yesterday.strftime("%Y-%m-%d")
 
-    client = VatComplyClient()
+        client = VatComplyClient()
 
-    rates = client.get_rates_latest()
-    rates_yesterday = client.get_rates_date(formatted_yesterday)
-    rates_with_change = add_rate_change(rates, rates_yesterday)
+        rates = client.get_rates_latest()
+        rates_yesterday = client.get_rates_date(formatted_yesterday)
+        rates_with_change = _add_rate_change(rates, rates_yesterday)
 
-    return rates_with_change
+        return rates_with_change
 
-def add_rate_change(rates_today, rates_yesterday):
+    except Exception as ex:
+            print(f"Error en get_metals: {ex}")
+            return {}
+
+def _add_rate_change(rates_today, rates_yesterday):
     for currency, rate_today in rates_today['rates'].items():
         rate_yesterday = rates_yesterday['rates'].get(currency)
         if rate_yesterday:
