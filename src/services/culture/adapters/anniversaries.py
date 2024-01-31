@@ -10,8 +10,7 @@ def get_anniversaries_from_hechoshistoricos():
 
         print(">> Leyendo efemérides del día")
 
-        url = HECHOSHISTORICOS_URL
-        page = requests.get(url, headers=HEADERS)
+        page = requests.get(HECHOSHISTORICOS_URL, headers=HEADERS)
         page.close()
 
         hhSoup = BeautifulSoup(page.content, 'lxml')
@@ -24,8 +23,8 @@ def get_anniversaries_from_hechoshistoricos():
         for fact, year in zip(anniversariesListFacts, anniversariesListYears):
             anniversaries.append(Anniversarie(fact.text, fact.span.text, year.text))
 
-        return Anniversaries(anniversaries, url)
+        return Anniversaries(anniversaries, HECHOSHISTORICOS_URL)
 
     except:
         print('Error buscando efemérides en HechosHistoricos')
-        return Anniversaries(["Efemérides no encontradas"], url)
+        return Anniversaries(["Efemérides no encontradas"], HECHOSHISTORICOS_URL)

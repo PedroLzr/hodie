@@ -10,8 +10,7 @@ def get_saints_from_santopedia():
 
         print(">> Leyendo santos del día")
 
-        url = SANTOPEDIA_URL
-        page = requests.get(url, headers=HEADERS)
+        page = requests.get(SANTOPEDIA_URL, headers=HEADERS)
         page.close()
 
         santopediaSoup = BeautifulSoup(page.content, 'lxml')
@@ -23,8 +22,8 @@ def get_saints_from_santopedia():
         cleaned_saints = [saint.text.strip() for saint in saintsOfDay]
         [saints.append(Saint(saint)) for saint in cleaned_saints if saint.startswith('San')]
 
-        return Saints(saints, url)
+        return Saints(saints, SANTOPEDIA_URL)
 
     except:
         print('Error buscando los santos en Santopedia')
-        return Saints(["Santos no encontrados"], url)
+        return Saints(["Santos no encontrados"], SANTOPEDIA_URL)

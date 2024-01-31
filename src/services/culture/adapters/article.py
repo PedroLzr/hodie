@@ -10,8 +10,7 @@ def get_article_from_wikipedia():
 
         print(">> Leyendo artículo del día")
 
-        url = WIKIPEDIA_URL
-        page = requests.get(url, headers=HEADERS)
+        page = requests.get(WIKIPEDIA_URL, headers=HEADERS)
         page.close()
 
         wikipediaSoup = BeautifulSoup(page.content, 'lxml')
@@ -21,8 +20,8 @@ def get_article_from_wikipedia():
         title = article.find('h2').find('a').text
         body = article.find('p').text
 
-        return Article(title, body, url)
+        return Article(title, body, WIKIPEDIA_URL)
 
     except:
         print('Error buscando el artículo de Wikipedia')
-        return Article("Artículo no encontrado", "Artículo no encontrado", url)
+        return Article("Artículo no encontrado", "Artículo no encontrado", WIKIPEDIA_URL)

@@ -25,6 +25,18 @@
 <section>
     <div class="row">
         <div class="col">
+            <h3 class="title">Segunda palabra del día</h3>
+            <h4>{{ today.word2.name }}</h4>
+            {% for def_word in today.word2.defs_word %}
+            <p>{{ def_word }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="row">
+        <div class="col">
             <h3 class="title">Palabra en inglés del día</h3>
             <h4>{{ today.english_word.name }}</h4>
             <p>{{ today.english_word.def_word }}</p>

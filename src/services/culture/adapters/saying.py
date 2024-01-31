@@ -10,8 +10,7 @@ def get_phrase_from_proverbia():
 
         print(">> Leyendo frase del día")
 
-        url = PROVERBIA_URL
-        page = requests.get(url, headers=HEADERS)
+        page = requests.get(PROVERBIA_URL, headers=HEADERS)
         page.close()
 
         proverbiaSoup = BeautifulSoup(page.content, 'lxml')
@@ -22,8 +21,8 @@ def get_phrase_from_proverbia():
         author = blockquote.a
         desc_author = footer.em
 
-        return Saying(phrase.text, author.text, desc_author.text, url)
+        return Saying(phrase.text, author.text, desc_author.text, PROVERBIA_URL)
 
     except:
         print('Error buscando la frase de Proverbia')
-        return Saying("Frase no encontrada", "Frase no encontrada", "Frase no encontrada", url)
+        return Saying("Frase no encontrada", "Frase no encontrada", "Frase no encontrada", PROVERBIA_URL)

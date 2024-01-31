@@ -1,3 +1,4 @@
+/* Tabla ratios de monedas */
 .currency-table {
     margin: 0 auto;
     width: 80%;
@@ -16,11 +17,6 @@
 .currency-table td:nth-child(1) {
     background-color: #113041;
     font-weight: bold;
-}
-
-.table-container {
-    overflow-x: auto;
-    margin: 20px 0;
 }
 
 .increased {
@@ -43,6 +39,14 @@
     margin-right: 5px;
 }
 
+@media only screen and (max-width: 768px) {
+    .currency-table th:nth-child(5),
+    .currency-table td:nth-child(5) {
+        display: none;
+    }
+}
+
+/* Tabla valores de metales */
 .metals-table {
     margin: 0 auto;
     width: 80%;
@@ -55,4 +59,11 @@
 .metals-table td {
     padding: 10px;
     border: 1px solid #ddd;
+}
+
+@media only screen and (max-width: 768px) {
+    .metals-table th:nth-child(4),
+    .metals-table td:nth-child(4) {
+        display: none;
+    }
 }

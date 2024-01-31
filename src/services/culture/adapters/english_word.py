@@ -10,8 +10,7 @@ def get_english_word_from_cambridge():
 
         print(">> Leyendo palabra en inglés del día")
 
-        url = CAMBRIDGE_URL
-        page = requests.get(url, headers=HEADERS)
+        page = requests.get(CAMBRIDGE_URL, headers=HEADERS)
         page.close()
 
         cambridgeSoup = BeautifulSoup(page.content, 'lxml')
@@ -22,8 +21,8 @@ def get_english_word_from_cambridge():
         wordOfDayDesc = cambridgeSoup.find('p', {'class': 'lmt-0 lmb-20'})
         wordDesc = wordOfDayDesc.text
 
-        return EnglishWord(wordName, wordDesc, url)
+        return EnglishWord(wordName, wordDesc, CAMBRIDGE_URL)
 
     except:
         print('Error buscando la palabra de Cambridge')
-        return EnglishWord("Palabra no encontrada", "Palabra no encontrada", url)
+        return EnglishWord("Palabra no encontrada", "Palabra no encontrada", CAMBRIDGE_URL)
