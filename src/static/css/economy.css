@@ -4,7 +4,6 @@
     width: 80%;
     border-collapse: collapse;
     text-align: center;
-    font-family: Arial, sans-serif;
 }
 
 .currency-table th,
@@ -53,7 +52,6 @@
     width: 80%;
     border-collapse: collapse;
     text-align: center;
-    font-family: Arial, sans-serif;
 }
 
 .metals-table th,
@@ -72,18 +70,20 @@
 
 /* Mercados abiertos */
 .open-markets-container {
+    margin: 0 auto;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: left;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .market-card {
     border: 1px solid #ddd;
-    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin: 5px;
-    padding: 8px;
+    margin: 3px;
+    padding: 6px;
     border-radius: 8px;
     font-size: 0.9em;
 }
@@ -91,4 +91,16 @@
 .market-card h5,
 .market-card p {
     margin: 2px 0;
+}
+
+h5{
+    color: green;
+    display: inline;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .p-card{
+        display: none;
+    }
 }

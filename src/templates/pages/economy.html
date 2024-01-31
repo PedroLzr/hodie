@@ -14,7 +14,7 @@
 <section>
     <h3 class="title">Ratios de monedas</h3>
 
-    <div class="table-container">
+    <div>
         <table class="currency-table">
             <thead>
                 <tr>
@@ -58,7 +58,7 @@
 <section>
     <h3 class="title">Precios de metales</h3>
 
-    <div class="table-container">
+    <div>
         <table class="metals-table">
             <thead>
                 <tr>
@@ -96,9 +96,9 @@
     <div class="open-markets-container">
         {% for market in open_markets %}
         <div class="market-card">
-            <h5>{{ market.region }} ({{ market.market_type }})</h5>
-            <p><strong>Exchanges:</strong> {{ market.primary_exchanges }}</p>
-            <p><strong>Horario:</strong> {{ market.local_open }} - {{ market.local_close }}</p>
+            <h5>{{ market.region }}</h5> <span>({{ market.market_type }})</span>
+            <p class="p-card"><strong>Exchanges:</strong> {{ market.primary_exchanges }}</p>
+            <p class="p-card"><strong>Horario:</strong> {{ market.local_open }} - {{ market.local_close }}</p>
         </div>
         {% endfor %}
     </div>

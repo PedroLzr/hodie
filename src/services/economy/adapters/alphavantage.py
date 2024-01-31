@@ -7,7 +7,8 @@ class AlphaVantageClient:
 
     def get_global_market_status(self):
         try:
-            url = ALPHA_VANTAGE_URL + "/query?function=MARKET_STATUS&apikey=" + API_KEY
+            # url = ALPHA_VANTAGE_URL + "/query?function=MARKET_STATUS&apikey=" + API_KEY
+            url = "https://www.alphavantage.co/query?function=MARKET_STATUS&apikey=demo"
             response = requests.get(url)
             
             return response.json()
