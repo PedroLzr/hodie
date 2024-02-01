@@ -112,7 +112,7 @@
 
 {% if commodities_chart_data %}
 <section>
-    <h3 class="title">Bienes básicos</h3>
+    <h3 class="title">Materias primas</h3>
 
     <div class="commodities-container">
         <canvas id="commoditiesChart"></canvas>
@@ -148,13 +148,13 @@
                     borderColor: 'rgba(255, 222, 132, 1)',
                     borderWidth: 1
                 },
-                {
-                    label: 'Azúcar (¢/lb)',
-                    data: commodities.values_sugar,
-                    backgroundColor: 'rgba(255, 99, 50, 0.2)',
-                    borderColor: 'rgba(255, 99, 50, 1)',
-                    borderWidth: 1
-                },
+                // {
+                //     label: 'Azúcar (¢/lb)',
+                //     data: commodities.values_sugar,
+                //     backgroundColor: 'rgba(255, 99, 50, 0.2)',
+                //     borderColor: 'rgba(255, 99, 50, 1)',
+                //     borderWidth: 1
+                // },
                 {
                     label: 'Café (¢/lb)',
                     data: commodities.values_coffee,
