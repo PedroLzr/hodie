@@ -93,14 +93,22 @@
     margin: 2px 0;
 }
 
-h5{
+h5 {
     color: green;
     display: inline;
 }
 
 @media only screen and (max-width: 768px) {
 
-    .p-card{
+    .p-card {
         display: none;
     }
+}
+
+/* Gráfica bienes básicos */
+.commodities-container {
+    margin: 0 auto;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
 }

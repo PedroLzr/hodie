@@ -2,6 +2,10 @@
 
 {% block title %}Inicio{% endblock %}
 
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
 {% block styles %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/economy.css') }}">
 {% endblock %}
@@ -102,6 +106,74 @@
         </div>
         {% endfor %}
     </div>
+
+</section>
+{% endif %}
+
+{% if commodities_chart_data %}
+<section>
+    <h3 class="title">Gráfica bienes básicos</h3>
+
+    <div class="commodities-container">
+        <canvas id="commoditiesChart"></canvas>
+    </div>
+
+    <script>
+        let commodities = {{ commodities_chart_data | tojson | safe}};
+        commodities = JSON.parse(commodities);
+
+        var ctx = document.getElementById('commoditiesChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: commodities.dates,
+                datasets: [{
+                    label: 'Precio del trigo ($/Tm)',
+                    data: commodities.values_wheat,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Precio del maíz ($/Tm)',
+                    data: commodities.values_corn,
+                    backgroundColor: 'rgba(111, 99, 132, 0.2)',
+                    borderColor: 'rgba(111, 99, 132, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Precio del algodón (cents/Libra)',
+                    data: commodities.values_cotton,
+                    backgroundColor: 'rgba(255, 222, 132, 0.2)',
+                    borderColor: 'rgba(255, 222, 132, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Precio del azúcar (cents/Libra)',
+                    data: commodities.values_sugar,
+                    backgroundColor: 'rgba(255, 99, 50, 0.2)',
+                    borderColor: 'rgba(255, 99, 50, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Precio del café (cents/Libra)',
+                    data: commodities.values_coffee,
+                    backgroundColor: 'rgba(40, 99, 132, 0.2)',
+                    borderColor: 'rgba(40, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    },
+                    x: {
+                    }
+                }
+            }
+        });
+    </script>
 
 </section>
 {% endif %}

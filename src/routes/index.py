@@ -7,7 +7,6 @@ from config.config_parameters import EXTERNAL_DATA
 
 index_bp = Blueprint('index', __name__)
 
-# Índice (Cultura)
 @index_bp.route('/', methods=['GET'])
 def index():
 
