@@ -111,4 +111,5 @@ h5 {
     width: 80%;
     border-collapse: collapse;
     text-align: center;
+    min-height: 300px;
 }
