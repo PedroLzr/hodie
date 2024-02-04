@@ -14,9 +14,9 @@
 
 {% include 'partials/submenu.html' %}
 
-{% if rates %}
+{% if currency %}
 <section>
-    <h3 class="title">Ratios de monedas</h3>
+    <h3 class="title">Divisas</h3>
 
     <div>
         <table class="currency-table">
@@ -32,24 +32,86 @@
             <tbody>
                 <tr>
                     <td
-                        class="{{ 'increased' if rates.rates.EUR.change == 'increased' else 'decreased' if rates.rates.EUR.change == 'decreased' else '' }}">
-                        {{ rates.rates.EUR.rate }}€
+                        class="{{ 'increased' if currency.rates.EUR.change == 'increased' else 'decreased' if currency.rates.EUR.change == 'decreased' else '' }}">
+                        {{ currency.rates.EUR.rate }}€
                     </td>
                     <td
-                        class="{{ 'increased' if rates.rates.USD.change == 'increased' else 'decreased' if rates.rates.USD.change == 'decreased' else '' }}">
-                        {{ rates.rates.USD.rate }}$
+                        class="{{ 'increased' if currency.rates.USD.change == 'increased' else 'decreased' if currency.rates.USD.change == 'decreased' else '' }}">
+                        {{ currency.rates.USD.rate }}$
                     </td>
                     <td
-                        class="{{ 'increased' if rates.rates.GBP.change == 'increased' else 'decreased' if rates.rates.GBP.change == 'decreased' else '' }}">
-                        {{ rates.rates.GBP.rate }}£
+                        class="{{ 'increased' if currency.rates.GBP.change == 'increased' else 'decreased' if currency.rates.GBP.change == 'decreased' else '' }}">
+                        {{ currency.rates.GBP.rate }}£
                     </td>
                     <td
-                        class="{{ 'increased' if rates.rates.CNY.change == 'increased' else 'decreased' if rates.rates.CNY.change == 'decreased' else '' }}">
-                        {{ rates.rates.CNY.rate }}¥
+                        class="{{ 'increased' if currency.rates.CNY.change == 'increased' else 'decreased' if currency.rates.CNY.change == 'decreased' else '' }}">
+                        {{ currency.rates.CNY.rate }}¥
                     </td>
                     <td
-                        class="{{ 'increased' if rates.rates.JPY.change == 'increased' else 'decreased' if rates.rates.JPY.change == 'decreased' else '' }}">
-                        {{ rates.rates.JPY.rate }}¥
+                        class="{{ 'increased' if currency.rates.JPY.change == 'increased' else 'decreased' if currency.rates.JPY.change == 'decreased' else '' }}">
+                        {{ currency.rates.JPY.rate }}¥
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endif %}
+
+{% if cryptos %}
+<section>
+    <h3 class="title">Criptomonedas</h3>
+
+    <div>
+        <table class="cryptos-table">
+            <thead>
+                <tr>
+                    <th>{{ cryptos[0].name }} ({{ cryptos[0].symbol }})</th>
+                    <th>{{ cryptos[1].name }} ({{ cryptos[1].symbol }})</th>
+                    <th>{{ cryptos[2].name }} ({{ cryptos[2].symbol }})</th>
+                    <th>{{ cryptos[3].name }} ({{ cryptos[3].symbol }})</th>
+                    <th>{{ cryptos[4].name }} ({{ cryptos[4].symbol }})</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        {{ cryptos[0].current_price }}€
+                    </td>
+                    <td>
+                        {{ cryptos[1].current_price }}€
+                    </td>
+                    <td>
+                        {{ cryptos[2].current_price }}€
+                    </td>
+                    <td>
+                        {{ cryptos[3].current_price }}€
+                    </td>
+                    <td>
+                        {{ cryptos[4].current_price }}€
+                    </td>
+                </tr>
+
+                <tr>
+                    <td
+                        class="{{ 'increased' if cryptos[0].price_change_percentage_30d_in_currency > 0 else 'decreased' if cryptos[0].price_change_percentage_30d_in_currency < 0 else '' }}">
+                        {{ '%0.2f' | format(cryptos[0].price_change_percentage_30d_in_currency | float) }}% / mes
+                    </td>
+                    <td
+                        class="{{ 'increased' if cryptos[1].price_change_percentage_30d_in_currency > 0 else 'decreased' if cryptos[1].price_change_percentage_30d_in_currency < 0 else '' }}">
+                        {{ '%0.2f' | format(cryptos[1].price_change_percentage_30d_in_currency | float) }}% / mes
+                    </td>
+                    <td
+                        class="{{ 'increased' if cryptos[2].price_change_percentage_30d_in_currency > 0 else 'decreased' if cryptos[2].price_change_percentage_30d_in_currency < 0 else '' }}">
+                        {{ '%0.2f' | format(cryptos[2].price_change_percentage_30d_in_currency | float) }}% / mes
+                    </td>
+                    <td
+                        class="{{ 'increased' if cryptos[3].price_change_percentage_30d_in_currency > 0 else 'decreased' if cryptos[3].price_change_percentage_30d_in_currency < 0 else '' }}">
+                        {{ '%0.2f' | format(cryptos[3].price_change_percentage_30d_in_currency | float) }}% / mes
+                    </td>
+                    <td
+                        class="{{ 'increased' if cryptos[4].price_change_percentage_30d_in_currency > 0 else 'decreased' if cryptos[4].price_change_percentage_30d_in_currency < 0 else '' }}">
+                        {{ '%0.2f' | format(cryptos[4].price_change_percentage_30d_in_currency | float) }}% / mes
                     </td>
                 </tr>
             </tbody>
@@ -123,6 +185,7 @@
         commodities = JSON.parse(commodities);
 
         var ctx = document.getElementById('commoditiesChart').getContext('2d');
+
         var commoditiesChart = new Chart(ctx, {
             type: 'line',
             data: {
@@ -148,13 +211,6 @@
                     borderColor: 'rgba(255, 222, 132, 1)',
                     borderWidth: 1
                 },
-                // {
-                //     label: 'Azúcar (¢/lb)',
-                //     data: commodities.values_sugar,
-                //     backgroundColor: 'rgba(255, 99, 50, 0.2)',
-                //     borderColor: 'rgba(255, 99, 50, 1)',
-                //     borderWidth: 1
-                // },
                 {
                     label: 'Café (¢/lb)',
                     data: commodities.values_coffee,
@@ -170,8 +226,7 @@
                     y: {
                         beginAtZero: false
                     },
-                    x: {
-                    }
+                    x: {}
                 }
             }
         });

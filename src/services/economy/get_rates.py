@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 def get_rates():
 
     try:
+
         today = datetime.now()
         yesterday = today - timedelta(days=1)
         formatted_yesterday = yesterday.strftime("%Y-%m-%d")

@@ -68,6 +68,28 @@
     }
 }
 
+/* Tabla criptomonedas */
+.cryptos-table {
+    margin: 0 auto;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.cryptos-table th,
+.cryptos-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .cryptos-table th:nth-child(5),
+    .cryptos-table td:nth-child(5) {
+        display: none;
+    }
+}
+
 /* Mercados abiertos */
 .open-markets-container {
     margin: 0 auto;
