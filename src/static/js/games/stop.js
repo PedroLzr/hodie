@@ -187,12 +187,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (answer && answer.trim()) {
 
-            // Eliminar espacios a los lados
-            answer = answer.trim();
             // Eliminar los acentos
             answer = removeAccentMark(answer);
             // Eliminar puntos, guiones, comillas y espacios
-            answer = answer.replace(/[.\- ']/g, '');
+            answer = answer.replace(/[.\- ']/g, ' ');
+            // Eliminar espacios a los lados
+            answer = answer.trim();
+            // Coger únicamente la primera palabra si es compuesta
+            answer = answer.split(' ')[0];
 
             if (REGEX_IS_CORRECT_WORD.test(answer)) {
                 answer = answer.toLowerCase();
@@ -214,7 +216,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Eliminar los acentos
         categoryItems = categoryItems.map((item) => removeAccentMark(item));
         // Eliminar carácteres especiales y espacios
-        categoryItems = categoryItems.map((item) => item.replace(/[.\-\/#!$%^&*;:{}=\-_'~()]/g, '').replace(/\s+/g, ''));
+        categoryItems = categoryItems.map((item) => item.replace(/[.\-\/#!$%^&*;:{}=\-_'´`~()]/g, ' ').replace(/\s+/g, ' '));
+        // Eliminar espacios a los lados
+        categoryItems = categoryItems.map((item) => item.trim());
+        // Coger únicamente la primera palabra si es compuesta
+        categoryItems = categoryItems.map((item) => item.split(' ')[0]);
 
         // Variantes de la palabra
         let answerWithO = answer.substring(0, (answer.length - 1)) + "o";
