@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const SPAN_SUFIX = '-category-option-span';
     const MAX_GAME_TIME = Math.round(NUM_GAME_CATEGORIES) * 14;
     const REGEX_IS_CORRECT_WORD = /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ '.-]+$/;
-    const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+    // const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+    const ALPHABET_MESSY = 'cqekwpnrlubvsfjdxoyimagzhtcmsefanj';
 
     let arrayCategories = Object.keys(CATEGORIES);
     let timeLeft = MAX_GAME_TIME;
@@ -110,11 +111,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         const DATE = new Date();
         const d = DATE.getDate() - 1;
 
-        if (d > 26) {
-            randomLetter = ALPHABET[d - 26];
-        } else {
-            randomLetter = ALPHABET[d];
-        }
+        randomLetter = ALPHABET_MESSY[d];
+
+        // if (d > 26) {
+        //     randomLetter = ALPHABET_MESSY[d - 26];
+        // } else {
+        //     randomLetter = ALPHABET_MESSY[d];
+        // }
     }
 
     async function setRandomCategories() {
