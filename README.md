@@ -1,2 +1,1 @@
-# Hodiernus
-Hodie.cafe
+# Hodie
