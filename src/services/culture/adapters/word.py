@@ -44,7 +44,7 @@ def get_word_from_dle():
 
     except:
         print('Error buscando la palabra del DLE-RAE')
-        return Word("Palabra no encontrada", "Palabra no encontrada", DLE_URL)
+        return Word("Palabra no encontrada", ["Palabra no encontrada"], DLE_URL)
 
 def get_word_from_iedra():
     try:
@@ -83,4 +83,4 @@ def get_word_from_iedra():
 
     except:
         print('Error buscando la palabra en Iedra')
-        return Word("Palabra no encontrada", "Palabra no encontrada", IEDRA_URL)
+        return Word("Palabra no encontrada", ["Palabra no encontrada"], IEDRA_URL)
