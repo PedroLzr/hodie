@@ -1,7 +1,7 @@
 import requests
 
 ALPHA_VANTAGE_URL = "https://www.alphavantage.co"
-API_KEY = "1699MSUFTB1IT5QC"
+API_KEY = "XXXXXXXXXXXXXXX"
 
 class AlphaVantageClient:
 

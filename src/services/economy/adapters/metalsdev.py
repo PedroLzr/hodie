@@ -2,7 +2,7 @@ import requests
 from requests.structures import CaseInsensitiveDict
 
 METALS_DEV_URL = "https://api.metals.dev/v1"
-API_KEY = "7RVBJZTJEJGSIQ4P045A4124P045A"
+API_KEY = "XXXXXXXXXXXXXXX"
 
 class MetalsDevClient:
 
